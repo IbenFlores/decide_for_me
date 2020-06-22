@@ -10,10 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_22_191935) do
+ActiveRecord::Schema.define(version: 2020_06_22_215017) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "dilemmas", force: :cascade do |t|
+    t.text "question"
+    t.string "type"
+    t.string "tag"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_dilemmas_on_user_id"
+  end
+
+  create_table "options", force: :cascade do |t|
+    t.text "description"
+    t.integer "upvotes", default: 0
+    t.bigint "dilemma_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["dilemma_id"], name: "index_options_on_dilemma_id"
+  end
+
+  create_table "replies", force: :cascade do |t|
+    t.text "answer"
+    t.integer "reply_votes", default: 0
+    t.bigint "dilemma_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "owner_id"
+    t.index ["dilemma_id"], name: "index_replies_on_dilemma_id"
+    t.index ["owner_id"], name: "index_replies_on_owner_id"
+    t.index ["user_id"], name: "index_replies_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +55,15 @@ ActiveRecord::Schema.define(version: 2020_06_22_191935) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "username"
+    t.integer "answered_dilemmas", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "dilemmas", "users"
+  add_foreign_key "options", "dilemmas"
+  add_foreign_key "replies", "dilemmas"
+  add_foreign_key "replies", "users"
+  add_foreign_key "replies", "users", column: "owner_id"
 end
