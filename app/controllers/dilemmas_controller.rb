@@ -17,6 +17,7 @@ class DilemmasController < ApplicationController
       redirect_to dilemma_path(dilemma)
     else
       render :new_dilemma
+    end
   end
 
   def edit
@@ -29,16 +30,18 @@ class DilemmasController < ApplicationController
       redirect_to dilemma_path(dilemma)
     else
       render :edit_dilemma
+    end
   end
 
   def destroy
     @dilemma = Dilemma.find(params[:id])
     @dilemma.destroy
 
-    redirect_to dilemma_index_path
+    redirect_to dilemmas_path
   end
 
   private
+
   def dilemma_params
     params.require(:dilemma).permit(:question)
   end

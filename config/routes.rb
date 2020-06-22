@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :user, except: [:index, :show]
-  resources :dilemma do
+  resources :users, except: [:index, :show]
+  resources :dilemmas do
     resources :option, only: [:new, :create]
     resources :reply, only: [:new, :create]
   end
