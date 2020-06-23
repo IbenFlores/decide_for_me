@@ -1,19 +1,50 @@
-<div>
-  <h2>Create a dilemma</h2>
-  <%= simple_form_for @dilemma do |f| %>
-  <%= f.input :question %>
-  <%= f.input :category %>
-  <%= f.simple_fields_for :options do |o| %>
-    <h3>Option A</h3>
-    <%= o.input :description %>
-  <% end %>
-  <%= f.simple_fields_for :options do |o| %>
-    <h3>Option B</h3>
-    <%= o.input :description %>
-  <% end %>
+<div class="container d-flex">
+  <div class="m-5">
+    <div class="pt-5 pb-2 border-bottom border-dark">
+      <h1><strong>Dilemma</strong></h1>
+    </div>
+    <div class="mt-4">
+      <%= simple_form_for @dilemma do |f| %>
+      <%= f.input :question, label: false,
+      error: 'A question is mandatory, please specify one',
+      placeholder: "My dilemma is..." %>
+    </div>
+  </div>
 
-  <%= f.button :submit, "Ready", class: "btn btn-primary" %>
-  <% end %>
+  <div class="m-5">
+    <div class="pb-5">
+      <%= f.simple_fields_for :options do |o| %>
+      <h3 class="pb-3"><strong>Option A</strong></h3>
+      <%= o.input :description, label: false,
+      error: 'An option is limited to 140 characters.',
+      placeholder: "Be clear. Be brief. Be wise" %>
+      <% end %>
+    </div>
+    <div>
+      <%= f.simple_fields_for :options do |o| %>
+      <h3 class="pb-3"><strong>Option B</strong></h3>
+      <%= o.input :description, label: false,
+      error: 'An option is limited to 140 characters.',
+      placeholder: "Be clear. Be brief. Be wise" %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="m-5">
+    <%= f.input :category %>
+    <%= f.input :tag %>
+  </div>
 </div>
-<%= link_to "Back to dilemmas", dilemmas_path %>
+<div class="container">
+  <div>
+    <%= f.button :submit, "Ready", class: "btn-sober" %>
+    <% end %>
+  </div>
+  <div>
+<!--     <%= link_to "", dilemmas_path %> -->
+  </div>
+</div>
+
+
+
 
