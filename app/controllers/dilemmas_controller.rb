@@ -10,10 +10,13 @@ class DilemmasController < ApplicationController
 
   def new
     @dilemma = Dilemma.new
+    authorize @dilemma
   end
 
   def create
     @dilemma = Dilemma.new(dilemma_params)
+    @dilemma.user_id = current_user.id
+    authorize @dilemma
     if @dilemma.save
       redirect_to dilemma_path(dilemma)
     else
@@ -25,6 +28,7 @@ class DilemmasController < ApplicationController
   end
 
   def update
+    @dilemma.update(dilemma_params)
     if @dilemma.save
       redirect_to dilemma_path(dilemma)
     else
