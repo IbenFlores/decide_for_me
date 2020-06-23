@@ -4,5 +4,4 @@ class Option < ApplicationRecord
   validates :description, length: {
     maximum: 140
   }
-  validates_presence_of :dilemma
 end

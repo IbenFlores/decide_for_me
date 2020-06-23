@@ -3,8 +3,15 @@
   <%= simple_form_for @dilemma do |f| %>
   <%= f.input :question %>
   <%= f.input :category %>
-  <%= f.input :option %>
-  <%= f.input :tag %>
+  <%= f.simple_fields_for :options do |o| %>
+    <h3>Option A</h3>
+    <%= o.input :description %>
+  <% end %>
+  <%= f.simple_fields_for :options do |o| %>
+    <h3>Option B</h3>
+    <%= o.input :description %>
+  <% end %>
+
   <%= f.button :submit, "Ready", class: "btn btn-primary" %>
   <% end %>
 </div>

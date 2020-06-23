@@ -10,16 +10,14 @@ class DilemmasController < ApplicationController
 
   def new
     @dilemma = Dilemma.new
+    @dilemma.options.build
     authorize @dilemma
-    option_new
   end
 
   def create
     @dilemma = Dilemma.new(dilemma_params)
     @dilemma.user_id = current_user.id
     authorize @dilemma
-    option_create
-
     if @dilemma.save
       redirect_to dilemma_path(@dilemma)
     else
@@ -45,16 +43,6 @@ class DilemmasController < ApplicationController
   #   redirect_to dilemmas_path
   # end
 
-  def option_new
-    @option = Option.new
-  end
-
-  def option_create
-    @dilemma = Dilemma.find(params[:dilemma_id])
-    @option = Option.new(option_params)
-    @option.dilemma = @dilemma
-  end
-
   private
 
   def find_dilemma
@@ -63,10 +51,6 @@ class DilemmasController < ApplicationController
   end
 
   def dilemma_params
-    params.require(:dilemma).permit(:question, :category)
-  end
-
-  def option_params
-    params.require(:option).permit(:description, :upvotes)
+    params.require(:dilemma).permit(:question, :category, {options_attributes: [:description]})
   end
 end
