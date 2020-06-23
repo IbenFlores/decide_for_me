@@ -20,7 +20,7 @@ class DilemmasController < ApplicationController
     if @dilemma.save
       redirect_to dilemma_path(dilemma)
     else
-      render :new_dilemma
+      render :new
     end
   end
 
@@ -50,6 +50,6 @@ class DilemmasController < ApplicationController
   end
 
   def dilemma_params
-    params.require(:dilemma).permit(:question)
+    params.require(:dilemma).permit(:question, :tag, :user_id)
   end
 end
