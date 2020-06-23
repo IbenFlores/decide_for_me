@@ -7,4 +7,6 @@ class Dilemma < ApplicationRecord
   validates :question, length: {
     maximum: 140
   }
+
+  accepts_nested_attributes_for :options
 end

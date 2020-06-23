@@ -11,12 +11,15 @@ class DilemmasController < ApplicationController
   def new
     @dilemma = Dilemma.new
     authorize @dilemma
+    option_new
   end
 
   def create
     @dilemma = Dilemma.new(dilemma_params)
     @dilemma.user_id = current_user.id
     authorize @dilemma
+    option_create
+
     if @dilemma.save
       redirect_to dilemma_path(@dilemma)
     else
@@ -24,22 +27,32 @@ class DilemmasController < ApplicationController
     end
   end
 
-  def edit
+  # def edit
+  # end
+
+  # def update
+  #   @dilemma.update(dilemma_params)
+  #   if @dilemma.save
+  #     redirect_to dilemma_path(dilemma)
+  #   else
+  #     render :edit_dilemma
+  #   end
+  # end
+
+  # def destroy
+  #   @dilemma.destroy
+
+  #   redirect_to dilemmas_path
+  # end
+
+  def option_new
+    @option = Option.new
   end
 
-  def update
-    @dilemma.update(dilemma_params)
-    if @dilemma.save
-      redirect_to dilemma_path(dilemma)
-    else
-      render :edit_dilemma
-    end
-  end
-
-  def destroy
-    @dilemma.destroy
-
-    redirect_to dilemmas_path
+  def option_create
+    @dilemma = Dilemma.find(params[:dilemma_id])
+    @option = Option.new(option_params)
+    @option.dilemma = @dilemma
   end
 
   private
@@ -51,5 +64,9 @@ class DilemmasController < ApplicationController
 
   def dilemma_params
     params.require(:dilemma).permit(:question, :category)
+  end
+
+  def option_params
+    params.require(:option).permit(:description, :upvotes)
   end
 end
