@@ -1,8 +1,13 @@
 class DilemmasController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :find_dilemma, only: [:show, :edit, :update, :destroy]
+
   def index
-    @dilemmas = policy_scope(Dilemma)
+    if params[:query].present?
+      @dilemmas = Dilemma.where("question ILIKE ?", "%#{params[:query]}%")
+    else
+      @dilemmas = policy_scope(Dilemma)
+    end
   end
 
   def show
