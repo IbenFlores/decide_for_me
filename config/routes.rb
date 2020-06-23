@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :users, except: [:index, :show]
   resources :dilemmas do
-    resources :option, only: [:new, :create]
-    resources :reply, only: [:new, :create]
+    resources :options, only: [:new, :create]
+    resources :replies, only: [:new, :create]
   end
-  resources :reply, only: :destroy
+  resources :replies, only: :destroy
 end
