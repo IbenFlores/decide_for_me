@@ -18,7 +18,7 @@ class DilemmasController < ApplicationController
     @dilemma.user_id = current_user.id
     authorize @dilemma
     if @dilemma.save
-      redirect_to dilemma_path(dilemma)
+      redirect_to dilemma_path(@dilemma)
     else
       render :new
     end
