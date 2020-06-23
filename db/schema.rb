@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_22_215017) do
+ActiveRecord::Schema.define(version: 2020_06_23_195823) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "dilemmas", force: :cascade do |t|
     t.text "question"
-    t.string "type"
+    t.string "category"
     t.string "tag"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false

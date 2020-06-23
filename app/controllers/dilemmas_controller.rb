@@ -50,6 +50,6 @@ class DilemmasController < ApplicationController
   end
 
   def dilemma_params
-    params.require(:dilemma).permit(:question, :tag, :user_id)
+    params.require(:dilemma).permit(:question, :category)
   end
 end
