@@ -1,4 +1,6 @@
-<% simple_form_for (@dilemma, @option) %>
+<% simple_form_for [@dilemma, @option] do |f| %>
 <% f.input :question %>
-<% f.input :option %>
+<% f.input :option  %>
+<% f.input :option, { maxlength: 150 } %>
 <% f.input :tag %>
+<% end %>
