@@ -1,10 +1,11 @@
 class DilemmasController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :find_dilemma, only: [:show, :edit, :update, :destroy]
   def index
-    @dilemmas = Dilemma.all
+    @dilemmas = policy_scope(Dilemma)
   end
 
   def show
-    @dilemma = Dilemma.find(params[:id])
   end
 
   def new
@@ -21,11 +22,9 @@ class DilemmasController < ApplicationController
   end
 
   def edit
-    @dilemma = Dilemma.find(params[:id])
   end
 
   def update
-    @dilemma = Dilemma.find(params[:id])
     if @dilemma.save
       redirect_to dilemma_path(dilemma)
     else
@@ -34,13 +33,17 @@ class DilemmasController < ApplicationController
   end
 
   def destroy
-    @dilemma = Dilemma.find(params[:id])
     @dilemma.destroy
 
     redirect_to dilemmas_path
   end
 
   private
+
+  def find_dilemma
+    @dilemma = Dilemma.find(params[:id])
+    authorize @dilemma
+  end
 
   def dilemma_params
     params.require(:dilemma).permit(:question)
