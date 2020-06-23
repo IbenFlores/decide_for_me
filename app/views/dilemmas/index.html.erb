@@ -1,9 +1,51 @@
-<div>
-  <h1>Dilemmas</h1>
-  <% @dilemmas.each do |dilemma| %>
+<div class="container">
   <div>
-    <%= dilemma.question %>
+      <h1>Dilemmas</h1>
+      <% @dilemmas.each do |dilemma| %>
+      <div>
+        <%= dilemma.question %>
+      </div>
+      <% end %>
+      <%= link_to "Post a new dilemma", new_dilemma_path %>
+    </div>
+  <br>
+  <div class="cards">
+
+    <div class="card-category" style="background-color: #556577">
+      Dilemma preview
+    </div>
+
+    <div class="card-category" style="background-color: #556577">
+      Dilemma preview
+    </div>
+
+    <div class="card-category" style="background-color: #556577">
+      Dilemma preview
+    </div>
+
+    <div class="card-category" style="background-color: #556577">
+      Dilemma preview
+    </div>
+
+    <div class="card-category" style="background-color: #556577">
+      Dilemma preview
+    </div>
+
+    <div class="card-category" style="background-color: #556577">
+      Dilemma preview
+    </div>
+
+    <div id ="last-row" class="card-category" style="background-color: #556577">
+      Dilemma preview
+    </div>
+
+    <div id ="last-row" class="card-category" style="background-color: #556577" >
+      Dilemma preview
+    </div>
+
+    <div id ="last-row" class="card-category" style="background-color: #556577">
+      Dilemma preview
+    </div>
+
   </div>
-  <% end %>
-  <%= link_to "Create a new dilemma", new_dilemma_path %>
 </div>

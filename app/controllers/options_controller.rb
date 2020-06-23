@@ -8,6 +8,7 @@ class OptionsController < ApplicationController
     @dilemma = Dilemma.find(params[:dilemma_id])
     @option = Option.new(option_params)
     @option.dilemma = @dilemma
+
     @option.save
   end
 
