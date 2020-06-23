@@ -1,5 +1,5 @@
 <div>
-  <div>
-    <%= @dilemma.question %>
-  </div>
+  <h2><%= @dilemma.question %></h2>
+  <% @dilemma.options %>
+  <%= link_to "See all dilemmas", dilemmas_path %>
 </div>

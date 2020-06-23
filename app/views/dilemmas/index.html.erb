@@ -1,7 +1,9 @@
 <div>
+  <h1>Dilemmas</h1>
   <% @dilemmas.each do |dilemma| %>
   <div>
     <%= dilemma.question %>
   </div>
   <% end %>
+  <%= link_to "Create a new dilemma", new_dilemma_path %>
 </div>

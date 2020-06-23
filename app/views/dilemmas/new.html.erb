@@ -1,6 +1,19 @@
-<% simple_form_for [@dilemma, @option] do |f| %>
-<% f.input :question %>
-<% f.input :option  %>
-<% f.input :option, { maxlength: 150 } %>
-<% f.input :tag %>
-<% end %>
+<div>
+  <h2>Create a dilemma</h2>
+  <%= simple_form_for @dilemma do |f| %>
+  <%= f.input :question %>
+  <%= f.input :category %>
+  <%= f.simple_fields_for :options do |o| %>
+    <h3>Option A</h3>
+    <%= o.input :description %>
+  <% end %>
+  <%= f.simple_fields_for :options do |o| %>
+    <h3>Option B</h3>
+    <%= o.input :description %>
+  <% end %>
+
+  <%= f.button :submit, "Ready", class: "btn btn-primary" %>
+  <% end %>
+</div>
+<%= link_to "Back to dilemmas", dilemmas_path %>
+

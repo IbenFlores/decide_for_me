@@ -3,8 +3,10 @@ class Dilemma < ApplicationRecord
   has_many :options, dependent: :destroy
   has_many :replies, dependent: :destroy
   validates :question, presence: true
-  validates :type, presence: true
+  validates :category, presence: true
   validates :question, length: {
     maximum: 140
   }
+
+  accepts_nested_attributes_for :options
 end

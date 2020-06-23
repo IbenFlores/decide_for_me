@@ -12,4 +12,16 @@ class DilemmaPolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
+
+  def new?
+    true
+  end
+
+  def create?
+    true
+  end
+
+  def show?
+    true
+  end
 end
