@@ -1,51 +1,24 @@
 <div class="container">
   <div>
-      <h1>Dilemmas</h1>
+    <h1>Dilemmas</h1>
+    <div class="cards">
       <% @dilemmas.each do |dilemma| %>
-      <div>
-        <%= dilemma.question %>
-      </div>
+        <% if dilemma.category == "Easy" %>
+          <div class="card-category" style="background-color: $easy">
+          <%= dilemma.question %><%= link_to dilemma_path(dilemma) %>
+          </div>
+        <% elsif dilemma.category == "Medium" %>
+          <div class="card-category" style="background-color: $medium">
+          <%= dilemma.question %>
+          </div>
+        <% else %>
+          <div class="card-category" style="background-color: $hard">
+          <%= dilemma.question %>
+          </div>
+        <% end %>
       <% end %>
-      <%= link_to "Post a new dilemma", new_dilemma_path %>
     </div>
-  <br>
-  <div class="cards">
-
-    <div class="card-category" style="background-color: #556577">
-      Dilemma preview
-    </div>
-
-    <div class="card-category" style="background-color: #556577">
-      Dilemma preview
-    </div>
-
-    <div class="card-category" style="background-color: #556577">
-      Dilemma preview
-    </div>
-
-    <div class="card-category" style="background-color: #556577">
-      Dilemma preview
-    </div>
-
-    <div class="card-category" style="background-color: #556577">
-      Dilemma preview
-    </div>
-
-    <div class="card-category" style="background-color: #556577">
-      Dilemma preview
-    </div>
-
-    <div id ="last-row" class="card-category" style="background-color: #556577">
-      Dilemma preview
-    </div>
-
-    <div id ="last-row" class="card-category" style="background-color: #556577" >
-      Dilemma preview
-    </div>
-
-    <div id ="last-row" class="card-category" style="background-color: #556577">
-      Dilemma preview
-    </div>
-
+    <%= link_to "Post a new dilemma", new_dilemma_path %>
   </div>
 </div>
+

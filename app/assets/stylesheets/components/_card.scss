@@ -7,10 +7,14 @@
   align-items: center;
   color: white;
   font-size: 24px;
-  font-weight: bold;
+  font-weight: normal;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-category:hover{
+  opacity: .5;
 }
 
 .title-card {
@@ -45,6 +49,7 @@
   background-color: $saffron;
   padding: 100px;
   margin: 20px auto;
+  box-sizing: content-box;
 }
 
 .background-color-input-form {
