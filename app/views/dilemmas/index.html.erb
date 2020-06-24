@@ -5,20 +5,45 @@
       <% @dilemmas.each do |dilemma| %>
         <% if dilemma.easy? %>
           <div class="easy card-category">
-          <%= dilemma.question %><%= link_to dilemma_path(dilemma) %>
+            <%= dilemma.question %><%= link_to dilemma_path(dilemma) %>
           </div>
         <% elsif dilemma.medium? %>
           <div class="medium card-category">
-          <%= dilemma.question %>
+            <%= dilemma.question %>
           </div>
         <% elsif dilemma.hard? %>
           <div class="hard card-category">
-          <%= dilemma.question %>
+            <%= dilemma.question %>
           </div>
-        <% end %>
+        <% end %>    
       <% end %>
     </div>
     <%= link_to "Post a new dilemma", new_dilemma_path %>
   </div>
 </div>
 
+<!-- <div class="container x">
+   <ul>
+    <li>
+      <a href="#">
+        <h2>dilemma #1</h2>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <h2>dilemma #2</h2>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <h2>dilemma #3</h2>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <h2>dilemma #4</h2>
+      </a>
+    </li>
+  </ul>
+</div>
+ -->
