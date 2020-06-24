@@ -22,8 +22,8 @@
         <h5><strong>Options</strong></h5>
         <p>A dilemma has two options. You can't decide which one is better.</p>
       </div>
-      <div>
-        <div class="mb-5 flex-grow-1">
+      <div class="flex-grow-1">
+        <div class="mb-5">
           <%= f.simple_fields_for :options do |o| %>
           <h4 class="pb-1"><strong>Option A</strong></h4>
           <%= o.input :description, label: false,
@@ -49,8 +49,9 @@
         <p>How much have you struggled with your dilemma?
         Easy will show for a day. Medium for 72hrs. Hard for a week.</p>
       </div>
-      <div>
-        <%= f.input :category, label: false,
+      <div class="flex-grow-1">
+        <%= f.input :category, collection: ['Easy', 'Medium', 'Hard'],
+          as: :select, label: false,
           error: 'Please select a type of difficulty',
           placeholder: "Select type of difficulty",
           input_html: { class: "background-color-input-form" } %>
