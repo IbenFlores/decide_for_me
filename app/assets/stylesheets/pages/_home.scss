@@ -78,7 +78,7 @@
 .container-content-icons:hover {
   align-items: center;
   width: 170px;
-  height: 370px;
+  height: 70%;
   border: 8px solid;
   border-color: #8A27E4;
   border-radius: 15px;
@@ -98,13 +98,14 @@
 }
 
 #member-container {
-  height: 60vh;
+  height: 100vh;
   width: 100vw;
   background-image: linear-gradient(to bottom right, #ff470f, #8A27E4);
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  display: inline-block;
 }
 
 #member-container i {
@@ -117,6 +118,16 @@
   align-items: center;
   text-align: center;
   width: 100vw;
+  margin-top: 8%;
+}
+
+#container-card-action2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  width: 100vw;
+  margin-top: 5%;
 }
 
 #card-individual {
@@ -124,4 +135,42 @@
   background-color: white;
   border-radius: 25px;
   width: 120px;
+}
+
+#card-individual2 {
+  box-shadow: 2px 2px 2px black;
+  background-color: white;
+  border-radius: 200%;
+  width: 9em;
+  height: 9em;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#card-individual2 p {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 30px;
+}
+
+#card-individual3 {
+   box-shadow: 2px 2px 2px black;
+  background-color: white;
+  border-radius: 200%;
+  width: 9em;
+  height: 9em;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#card-individual3 p {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 20px;
 }
