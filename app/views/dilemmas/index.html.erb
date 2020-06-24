@@ -3,14 +3,19 @@
     <h1>Dilemmas</h1>
     <div class="cards">
       <% @dilemmas.each do |dilemma| %>
-          <div class="card-category easy p-3 mx-auto">
-          <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
-          <br>
-          <% dilemma.options.each do |option| %>
-            <%= option.description%>
-          <%= link_to "Vote", dilemma_path(dilemma) %>
-          <% end %>
+        <% if dilemma.easy? %>
+          <div class="easy card-category">
+            <%= dilemma.question %><%= link_to dilemma_path(dilemma) %>
           </div>
+        <% elsif dilemma.medium? %>
+          <div class="medium card-category">
+            <%= dilemma.question %>
+          </div>
+        <% elsif dilemma.hard? %>
+          <div class="hard card-category">
+            <%= dilemma.question %>
+          </div>
+        <% end %>    
       <% end %>
     </div>
     <%= link_to "Post a new dilemma", new_dilemma_path %>
