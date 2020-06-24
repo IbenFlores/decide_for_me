@@ -50,7 +50,7 @@
         Easy will show for a day. Medium for 72hrs. Hard for a week.</p>
       </div>
       <div class="flex-grow-1">
-        <%= f.input :category, collection: Dilemma.categories.keys,
+        <%= f.input :category, collection: Dilemma.categories,
           as: :select, label: false,
           error: 'Please select a type of difficulty',
           placeholder: "Select type of difficulty",
@@ -63,7 +63,7 @@
       input_html: { class: "background-color-input-form" } %>
     </div>
     <div class="text-center mt-4">
-      <%= f.button :submit, "READY", class: "btn-sober" %>
+      <%= f.submit "READY", class: "btn-sober" %>
       <% end %>
     </div>
   </div>

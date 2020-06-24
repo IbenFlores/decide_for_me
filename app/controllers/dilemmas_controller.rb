@@ -21,9 +21,10 @@ class DilemmasController < ApplicationController
 
   def create
     @dilemma = Dilemma.new(dilemma_params)
+    @dilemma.category = params["dilemma"]["category"].to_i
     @dilemma.user_id = current_user.id
     authorize @dilemma
-    if @dilemma.save
+    if @dilemma.save!
       redirect_to dilemma_path(@dilemma)
     else
       render :new
@@ -56,6 +57,6 @@ class DilemmasController < ApplicationController
   end
 
   def dilemma_params
-    params.require(:dilemma).permit(:question, :photo, :category, {options_attributes: [:description]})
+    params.require(:dilemma).permit(:question, :photo, {options_attributes: [:description]})
   end
 end
