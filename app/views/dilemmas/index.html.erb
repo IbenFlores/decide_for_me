@@ -4,15 +4,15 @@
     <div class="cards">
       <% @dilemmas.each do |dilemma| %>
         <% if dilemma.easy? %>
-          <div class="card-category" style="background-color: $easy">
+          <div class="easy card-category">
           <%= dilemma.question %><%= link_to dilemma_path(dilemma) %>
           </div>
         <% elsif dilemma.medium? %>
-          <div class="card-category" style="background-color: $medium">
+          <div class="medium card-category">
           <%= dilemma.question %>
           </div>
         <% else %>
-          <div class="card-category" style="background-color: $hard">
+          <div class="card-category">
           <%= dilemma.question %>
           </div>
         <% end %>
