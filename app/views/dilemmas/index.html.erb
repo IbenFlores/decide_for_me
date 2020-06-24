@@ -11,8 +11,8 @@
           <div class="medium card-category">
           <%= dilemma.question %>
           </div>
-        <% else %>
-          <div class="card-category">
+        <% elsif dilemma.hard? %>
+          <div class="hard card-category">
           <%= dilemma.question %>
           </div>
         <% end %>
