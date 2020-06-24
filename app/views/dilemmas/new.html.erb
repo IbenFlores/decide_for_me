@@ -50,7 +50,7 @@
         Easy will show for a day. Medium for 72hrs. Hard for a week.</p>
       </div>
       <div class="flex-grow-1">
-        <%= f.input :category, collection: ['Easy', 'Medium', 'Hard'],
+        <%= f.input :category, collection: [:easy, :medium, :hard],
           as: :select, label: false,
           error: 'Please select a type of difficulty',
           placeholder: "Select type of difficulty",

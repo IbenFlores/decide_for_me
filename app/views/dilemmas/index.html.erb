@@ -3,11 +3,11 @@
     <h1>Dilemmas</h1>
     <div class="cards">
       <% @dilemmas.each do |dilemma| %>
-        <% if dilemma.category == "Easy" %>
+        <% if dilemma.easy? %>
           <div class="card-category" style="background-color: $easy">
           <%= dilemma.question %><%= link_to dilemma_path(dilemma) %>
           </div>
-        <% elsif dilemma.category == "Medium" %>
+        <% elsif dilemma.medium? %>
           <div class="card-category" style="background-color: $medium">
           <%= dilemma.question %>
           </div>
