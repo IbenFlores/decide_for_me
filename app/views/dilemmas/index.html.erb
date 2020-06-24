@@ -3,16 +3,16 @@
     <h1>Dilemmas</h1>
     <div class="cards">
       <% @dilemmas.each do |dilemma| %>
-        <% if dilemma.category == "Easy" %>
-          <div class="card-category" style="background-color: $easy">
+        <% if dilemma.easy? %>
+          <div class="card-category easy">
           <%= dilemma.question %><%= link_to dilemma_path(dilemma) %>
           </div>
-        <% elsif dilemma.category == "Medium" %>
-          <div class="card-category" style="background-color: $medium">
+        <% elsif dilemma.medium? %>
+          <div class="card-category medium">
           <%= dilemma.question %>
           </div>
-        <% else %>
-          <div class="card-category" style="background-color: $hard">
+        <% elsif dilemma.hard? %>
+          <div class="card-category hard">
           <%= dilemma.question %>
           </div>
         <% end %>

@@ -12,6 +12,17 @@
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
+.easy {
+  background-color: $easy;
+}
+
+.medium {
+  background-color: $medium;
+}
+
+.hard {
+  background-color: $hard;
+}
 
 .card-category:hover{
   opacity: .5;
