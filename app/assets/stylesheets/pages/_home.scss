@@ -14,7 +14,7 @@
 
 .background-color h1 {
   color: white;
-  font-size: 55px;
+  font-size: 79px;
 }
 
 .background-color h1, h5 {
@@ -57,7 +57,7 @@
 
 .icon-container {
   display: flex;
-  height: 100vh;
+  height: 70vh;
   text-align: center;
   justify-content: space-around;
   align-items: center;
@@ -67,7 +67,7 @@
 .container-content-icons {
   align-items: center;
   width: 170px;
-  height: 80%;
+  height: 60%;
   border: 2px solid;
   border-color: black;
   border-radius: 15px;
@@ -94,11 +94,11 @@
 
 .number-card {
   position: relative;
-  top: 60px;
+  top: 40px;
 }
 
 #member-container {
-  height: 100vh;
+  height: 60vh;
   width: 100vw;
   background-image: linear-gradient(to bottom right, #ff470f, #8A27E4);
   display: flex;
