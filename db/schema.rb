@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2020_06_24_160218) do
 
   create_table "dilemmas", force: :cascade do |t|
     t.text "question"
-    t.string "category"
+    t.integer "category"
     t.string "tag"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
