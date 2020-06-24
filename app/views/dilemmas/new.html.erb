@@ -12,7 +12,8 @@
         <%= simple_form_for @dilemma do |f| %>
         <%= f.input :question, label: false,
         error: 'A question is mandatory, please specify one',
-        placeholder: "My dilemma is..." %>
+        placeholder: "My dilemma is...",
+        input_html: { class: "background-color" } %>
       </div>
     </div>
 
@@ -27,7 +28,8 @@
           <h4 class="pb-1"><strong>Option A</strong></h4>
           <%= o.input :description, label: false,
           error: 'An option is limited to 140 characters.',
-          placeholder: "Be clear. Be brief. Be wise" %>
+          placeholder: "Be clear. Be brief. Be wise",
+          input_html: { class: "background-color" } %>
           <% end %>
         </div>
         <div class="mb-5">
@@ -35,7 +37,8 @@
           <h4 class="pb-2"><strong>Option B</strong></h4>
           <%= o.input :description, label: false,
           error: 'An option is limited to 140 characters.',
-          placeholder: "Be clear. Be brief. Be wise" %>
+          placeholder: "Be clear. Be brief. Be wise",
+          input_html: { class: "background-color" } %>
           <% end %>
         </div>
       </div>
@@ -49,12 +52,14 @@
       <div>
         <%= f.input :category, label: false,
           error: 'Please select a type of difficulty',
-          placeholder: "Select type of difficulty" %>
+          placeholder: "Select type of difficulty",
+          input_html: { class: "background-color" } %>
       </div>
     </div>
     <div class="p-2">
       <%= f.input :tag, label: "Any tags you would like to add?",
-      placeholder: "e.g. #fun #relationships #omg" %>
+      placeholder: "e.g. #fun #relationships #omg",
+      input_html: { class: "background-color" } %>
     </div>
     <div class="text-center mt-4">
       <%= f.button :submit, "READY", class: "btn-sober" %>
