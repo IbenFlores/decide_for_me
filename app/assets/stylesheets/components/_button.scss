@@ -1,11 +1,12 @@
 .btn-sober {
   color: white;
-  padding: 8px 30px;
+  padding: 8px 50px;
   border-radius: 1px;
   background: black;
-  transition: background 0.3s ease;
-  :hover {
-    background: linear-gradient(#147EFF, #0F67DA);
-    color: white;
-  }
+  transition: 0.3s ease;
+}
+
+.btn-sober:hover {
+  background: white;
+  color: black;
 }
