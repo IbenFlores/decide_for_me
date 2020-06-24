@@ -1,1 +1,127 @@
 // Specific CSS for your home-page
+
+.background-color {
+  background-color: #ff470f;
+  background-image: linear-gradient(to bottom right, #ff470f, #8A27E4);
+  font-family: "Playfair Display", serif;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+.background-color h1 {
+  color: white;
+  font-size: 55px;
+}
+
+.background-color h1, h5 {
+  color: white;
+}
+
+#button-home-page {
+  padding: 1em;
+  border: 1px solid;
+  border-color: white;
+  border-radius: 70px;
+  transition: all .4s ease-in-out;
+  text-align: center;
+}
+
+#button-home-page:hover {
+  padding: 1em;
+  border: 3px solid;
+  border-color: white;
+  transform: scale(1.1);
+}
+
+
+#button-home-page a {
+  color: white;
+  font-family: "Montserrat", serif;
+  font-size: 20px;
+}
+
+#button-home-page a:hover {
+  color: white;
+  font-family: "Montserrat", serif;
+  text-decoration: none;
+}
+
+#icons-page i {
+  font-size: 70px;
+  color:black;
+}
+
+.icon-container {
+  display: flex;
+  height: 100vh;
+  text-align: center;
+  justify-content: space-around;
+  align-items: center;
+  background-image: linear-gradient(to bottom left, #D5B6F6, #FFB199);
+}
+
+.container-content-icons {
+  align-items: center;
+  width: 170px;
+  height: 80%;
+  border: 2px solid;
+  border-color: black;
+  border-radius: 15px;
+  padding: 15px;
+  transition: all .4s ease-in-out;
+}
+
+.container-content-icons:hover {
+  align-items: center;
+  width: 170px;
+  height: 370px;
+  border: 8px solid;
+  border-color: #8A27E4;
+  border-radius: 15px;
+  padding: 15px;
+  transform: scale(1.1);
+  color: #8A27E4;
+}
+
+.contents-container {
+  position: relative;
+  top: 10%;
+}
+
+.number-card {
+  position: relative;
+  top: 60px;
+}
+
+#member-container {
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(to bottom right, #ff470f, #8A27E4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#member-container i {
+ font-size: 50px;
+}
+
+#container-card-action {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  width: 100vw;
+}
+
+#card-individual {
+  padding: 25px;
+  background-color: white;
+  border-radius: 25px;
+  width: 120px;
+}
