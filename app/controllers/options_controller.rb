@@ -12,9 +12,17 @@ class OptionsController < ApplicationController
     @option.save
   end
 
+  def upvotes
+    @option = Option.find(params[:id])
+    @option.upvotes += 1
+    authorize @option
+
+    @option.save!
+  end
+
   private
 
   def option_params
-    params.require(:option).permit(:description)
+    params.require(:option).permit(:description, :photo)
   end
 end
