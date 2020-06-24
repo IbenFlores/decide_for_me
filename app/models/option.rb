@@ -4,4 +4,5 @@ class Option < ApplicationRecord
   validates :description, length: {
     maximum: 140
   }
+  has_one_attached :photo
 end

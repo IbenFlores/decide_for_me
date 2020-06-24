@@ -7,9 +7,9 @@ class ApplicationController < ActionController::Base
   after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :answered_dilemmas])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :answered_dilemmas, :avatar])
 
-    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :answered_dilemmas])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :answered_dilemmas, :avatar])
   end
 
   private

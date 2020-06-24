@@ -15,6 +15,6 @@ class OptionsController < ApplicationController
   private
 
   def option_params
-    params.require(:option).permit(:description)
+    params.require(:option).permit(:description, :photo)
   end
 end
