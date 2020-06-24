@@ -8,4 +8,5 @@ Rails.application.routes.draw do
     resources :replies, only: [:new, :create]
   end
   resources :replies, only: :destroy
+  post '/options/:id/upvotes', to: 'options#upvotes', as: :upvotes
 end

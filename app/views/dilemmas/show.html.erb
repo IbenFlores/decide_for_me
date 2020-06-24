@@ -1,5 +1,9 @@
 <div>
   <h2><%= @dilemma.question %></h2>
-  <% @dilemma.options %>
+  <% @dilemma.options.each do |option| %>
+  <%= link_to option.description, upvotes_path(option.id), method: :post %>
+  <%= (option.upvotes  * 100) / @dilemma.options.reduce(0) { |sum, option| sum + option.upvotes }  %> %
+  <% end %>
+  <br>
   <%= link_to "See all dilemmas", dilemmas_path %>
 </div>
