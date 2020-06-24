@@ -7,6 +7,7 @@ class Dilemma < ApplicationRecord
   validates :question, length: {
     maximum: 140
   }
+  enum category: [ :easy, :medium, :hard ]
   has_one_attached :photo
 
   accepts_nested_attributes_for :options
