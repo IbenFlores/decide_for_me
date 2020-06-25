@@ -98,14 +98,15 @@
 
 .narrow-viewport {
   width: 60%;
-  background-color: $saffron;
-  padding: 100px;
-  margin: 20px auto;
+  background-color: #f9f9f9;
+  padding: 80px;
+  margin: 0 auto;
   box-sizing: content-box;
 }
 
 .background-color-input-form {
-  background-color: #f4e6ba;
+  // background-color: #f4e6ba;
+  background-color: white;
 }
 
 .white-box-show-options {
@@ -123,4 +124,9 @@
 .card-box-show {
   width: 50%;
   box-sizing: content-box;
+}
+
+.background-pattern {
+  background-image: url("doodle.png");
+  padding: 90px;
 }
