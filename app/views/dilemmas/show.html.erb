@@ -13,7 +13,7 @@
               <% if @dilemma.has_user_voted?(current_user) %>
                 <%= option.description %>
               <% else %>
-                <%= link_to option.description, upvotes_path(option.id), method: :post, class: "option" %>
+                <%= link_to option.description, upvotes_path(option.id) %>
               <% end %>
               <div class="circle-percentage mt-3">
                 <% percentage = @dilemma.options.reduce(0) { |sum, option| sum + option.users.count } %>
@@ -39,7 +39,7 @@
               <% if @dilemma.has_user_voted?(current_user) %>
                 <%= option.description %>
               <% else %>
-                <%= link_to option.description, upvotes_path(option.id), method: :post, class: "option" %>
+                <%= link_to option.description, upvotes_path(option.id) %>
               <% end %>
               <div class="circle-percentage mt-3">
                 <% percentage = @dilemma.options.reduce(0) { |sum, option| sum + option.users.count } %>
@@ -65,7 +65,7 @@
               <% if @dilemma.has_user_voted?(current_user) %>
                 <%= option.description %>
               <% else %>
-                <%= link_to option.description, upvotes_path(option.id), method: :post, class: "option" %>
+                <%= link_to option.description, upvotes_path(option.id) %>
               <% end %>
               <div class="circle-percentage mt-3">
                 <% percentage = @dilemma.options.reduce(0) { |sum, option| sum + option.users.count } %>

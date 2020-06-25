@@ -18,6 +18,7 @@ class OptionsController < ApplicationController
     authorize @option
 
     @option.save!
+    redirect_to dilemma_path(@option.dilemma)
   end
 
   private
