@@ -68,10 +68,15 @@
       <p>Dilemma</p>
     </div>
     <div id="card-individual2">
-      <p>Sign Up</p>
+      <%= link_to "Sign Up", new_user_registration_path %>
     </div>
   </div>
   <div id="container-card-action2">
+    <div id="card-individual">
+      <h3>User</h3>
+      <i class="fas fa-grin-stars"></i>
+      <p>Interact with users</p>
+    </div>
     <div id="card-individual3">
       <p>Create Dilemma</p>
     </div>
@@ -79,12 +84,7 @@
       <p>Select Category</p>
     </div>
     <div id="card-individual3">
-      <p>Post it!</p>
-    </div>
-    <div id="card-individual">
-      <h3>User</h3>
-      <i class="fas fa-grin-stars"></i>
-      <p>Create dilemma</p>
+      <%= link_to "Post it!", new_dilemma_path %>
     </div>
   </div>
 </div>
