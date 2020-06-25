@@ -94,7 +94,7 @@
       <div>
         <% @dilemma.replies.each do |reply| %>
         <div class="border mt-3">
-          <% #Joselito aquí va el avatar %>
+          <%= cl_image_tag current_user.avatar.key %>
           <%= reply.answer.capitalize %>
         </div>
         <% end %>
