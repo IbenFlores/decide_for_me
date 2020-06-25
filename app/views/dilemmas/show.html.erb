@@ -92,12 +92,12 @@
         <% end %>
       </div>
       <br>
-      <div id="container-reply-avatar">
+      <div class="container-comment">
         <% @dilemma.replies.each do |reply| %>
-        <div id="avatar-image-reply">
-          <%= reply.answer.capitalize %>
-          <%= cl_image_tag current_user.avatar.key %>
-        </div>
+          <div class="comment">
+            <%= reply.answer.capitalize %>
+            <%= cl_image_tag current_user.avatar.key %>
+          </div>
         <% end %>
       </div>
     </div>

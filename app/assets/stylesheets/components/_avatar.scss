@@ -19,29 +19,33 @@
   border: white 1px solid;
 }
 
-#avatar-image-reply {
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  padding: 10%;
-  color: white;
-}
 
-#container-reply-avatar img {
+.comment img {
   width: 65px;
   height: 65px;
-  border-radius: 200%;
-  margin-left: 40px;
+  border-radius: 200px;
+  margin-left: 20px;
 }
 
-#container-reply-avatar {
-
-  border-radius: 20px;
+.container-comment {
+  border-radius: 20px 20px 20px 20px;
   width: 400px;
   height: 60vh;
-  display: flex;
-  justify-content: center;
+  display: inline-block;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
   background-image: linear-gradient(to bottom right, #342E37, #8A27E4);
+  color: white;
+  padding: 10px;
+}
+
+.comment {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
 }
