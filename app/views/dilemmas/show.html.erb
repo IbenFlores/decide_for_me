@@ -10,13 +10,17 @@
           <div class="container d-flex justify-content-center">
             <% @dilemma.options.each do |option| %>
             <div class="show-options mx-5 mb-5">
-              <%= link_to option.description, upvotes_path(option.id), method: :post %>
+              <% if @dilemma.has_user_voted?(current_user) %>
+                <%= option.description %>
+              <% else %>
+                <%= link_to option.description, upvotes_path(option.id), method: :post, class: "option" %>
+              <% end %>
               <div class="circle-percentage mt-3">
-                <% percentage = @dilemma.options.reduce(0) { |sum, option| sum + option.upvotes } %>
+                <% percentage = @dilemma.options.reduce(0) { |sum, option| sum + option.users.counts } %>
                 <% if percentage > 0 %>
-                  <%= (option.upvotes * 100) / percentage  %> %
+                  <%= (option.users.count * 100) / percentage  %> %
                 <% else %>
-                  50%
+                  0%
                 <% end %>
               </div>
             </div>
@@ -32,13 +36,17 @@
           <div class="container d-flex justify-content-center">
             <% @dilemma.options.each do |option| %>
             <div class="show-options mx-5 mb-5">
-              <%= link_to option.description, upvotes_path(option.id), method: :post %>
+              <% if @dilemma.has_user_voted?(current_user) %>
+                <%= option.description %>
+              <% else %>
+                <%= link_to option.description, upvotes_path(option.id), method: :post, class: "option" %>
+              <% end %>
               <div class="circle-percentage mt-3">
-                <% percentage = @dilemma.options.reduce(0) { |sum, option| sum + option.upvotes } %>
+                <% percentage = @dilemma.options.reduce(0) { |sum, option| sum + option.users.count } %>
                 <% if percentage > 0 %>
-                  <%= (option.upvotes * 100) / percentage  %> %
+                  <%= (option.users.count * 100) / percentage  %> %
                 <% else %>
-                  50%
+                  0%
                 <% end %>
               </div>
             </div>
@@ -54,13 +62,17 @@
           <div class="container d-flex justify-content-center">
             <% @dilemma.options.each do |option| %>
             <div class="show-options mx-5 mb-5">
-              <%= link_to option.description, upvotes_path(option.id), method: :post %>
+              <% if @dilemma.has_user_voted?(current_user) %>
+                <%= option.description %>
+              <% else %>
+                <%= link_to option.description, upvotes_path(option.id), method: :post, class: "option" %>
+              <% end %>
               <div class="circle-percentage mt-3">
-                <% percentage = @dilemma.options.reduce(0) { |sum, option| sum + option.upvotes } %>
+                <% percentage = @dilemma.options.reduce(0) { |sum, option| sum + option.users.count } %>
                 <% if percentage > 0 %>
-                  <%= (option.upvotes * 100) / percentage  %> %
+                  <%= (option.users.count * 100) / percentage  %> %
                 <% else %>
-                  50%
+                  0%
                 <% end %>
               </div>
             </div>
