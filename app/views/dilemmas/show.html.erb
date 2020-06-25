@@ -1,24 +1,23 @@
-<div class="container d-flex">
-  <div>
+<div class="card-box-show container medium mt-4">
+  <div class="p-5">
     <h2><%= @dilemma.question %></h2>
-    <p><%= @dilemma.category %></p>
-    <% @dilemma.options.each do |option| %>
-      <%= link_to option.description, upvotes_path(option.id), method: :post %>
+    <p class="pl-4"><%= "#{@dilemma.category.capitalize} dilemma" %></p>
   </div>
-  <div>
+  <div class="container d-flex justify-content-center">
+    <% @dilemma.options.each do |option| %>
+    <div class="white-box-show-options m-5">
+      <%= link_to option.description, upvotes_path(option.id), method: :post %>
+      <br>
       <% percentage = @dilemma.options.reduce(0) { |sum, option| sum + option.upvotes } %>
         <% if percentage > 0 %>
           <%= (option.upvotes * 100) / percentage  %> %
         <% else %>
           50%
         <% end %>
-      <% end %>
+    </div>
+    <% end %>
   </div>
-
-  <div>
-
-  </div>
-
-  <br>
+</div>
+<div class="container">
   <%= link_to "See all dilemmas", dilemmas_path %>
 </div>
