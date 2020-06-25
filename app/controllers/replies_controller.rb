@@ -1,11 +1,12 @@
 class RepliesController < ApplicationController
   def new
-    @reply = Reply.new
     @dilemma = Dilemma.find(params[:dilemma_id])
+    @reply = Reply.new
     authorize @reply
   end
 
   def create
+    @dilemma = Dilemma.find(params[:dilemma_id])
     @reply = Reply.new(reply_params)
     @reply.dilemma_id = params[:dilemma_id]
     @reply.user_id = current_user.id

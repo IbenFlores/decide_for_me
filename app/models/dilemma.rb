@@ -10,7 +10,7 @@ class Dilemma < ApplicationRecord
   enum category: [ :easy, :medium, :hard ]
   has_one_attached :photo
 
-  accepts_nested_attributes_for :options
+  accepts_nested_attributes_for :options, :replies, allow_destroy: true
 
   def has_user_voted?(user)
     voted = false
