@@ -84,17 +84,19 @@
 
     <div class="col-lg-4">
       <div class="mt-5">
-        <% console %>
         <%= simple_form_for([@dilemma, @reply]) do |f| %>
           <%= f.input :answer, label: "Why is that the best option? Elaborate on your option",
-          error: 'A comment can only have 500 characters maximum',
-          placeholder: "Be clear. Be wise." %>
+          error: 'A comment can not be blank and can only have 280 characters maximum',
+          placeholder: "Be short. Be thoughtful." %>
           <%= f.submit "Go for it", class: "btn-sober" %>
         <% end %>
       </div>
       <div>
         <% @dilemma.replies.each do |reply| %>
-        <%= reply.answer %>
+        <div class="border mt-3">
+          <% #Joselito aquí va el avatar %>
+          <%= reply.answer.capitalize %>
+        </div>
         <% end %>
       </div>
     </div>
