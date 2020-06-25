@@ -14,7 +14,7 @@ class OptionsController < ApplicationController
 
   def upvotes
     @option = Option.find(params[:id])
-    @option.upvotes += 1
+    @option.users.push(current_user)
     authorize @option
 
     @option.save!
