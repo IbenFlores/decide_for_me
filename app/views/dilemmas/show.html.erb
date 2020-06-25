@@ -91,11 +91,12 @@
           <%= f.submit "Go for it", class: "btn-sober" %>
         <% end %>
       </div>
-      <div>
+      <br>
+      <div id="container-reply-avatar">
         <% @dilemma.replies.each do |reply| %>
-        <div class="border mt-3">
-          <%= cl_image_tag current_user.avatar.key %>
+        <div id="avatar-image-reply">
           <%= reply.answer.capitalize %>
+          <%= cl_image_tag current_user.avatar.key %>
         </div>
         <% end %>
       </div>

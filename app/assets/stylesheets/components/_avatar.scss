@@ -18,3 +18,30 @@
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
 }
+
+#avatar-image-reply {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 10%;
+  color: white;
+}
+
+#container-reply-avatar img {
+  width: 65px;
+  height: 65px;
+  border-radius: 200%;
+  margin-left: 40px;
+}
+
+#container-reply-avatar {
+
+  border-radius: 20px;
+  width: 400px;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: linear-gradient(to bottom right, #342E37, #8A27E4);
+}
