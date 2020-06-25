@@ -96,7 +96,7 @@
         <% @dilemma.replies.each do |reply| %>
           <div class="comment">
             <%= reply.answer.capitalize %>
-            <%= cl_image_tag current_user.avatar.key %>
+            <%= cl_image_tag reply.owner.avatar.key %>
           </div>
         <% end %>
       </div>
