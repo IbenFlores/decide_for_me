@@ -1,21 +1,21 @@
 <div class="container">
   <div>
     <h1>Dilemmas</h1>
-    <div class="cards">
+    <div class="cards post-it-note">
       <% @dilemmas.each do |dilemma| %>
         <% if dilemma.easy? %>
           <div class="easy card-category">
-            <%= dilemma.question %><%= link_to dilemma_path(dilemma) %>
+            <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
           </div>
         <% elsif dilemma.medium? %>
           <div class="medium card-category">
-            <%= dilemma.question %>
+            <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
           </div>
         <% elsif dilemma.hard? %>
           <div class="hard card-category">
-            <%= dilemma.question %>
+            <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
           </div>
-        <% end %>    
+        <% end %>
       <% end %>
     </div>
     <%= link_to "Post a new dilemma", new_dilemma_path %>
