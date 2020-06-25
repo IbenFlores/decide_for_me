@@ -1,20 +1,103 @@
-.card-category {
-  // background-size: cover;
-  // background-position: center;
-  // height: 180px;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  // color: white;
-  // font-size: 24px;
-  // font-weight: normal;
-  // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  height:250px;
-  width:250px;
+.card-category:hover{
+  opacity: .5;
+}
+
+.card-category-easy {
+  min-height: 13em;
+  width: 15em;
   box-sizing: border-box;
-  text-align: center;
+  text-align: justify;
+  padding: 2em;
+  position: relative;
+}
+
+.card-category-easy:after {
+  content: "";
+  position: absolute;
+  bottom: -2em;
+  left: 0;
+  right: 2em;
+  border-width: 1em;
+  border-style: solid;
+  border-color: $easy;
+}
+
+.card-category-easy:before {
+  content: "";
+  position: absolute;
+  bottom: -2em;
+  right: 0em;
+  border-width: 2em 2em 0 0;
+  border-style: solid;
+  border-color: darken($easy, 10%) transparent;
+}
+
+.card-category-medium {
+  min-height: 13em;
+  width: 15em;
+  box-sizing: border-box;
+  text-align: justify;
+  padding: 2em;
+  position: relative;
+}
+
+.card-category-medium:after {
+  content: "";
+  position: absolute;
+  bottom: -2em;
+  left: 0;
+  right: 2em;
+  border-width: 1em;
+  border-style: solid;
+  border-color: $medium;
+}
+
+.card-category-medium:before {
+  content: "";
+  position: absolute;
+  bottom: -2em;
+  right: 0em;
+  border-width: 2em 2em 0 0;
+  border-style: solid;
+  border-color: darken($medium, 10%) transparent;
+}
+
+.card-category-hard {
+  min-height: 13em;
+  width: 15em;
+  box-sizing: border-box;
+  text-align: justify;
+  padding: 2em;
+  position: relative;
+}
+
+.card-category-hard:after {
+  content: "";
+  position: absolute;
+  bottom: -2em;
+  left: 0;
+  right: 2em;
+  border-width: 1em;
+  border-style: solid;
+  border-color: $hard;
+}
+
+.card-category-hard:before {
+  content: "";
+  position: absolute;
+  bottom: -2em;
+  right: 0em;
+  border-width: 2em 2em 0 0;
+  border-style: solid;
+  border-color: darken($hard, 10%) transparent;
+}
+
+.card-note-text {
+  a {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: black;
+  }
 }
 
 .easy {
@@ -27,10 +110,6 @@
 
 .hard {
   background-color: $hard;
-}
-
-.card-category:hover{
-  opacity: .5;
 }
 
 .title-card {
