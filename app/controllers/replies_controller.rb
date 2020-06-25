@@ -10,11 +10,12 @@ class RepliesController < ApplicationController
     @reply = Reply.new(reply_params)
     @reply.dilemma_id = params[:dilemma_id]
     @reply.user_id = current_user.id
+    @reply.owner_id = current_user.id
     authorize @reply
     if @reply.save
       redirect_to dilemma_path(@dilemma)
     else
-      render :new
+      render "dilemmas/show"
     end
   end
 

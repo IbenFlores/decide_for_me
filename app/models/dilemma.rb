@@ -10,5 +10,5 @@ class Dilemma < ApplicationRecord
   enum category: [ :easy, :medium, :hard ]
   has_one_attached :photo
 
-  accepts_nested_attributes_for :options, :replies, allow_destroy: true
+  accepts_nested_attributes_for :options, allow_destroy: true
 end
