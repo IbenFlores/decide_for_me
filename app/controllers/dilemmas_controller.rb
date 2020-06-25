@@ -11,6 +11,7 @@ class DilemmasController < ApplicationController
   end
 
   def show
+    @reply = Reply.new
   end
 
   def new
@@ -57,6 +58,6 @@ class DilemmasController < ApplicationController
   end
 
   def dilemma_params
-    params.require(:dilemma).permit(:question, :photo, {options_attributes: [:description]})
+    params.require(:dilemma).permit(:question, :photo, {replies_attributes: [:answer]}, {options_attributes: [:description]})
   end
 end
