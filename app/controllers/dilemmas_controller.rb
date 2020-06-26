@@ -3,10 +3,12 @@ class DilemmasController < ApplicationController
   before_action :find_dilemma, only: [:show, :edit, :update, :destroy]
 
   def index
+    @dilemmas = policy_scope(Dilemma)
     if params[:query].present?
-      @dilemmas = Dilemma.where("question ILIKE ?", "%#{params[:query]}%")
+      sql_query = "question ILIKE :query OR tag ILIKE :query"
+      @dilemmas = Dilemma.where(sql_query, query: "%#{params[:query]}%")
     else
-      @dilemmas = policy_scope(Dilemma)
+      @dilemmas = Dilemma.all
     end
   end
 
