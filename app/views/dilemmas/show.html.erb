@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container-show m-0 bg-white">
   <div class="row">
-    <div class="col-lg-8">
+    <div class="col-lg-8 bg-white">
       <% if @dilemma.easy? %>
         <div class="card-box-show container easy mt-4">
           <div class="p-5">
@@ -80,31 +80,42 @@
           </div>
         </div>
       <% end %>
-    </div>
-
-    <div class="col-lg-4">
       <div class="mt-5">
-        <%= simple_form_for([@dilemma, @reply]) do |f| %>
-          <%= f.input :answer, label: "Why is that the best option? Elaborate on your option",
-          error: 'A comment can not be blank and can only have 280 characters maximum',
-          placeholder: "Be short. Be thoughtful." %>
-          <%= f.submit "Go for it", class: "btn-sober" %>
-        <% end %>
-      </div>
-      <br>
-      <div class="container-comment">
         <% @dilemma.replies.each do |reply| %>
-          <div class="comment">
-            <%= reply.answer.capitalize %>
-            <%= cl_image_tag reply.owner.avatar.key %>
+          <div class="bg-light rounded d-flex justify-content-between align-items-center px-3 py-2 mx-4 my-4 parent">
+            <div class="pr-2"><strong><%= reply.owner.username %></strong></div>
+            <div class="pr-5"><%= cl_image_tag reply.owner.avatar.key, class: "avatar" %></div>
+            <div class="flex-grow-1"><%= reply.answer.capitalize %></div>
+            <div class="child-comment-icons">
+              <i class="fas fa-grimace text-success"></i>
+              <i class="fas fa-dizzy text-danger"></i>
+            </div>
           </div>
         <% end %>
       </div>
+    </div>
+
+    <div class="col-lg-4 bg-light pb-5">
+      <div class="ml-2 mt-5 pb-3 border-bottom">
+        <p><strong>Which is the best option?</strong></p>
+        <p>You can only vote once</p>
+      </div>
+      <div class=" ml-2 mt-4 pb-5 border-bottom">
+        <p><strong>Why?</strong></p>
+        <%= simple_form_for([@dilemma, @reply]) do |f| %>
+          <%= f.input :answer, label: "Elaborate on your option",
+          error: 'A comment can not be blank and can only have 280 characters maximum',
+          placeholder: "Be short. Be thoughtful." %>
+          <%= f.submit "Post it", class: "btn-sober" %>
+        <% end %>
+      </div>
+      <div class=" ml-2 mt-4 cointainer btn btn-outline-info" id="button-show">
+        <%= link_to "See all dilemmas", dilemmas_path %>
+      </div>
+
     </div>
   </div>
 </div>
 
 
-<div class="cointainer btn btn-secondary" id="button-show">
-  <%= link_to "See all dilemmas", dilemmas_path %>
-</div>
+

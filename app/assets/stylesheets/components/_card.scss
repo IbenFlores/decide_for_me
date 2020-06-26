@@ -185,3 +185,22 @@
   justify-content: center;
   align-items: center;
 }
+
+.container-show {
+  height: 100vh;
+}
+
+.parent {
+  position: relative;
+}
+
+.child-comment-icons {
+  position: absolute;
+  top: 6px;
+  right: 2px;
+  i {
+    font-size: 24px;
+    color: gray;
+    padding-right: 10px;
+  }
+}

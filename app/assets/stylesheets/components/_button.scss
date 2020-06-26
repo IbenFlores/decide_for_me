@@ -12,14 +12,17 @@
 }
 
 #button-show {
-  position: absolute;
-  top: 60%;
-  right: 60%;
+  a {
+    color: $easy;
+  }
 }
 
-#button-show a {
-  color: white;
-  padding: 20px;
+#button-show:hover {
+  background-color: $easy;
+  a {
+    color: black;
+    text-decoration: none;
+  }
 }
 
 .btn {
