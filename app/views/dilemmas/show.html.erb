@@ -96,7 +96,7 @@
         <% @dilemma.replies.each do |reply| %>
           <div class="comment">
             <%= reply.answer.capitalize %>
-            <%= cl_image_tag current_user.avatar.key %>
+            <%= cl_image_tag reply.owner.avatar.key %>
           </div>
         <% end %>
       </div>
@@ -105,6 +105,6 @@
 </div>
 
 
-<div class="cointainer m-5">
+<div class="cointainer btn btn-secondary" id="button-show">
   <%= link_to "See all dilemmas", dilemmas_path %>
 </div>
