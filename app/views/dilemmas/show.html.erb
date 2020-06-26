@@ -82,13 +82,18 @@
       <% end %>
       <div class="mt-5">
         <% @dilemma.replies.each do |reply| %>
-          <div class="bg-light rounded d-flex justify-content-between align-items-center px-3 py-2 mx-4 my-4 parent">
+          <div class="bg-light rounded d-flex justify-content-between align-items-center px-3 py-2 mx-4 border">
             <div class="pr-2"><strong><%= reply.owner.username %></strong></div>
             <div class="pr-5"><%= cl_image_tag reply.owner.avatar.key, class: "avatar" %></div>
             <div class="flex-grow-1"><%= reply.answer.capitalize %></div>
-            <div class="child-comment-icons">
-              <i class="fas fa-grimace text-success"></i>
-              <i class="fas fa-dizzy text-danger"></i>
+          </div>
+          <div class="bg-light rounded d-flex justify-content-between align-items-center px-3 mx-4 mb-4 border">
+            <div class="text-center">
+              <p class="font-weight-lighter pt-3" style="font-size: 10px;"><%= "Posted at #{@dilemma.created_at}" %></p>
+            </div>
+            <div>
+              <i class="fas fa-grimace text-success pr-2" style="font-size: 20px;"></i>
+              <i class="fas fa-dizzy text-danger" style="font-size: 20px;"></i>
             </div>
           </div>
         <% end %>
