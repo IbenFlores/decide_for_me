@@ -32,13 +32,6 @@ class DilemmasController < ApplicationController
     end
   end
 
-   # <% percentage = @dilemma.options.reduce(0) { |sum, option| sum + option.users.count } %>
-   #   <% if percentage > 0 %>
-   #     <%= (option.users.count * 100) / percentage  %> %
-   #              <% else %>
-   #                0%
-   #              <% end %>
-
   # def edit
   # end
 

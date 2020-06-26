@@ -9,8 +9,8 @@
               <%= link_to "#{dilemma.question.capitalize}", dilemma_path(dilemma) %>
               <% a = dilemma.options[0].upvotes%>
               <% b = dilemma.options[1].upvotes%>
-               <%= javascript_include_tag '//www.google.com/jsapi', 'chartkick' %>
-               <%= bar_chart(a: a, b:b) %>
+              <%= javascript_include_tag '//www.google.com/jsapi', 'chartkick' %>
+              <%= bar_chart(a: a, b:b) %>
             </div>
           </div>
         <% elsif dilemma.medium? %>
@@ -36,8 +36,11 @@
         <% end %>
       <% end %>
     </div>
-    <%= link_to "Post a new dilemma", new_dilemma_path %>
   </div>
-
+</div>
+<div class="container mt-5 mb-3">
+  <button type="button" class="btn btn-outline-success btn-lg">
+    <%= link_to "Post a new dilemma", new_dilemma_path %>
+   </button>
 </div>
 
