@@ -11,7 +11,7 @@
         <% if dilemma.easy? %>
           <div class="m-3">
             <div class="easy card-category-easy card-note-text">
-              <%= link_to "#{dilemma.question.capitalize}", dilemma_path(dilemma) %>
+              <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
               <% option_a = dilemma.options[0].users.count%>
               <% option_b = dilemma.options[1].users.count%>
               <%= javascript_include_tag '//www.google.com/jsapi', 'chartkick' %>
@@ -21,7 +21,7 @@
         <% elsif dilemma.medium? %>
           <div class="m-3">
             <div class="medium card-category-medium card-note-text">
-              <%= link_to "#{dilemma.question.capitalize}", dilemma_path(dilemma) %>
+              <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
               <% option_a = dilemma.options[0].users.count%>
               <% option_b = dilemma.options[1].users.count%>
               <%= javascript_include_tag '//www.google.com/jsapi', 'chartkick' %>
@@ -31,7 +31,7 @@
         <% elsif dilemma.hard? %>
           <div class="m-3">
             <div class="hard card-category-hard card-note-text">
-              <%= link_to "#{dilemma.question.capitalize}", dilemma_path(dilemma) %>
+              <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
               <% option_a = dilemma.options[0].users.count%>
               <% option_b = dilemma.options[1].users.count%>
               <%= javascript_include_tag '//www.google.com/jsapi', 'chartkick' %>
