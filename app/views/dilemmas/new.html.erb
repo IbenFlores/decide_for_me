@@ -3,75 +3,71 @@
     <div class="pb-2 mb-4 border-bottom border-dark">
       <h1><strong>Dilemma</strong></h1>
     </div>
-    <div class="container d-flex mb-4 border-bottom border-dark">
-      <div class="narrow-box mb-3">
-        <h5><strong>Your dilemma</strong></h5>
-        <p>This is your core question. Try to give others a brief context.</p>
-      </div>
-      <div class="flex-grow-1">
-        <%= simple_form_for @dilemma do |f| %>
-        <%= f.input :question, label: false,
-        error: 'A question is mandatory, please specify one',
-        placeholder: "My dilemma is...",
-        input_html: { class: "background-color-input-form" } %>
-      </div>
-    </div>
-
-    <div class="container d-flex mb-4 border-bottom border-dark">
-      <div class="narrow-box mb-3">
-        <h5><strong>Options</strong></h5>
-        <p>A dilemma has two options. You can't decide which one is better.</p>
-      </div>
-      <div class="flex-grow-1">
-        <div class="mb-5">
-          <%= f.simple_fields_for :options do |o| %>
-          <h4 class="pb-1"><strong>Option A</strong></h4>
-          <%= o.input :description, label: false,
-          error: 'An option is limited to 140 characters.',
-          placeholder: "Be clear. Be brief. Be wise",
-          input_html: { class: "background-color-input-form" } %>
-          <% end %>
+    <div>
+      <%= simple_form_for @dilemma do |f| %>
+        <div class="container d-flex mb-4 border-bottom border-dark">
+          <div class="narrow-box mb-3">
+            <h5><strong>Your dilemma</strong></h5>
+            <p>This is your core question. Try to give others a brief context.</p>
+          </div>
+          <div class="flex-grow-1">
+            <%= f.input :question, label: false,
+            error: 'A question is mandatory, please specify one',
+            placeholder: "My dilemma is...",
+            input_html: { class: "background-color-input-form" } %>
+          </div>
         </div>
-        <div class="mb-5">
-          <%= f.simple_fields_for :options do |o| %>
-          <h4 class="pb-2"><strong>Option B</strong></h4>
-          <%= o.input :description, label: false,
-          error: 'An option is limited to 140 characters.',
-          placeholder: "Be clear. Be brief. Be wise",
-          input_html: { class: "background-color-input-form" } %>
-          <% end %>
+        <div class="container d-flex mb-4 border-bottom border-dark">
+          <div class="narrow-box mb-3">
+            <h5><strong>Options</strong></h5>
+            <p>A dilemma has two options. You can't decide which one is better.</p>
+          </div>
+          <div class="flex-grow-1">
+            <div class="mb-5">
+              <%= f.simple_fields_for :options do |o| %>
+                <h4 class="pb-1"><strong>Option A</strong></h4>
+                <%= o.input :description, label: false,
+                error: 'An option is limited to 140 characters.',
+                placeholder: "Be clear. Be brief. Be wise",
+                input_html: { class: "background-color-input-form" } %>
+              <% end %>
+            </div>
+            <div class="mb-5">
+              <%= f.simple_fields_for :options do |o| %>
+                <h4 class="pb-2"><strong>Option B</strong></h4>
+                <%= o.input :description, label: false,
+                error: 'An option is limited to 140 characters.',
+                placeholder: "Be clear. Be brief. Be wise",
+                input_html: { class: "background-color-input-form" } %>
+              <% end %>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="container d-flex mb-4 border-bottom border-dark">
-      <div class="narrow-box mb-3">
-        <h5><strong>Type</strong></h5>
-        <p>How much have you struggled with your dilemma?
-        Easy will show for a day, medium for 72hrs, hard for a week.</p>
-      </div>
-      <div class="flex-grow-1">
-        <%= f.input :category, collection: Dilemma.categories,
-          as: :select, label: false,
-          error: 'Please select a type of difficulty',
-          placeholder: "Select type of difficulty",
+        <div class="container d-flex mb-4 border-bottom border-dark">
+          <div class="narrow-box mb-3">
+            <h5><strong>Type</strong></h5>
+            <p>How much have you struggled with your dilemma?
+            Easy will show for a day, medium for 72hrs, hard for a week.</p>
+          </div>
+          <div class="flex-grow-1">
+            <%= f.input :category, collection: Dilemma.categories,
+              as: :select, label: false,
+              error: 'Please select a type of difficulty',
+              placeholder: "Select type of difficulty",
+              input_html: { class: "background-color-input-form" } %>
+          </div>
+        </div>
+        <div class="p-2">
+          <%= f.input :tag, label: "Any tags you would like to add?",
+          placeholder: "e.g. #fun #relationships #omg",
           input_html: { class: "background-color-input-form" } %>
-      </div>
-    </div>
-    <div class="p-2">
-      <%= f.input :tag, label: "Any tags you would like to add?",
-      placeholder: "e.g. #fun #relationships #omg",
-      input_html: { class: "background-color-input-form" } %>
-    </div>
-    <div class="text-center mt-4">
-      <%= f.submit "READY", class: "btn-sober" %>
+        </div>
+        <div class="text-center mt-4">
+          <%= f.submit "READY", class: "btn-sober" %>
+        </div>
       <% end %>
+
     </div>
-  </div>
-</div>
-
-
-
-<!--     <%= link_to "", dilemmas_path %> -->
   </div>
 </div>
 
