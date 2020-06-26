@@ -7,8 +7,8 @@
           <div class="m-3">
             <div class="easy card-category-easy card-note-text">
               <%= link_to "#{dilemma.question.capitalize}", dilemma_path(dilemma) %>
-              <% a = dilemma.options[0].upvotes%>
-              <% b = dilemma.options[1].upvotes%>
+              <% a = dilemma.options[0].users.count%>
+              <% b = dilemma.options[1].users.count%>
               <%= javascript_include_tag '//www.google.com/jsapi', 'chartkick' %>
               <%= bar_chart(a: a, b:b) %>
             </div>
@@ -17,8 +17,8 @@
           <div class="m-3">
             <div class="medium card-category-medium card-note-text">
               <%= link_to "#{dilemma.question.capitalize}", dilemma_path(dilemma) %>
-              <% a = dilemma.options[0].upvotes%>
-              <% b = dilemma.options[1].upvotes%>
+              <% a = dilemma.options[0].users.count%>
+              <% b = dilemma.options[1].users.count%>
               <%= javascript_include_tag '//www.google.com/jsapi', 'chartkick' %>
               <%= bar_chart(a: a, b:b) %>
             </div>
@@ -27,8 +27,8 @@
           <div class="m-3">
             <div class="hard card-category-hard card-note-text">
               <%= link_to "#{dilemma.question.capitalize}", dilemma_path(dilemma) %>
-              <% a = dilemma.options[0].upvotes%>
-              <% b = dilemma.options[1].upvotes%>
+              <% a = dilemma.options[0].users.count%>
+              <% b = dilemma.options[1].users.count%>
               <%= javascript_include_tag '//www.google.com/jsapi', 'chartkick' %>
               <%= bar_chart(a: a, b:b) %>
             </div>
