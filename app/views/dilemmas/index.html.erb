@@ -7,30 +7,30 @@
           <div class="m-3">
             <div class="easy card-category-easy card-note-text">
               <%= link_to "#{dilemma.question.capitalize}", dilemma_path(dilemma) %>
-              <% a = dilemma.options[0].users.count%>
-              <% b = dilemma.options[1].users.count%>
+              <% option_a = dilemma.options[0].users.count%>
+              <% option_b = dilemma.options[1].users.count%>
               <%= javascript_include_tag '//www.google.com/jsapi', 'chartkick' %>
-              <%= bar_chart(a: a, b:b) %>
+              <%= pie_chart(column_a: option_a, column_b:option_b) %>
             </div>
           </div>
         <% elsif dilemma.medium? %>
           <div class="m-3">
             <div class="medium card-category-medium card-note-text">
               <%= link_to "#{dilemma.question.capitalize}", dilemma_path(dilemma) %>
-              <% a = dilemma.options[0].users.count%>
-              <% b = dilemma.options[1].users.count%>
+              <% option_a = dilemma.options[0].users.count%>
+              <% option_b = dilemma.options[1].users.count%>
               <%= javascript_include_tag '//www.google.com/jsapi', 'chartkick' %>
-              <%= bar_chart(a: a, b:b) %>
+              <%= pie_chart(column_a: option_a, column_b:option_b) %>
             </div>
           </div>
         <% elsif dilemma.hard? %>
           <div class="m-3">
             <div class="hard card-category-hard card-note-text">
               <%= link_to "#{dilemma.question.capitalize}", dilemma_path(dilemma) %>
-              <% a = dilemma.options[0].users.count%>
-              <% b = dilemma.options[1].users.count%>
+              <% option_a = dilemma.options[0].users.count%>
+              <% option_b = dilemma.options[1].users.count%>
               <%= javascript_include_tag '//www.google.com/jsapi', 'chartkick' %>
-              <%= bar_chart(a: a, b:b) %>
+              <%= pie_chart(column_a: option_a, column_b:option_b) %>
             </div>
           </div>
         <% end %>
