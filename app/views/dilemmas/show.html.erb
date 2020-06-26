@@ -96,7 +96,11 @@
         <% @dilemma.replies.each do |reply| %>
           <div class="comment">
             <%= reply.answer.capitalize %>
-            <%= cl_image_tag reply.owner.avatar.key %>
+            <%  if current_user.avatar.attached? %>
+              <%= cl_image_tag reply.owner.avatar.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% else %>
+              <%= image_tag "avatar_default_1.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% end %>
           </div>
         <% end %>
       </div>
