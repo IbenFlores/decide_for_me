@@ -1,0 +1,25 @@
+<div class="card-box-show container <%= dilemma.category %> mt-4">
+  <div class="p-5">
+    <h2><%= dilemma.question.capitalize %></h2>
+    <p class="pl-4"><%= "#{dilemma.category.capitalize} dilemma" %></p>
+  </div>
+  <div class="container d-flex justify-content-center">
+    <% dilemma.options.each do |option| %>
+      <div class="show-options mx-5 mb-5">
+        <% if dilemma.has_user_voted?(current_user) %>
+          <%= option.description %>
+        <% else %>
+          <%= link_to option.description, upvotes_path(option.id) %>
+        <% end %>
+        <div class="circle-percentage mt-3">
+          <% percentage = dilemma.options.reduce(0) { |sum, option| sum + option.users.count } %>
+          <% if percentage > 0 %>
+            <%= (option.users.count * 100) / percentage  %> %
+          <% else %>
+            0%
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
