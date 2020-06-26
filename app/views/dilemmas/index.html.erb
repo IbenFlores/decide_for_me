@@ -1,6 +1,11 @@
 <div class="container">
   <div>
-    <h1>Dilemmas</h1>
+    <div class="container mt-5 mb-3">
+      <h1>Dilemmas</h1>
+      <button type="button" class="btn btn-outline-success btn-lg">
+        <%= link_to "Post a new dilemma", new_dilemma_path %>
+       </button>
+    </div>
     <div class="cards">
       <% @dilemmas.each do |dilemma| %>
         <% if dilemma.easy? %>
@@ -38,9 +43,5 @@
     </div>
   </div>
 </div>
-<div class="container mt-5 mb-3">
-  <button type="button" class="btn btn-outline-success btn-lg">
-    <%= link_to "Post a new dilemma", new_dilemma_path %>
-   </button>
-</div>
+
 
