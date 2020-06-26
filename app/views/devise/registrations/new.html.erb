@@ -5,8 +5,8 @@
     <%= f.error_notification %>
 
     <div class="form-inputs">
-      <%= f.input :username, label:"Write an original username" %>
-      <%= f.input :email, label: "Write down an email",
+      <%= f.input :username, label:"Choose a username" %>
+      <%= f.input :email, label: "Enter your email",
                   required: true,
                   autofocus: true,
                   input_html: { autocomplete: "email" }%>
@@ -17,7 +17,7 @@
       <%= f.input :password_confirmation,
                   required: true,
                   input_html: { autocomplete: "new-password" } %>
-      <%= f.input :avatar, as: :file %>
+      <%= f.input :avatar, label: "Choose a profile pic", as: :file %>
     </div>
 
     <div class="form-actions bg-light text-dark" style="width: 80px" id="button-submit">

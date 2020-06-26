@@ -20,7 +20,7 @@
         <div class="container d-flex mb-4 border-bottom border-dark">
           <div class="narrow-box mb-3">
             <h5><strong>Options</strong></h5>
-            <p>A dilemma has two options. You can't decide which one is better.</p>
+            <p>Tell users which options you can't choose between and let others help you decide which one is better.</p>
           </div>
           <div class="flex-grow-1">
             <div class="mb-5">
@@ -28,7 +28,7 @@
                 <h4 class="pb-1"><strong>Option A</strong></h4>
                 <%= o.input :description, label: false,
                 error: 'An option is limited to 140 characters.',
-                placeholder: "Be clear. Be brief. Be wise",
+                placeholder: "Type a clear and brief choice..",
                 input_html: { class: "background-color-input-form" } %>
               <% end %>
             </div>
@@ -37,7 +37,7 @@
                 <h4 class="pb-2"><strong>Option B</strong></h4>
                 <%= o.input :description, label: false,
                 error: 'An option is limited to 140 characters.',
-                placeholder: "Be clear. Be brief. Be wise",
+                placeholder: "Type a clear and brief choice..",
                 input_html: { class: "background-color-input-form" } %>
               <% end %>
             </div>
@@ -46,20 +46,24 @@
         <div class="container d-flex mb-4 border-bottom border-dark">
           <div class="narrow-box mb-3">
             <h5><strong>Type</strong></h5>
-            <p>How much have you struggled with your dilemma?
-            Easy will show for a day, medium for 72hrs, hard for a week.</p>
+            <p>
+              <em>How hard is your dilemma?</em> <br>
+              <strong>Easy</strong> will be archived after a day. <br>
+              <strong>Medium</strong> after 72 hours. <br>
+              <strong>Hard</strong> after a week.
+          </p>
           </div>
           <div class="flex-grow-1">
             <%= f.input :category, collection: Dilemma.categories,
               as: :select, label: false,
-              error: 'Please select a type of difficulty',
-              placeholder: "Select type of difficulty",
+              error: 'Choose the level of difficulty',
+              placeholder: "Select type",
               input_html: { class: "background-color-input-form" } %>
           </div>
         </div>
         <div class="p-2">
-          <%= f.input :tag, label: "Any tags you would like to add?",
-          placeholder: "e.g. #fun #relationships #omg",
+          <%= f.input :tag, label: "Add a tag",
+          placeholder: "#yolo, #fun, #relationships, #omg",
           input_html: { class: "background-color-input-form" } %>
         </div>
         <div class="text-center mt-4">

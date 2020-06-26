@@ -105,17 +105,17 @@
     </div>
 
     <div class="col-lg-4 bg-light pb-5">
-      <div class="ml-2 mt-5 pb-3 border-bottom">
+      <!-- <div class="ml-2 mt-5 pb-3 border-bottom">
         <p><strong>Which is the best option?</strong></p>
         <p>You can only vote once</p>
-      </div>
+      </div> -->
       <div class=" ml-2 mt-4 pb-5 border-bottom">
-        <p><strong>Why?</strong></p>
+        <p><strong>Add a comment </strong></p>
         <%= simple_form_for([@dilemma, @reply]) do |f| %>
-          <%= f.input :answer, label: "Elaborate on your option",
-          error: 'A comment can not be blank and can only have 280 characters maximum',
-          placeholder: "Be short. Be thoughtful." %>
-          <%= f.submit "Post it", class: "btn-sober" %>
+          <%= f.input :answer, label: "Tell us what you really think. 👀",
+          error: 'A comment cannot be blank and must have 280 characters maximum.',
+          placeholder: "Type your comment" %>
+          <%= f.submit "Submit", class: "btn-sober" %>
         <% end %>
       </div>
       <div class=" ml-2 mt-4 cointainer btn btn-outline-info" id="button-show">
