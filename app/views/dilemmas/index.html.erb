@@ -6,17 +6,13 @@
         <%= link_to "Post a new dilemma", new_dilemma_path %>
        </button>
     </div>
-    <div class="cards">
+    <div class="d-flex">
       <% @dilemmas.each do |dilemma| %>
         <% if dilemma.easy? %>
-          <div class="m-3">
+          <div class="m-2">
             <div class="easy card-category-easy card-note-text">
               <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
               <p>created by <%= dilemma.user.username %></p>
-              <% option_a = dilemma.options[0].users.count%>
-              <% option_b = dilemma.options[1].users.count%>
-              <%= javascript_include_tag '//www.google.com/jsapi', 'chartkick' %>
-              <%= pie_chart(a: option_a, b:option_b) %>
             </div>
           </div>
         <% elsif dilemma.medium? %>

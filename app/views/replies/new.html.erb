@@ -1,9 +1,0 @@
-<h1>This is the form for you to write a reply</h1>
-<div class="container form">
-  <h4 style="font-family: Nunito" class="form-title">Create a reply</h4>
-  <%= simple_form_for([@dilemma, @reply]) do |f| %>
-  <%= f.input :answer %>
-  <br>
-  <%= f.button :submit, "Ready", class: "btn-flat mb-5" %>
-<% end %>
-</div>

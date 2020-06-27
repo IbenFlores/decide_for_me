@@ -1,46 +1,41 @@
 <div class="container-show m-0 bg-white">
   <div class="row">
-    <div class="col-lg-8 bg-white">
+    <div class="col-lg-8 <%= @dilemma.category %>">
       <%= render "display-show", dilemma: @dilemma %>
       <div class="mt-5">
         <% @dilemma.replies.each do |reply| %>
-          <div class="bg-light rounded d-flex justify-content-between align-items-center px-3 py-2 mx-4 border">
-            <div class="pr-2"><strong><%= reply.owner.username %></strong></div>
+          <div class="d-flex justify-content-between align-items-center px-3 py-2 mx-4">
+            <div class="badge badge-dark text-wrap"><strong><%= reply.owner.username %></strong></div>
             <% if reply.owner.avatar.attached? %>
-              <div class="pr-5"><%= cl_image_tag reply.owner.avatar.key, class: "avatar" %></div>
+              <div class="pr-3 pl-2 border-right border-dark"><%= cl_image_tag reply.owner.avatar.key, class: "avatar-bordered" %></div>
             <% else %>
-              <div class="pr-5"><%= image_tag "default_avatar.png", class: "avatar" %></div>
+              <div class="pr-3 pl-2 border-right border-dark"><%= image_tag "default_avatar.png", class: "avatar-bordered" %></div>
             <% end %>
-            <div class="flex-grow-1"><%= reply.answer.capitalize %></div>
+            <div class="flex-grow-1 px-3 text-dark">
+              <i class="fas fa-comment pl-3 pr-2 text-dark"></i>
+              <%= reply.answer %>
+              <i class="fas fa-star text-primary px-2" style="font-size: 20px;"></i>
+              <i class="fas fa-times text-primary" style="font-size: 20px;"></i>
+            </div>
           </div>
-          <div class="bg-light rounded d-flex justify-content-between align-items-center px-3 mx-4 mb-4 border">
-            <div class="text-center">
-              <p class="font-weight-lighter pt-3" style="font-size: 10px;"><%= "Posted at #{@dilemma.created_at}" %></p>
-            </div>
-            <div>
-              <i class="fas fa-grimace text-success pr-2" style="font-size: 20px;"></i>
-              <i class="fas fa-dizzy text-danger" style="font-size: 20px;"></i>
-            </div>
+          <div class="rounded px-3 mx-4 mb-4 mt-0">
+            <p class="font-weight-lighter text-dark" style="font-size: 10px;"><%= "Posted at #{@dilemma.created_at}" %></p>
           </div>
         <% end %>
       </div>
     </div>
 
     <div class="col-lg-4 bg-light pb-5">
-      <!-- <div class="ml-2 mt-5 pb-3 border-bottom">
-        <p><strong>Which is the best option?</strong></p>
-        <p>You can only vote once</p>
-      </div> -->
       <div class=" ml-2 mt-4 pb-5 border-bottom">
-        <p><strong>Add a comment </strong></p>
+        <p class="word"><strong>Add a comment </strong></p>
         <%= simple_form_for([@dilemma, @reply]) do |f| %>
           <%= f.input :answer, label: "Tell us what you really think. 👀",
           error: 'A comment cannot be blank and must have 280 characters maximum.',
           placeholder: "Type your comment" %>
-          <%= f.submit "Submit", class: "btn-sober" %>
+          <%= f.button :submit, "Comment", class: "btn-sober" %>
         <% end %>
       </div>
-      <div class=" ml-2 mt-4 cointainer btn btn-outline-info" id="button-show">
+      <div class=" ml-2 mt-4 cointainer btn btn-outline-primary" id="btn-thin">
         <%= link_to "See all dilemmas", dilemmas_path %>
       </div>
 

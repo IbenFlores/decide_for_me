@@ -1,5 +1,6 @@
 .btn-sober {
   color: white;
+  font-size: 12px;
   padding: 8px 50px;
   border-radius: 1px;
   background: black;
@@ -9,22 +10,19 @@
 .btn-sober:hover {
   background: white;
   color: black;
+  border: solid;
 }
 
-#button-show {
+#btn-thin {
   a {
-    color: $easy;
+    color: $blue;
   }
 }
 
-#button-show:hover {
-  background-color: $easy;
+#btn-thin:hover {
+  background-color: $blue;
   a {
     color: black;
     text-decoration: none;
   }
-}
-
-.btn {
-  border-radius: 5px;
 }
