@@ -141,15 +141,17 @@
 
 .narrow-viewport {
   width: 60%;
-  background-color: #f9f9f9;
+  background-color: $blue;
   padding: 80px;
   margin: 0 auto;
   box-sizing: content-box;
+  h5 {
+    color: black;
+  }
 }
 
 .background-color-input-form {
-  // background-color: #f4e6ba;
-  background-color: white;
+  background-color: #58e6fc;
 }
 
 .show-options {
