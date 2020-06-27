@@ -1,12 +1,13 @@
 <div class="card-box-show container <%= dilemma.category %> mt-4">
   <div class="p-5">
     <h2><%= dilemma.question.capitalize %></h2>
+    <p><%= dilemma.user.username %>'s dilemma</p>
     <p class="pl-4"><%= "#{dilemma.category.capitalize} dilemma" %></p>
   </div>
   <div class="container d-flex justify-content-center">
     <% dilemma.options.each do |option| %>
       <div class="show-options mx-5 mb-5">
-        <% if dilemma.has_user_voted?(current_user) %>
+        <% if dilemma.has_user_voted?(current_user) || dilemma.user == current_user %>
           <%= option.description %>
         <% else %>
           <%= link_to option.description, upvotes_path(option.id) %>
