@@ -12,6 +12,7 @@
           <div class="m-3">
             <div class="easy card-category-easy card-note-text">
               <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
+              <p>created by <%= dilemma.user.username %></p>
               <% option_a = dilemma.options[0].users.count%>
               <% option_b = dilemma.options[1].users.count%>
               <%= javascript_include_tag '//www.google.com/jsapi', 'chartkick' %>
@@ -22,6 +23,7 @@
           <div class="m-3">
             <div class="medium card-category-medium card-note-text">
               <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
+              <p>created by <%= dilemma.user.username %></p>
               <% option_a = dilemma.options[0].users.count%>
               <% option_b = dilemma.options[1].users.count%>
               <%= javascript_include_tag '//www.google.com/jsapi', 'chartkick' %>
@@ -32,6 +34,7 @@
           <div class="m-3">
             <div class="hard card-category-hard card-note-text">
               <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
+              <p>created by <%= dilemma.user.username %></p>
               <% option_a = dilemma.options[0].users.count%>
               <% option_b = dilemma.options[1].users.count%>
               <%= javascript_include_tag '//www.google.com/jsapi', 'chartkick' %>
