@@ -1,4 +1,4 @@
-<div class="container-show m-0 bg-white">
+<div class="container-show m-0">
   <div class="row">
     <div class="col-lg-8 <%= @dilemma.category %>">
       <%= render "display-show", dilemma: @dilemma %>
@@ -25,21 +25,40 @@
       </div>
     </div>
 
-    <div class="col-lg-4 bg-light pb-5">
-      <div class=" ml-2 mt-4 pb-5 border-bottom">
-        <p class="word"><strong>Add a comment </strong></p>
-        <%= simple_form_for([@dilemma, @reply]) do |f| %>
-          <%= f.input :answer, label: "Tell us what you really think. 👀",
-          error: 'A comment cannot be blank and must have 280 characters maximum.',
-          placeholder: "Type your comment" %>
-          <%= f.button :submit, "Comment", class: "btn-sober" %>
-        <% end %>
+    <div class="col-lg-4 px-4">
+      <div class="pb-5 pt-4 text-white">
+        <p class="badge badge-secondary text-wrap p-1"><strong>ADD A COMMENT</strong></p>
+        <div>
+          <%= simple_form_for([@dilemma, @reply]) do |f| %>
+            <%= f.input :answer, label: "Tell us what you really think:",
+            error: 'A comment cannot be blank and must have 280 characters maximum.',
+            placeholder: "Type your comment 👀",
+            input_html: { class: "background-color-comment-form" } %>
+            <%= f.button :submit, "Post", class: "btn-sober" %>
+          <% end %>
+        </div>
       </div>
-      <div class=" ml-2 mt-4 cointainer btn btn-outline-primary" id="btn-thin">
-        <%= link_to "See all dilemmas", dilemmas_path %>
+      <div class="d-flex justify-content-around">
+        <div class="btn btn-outline-primary pr-2" id="btn-thin">
+          <i class="fas fa-circle-notch pr-1"></i>
+          <%= link_to "All dilemmas", dilemmas_path %>
+        </div>
+        <div class="pr-5">
+          <p class="badge badge-primary text-wrap p-1">Featured</p>
+          <i class="fas fa-arrow-down pl-1 text-primary"></i>
+        </div>
       </div>
 
+      <div class="pl-4 pt-5">
+        <div class="easy card-category-easy card-note-text">
+          <%= link_to "#{@dilemma.question}", dilemma_path(@dilemma) %>
+          <p class="font-italic little-text pb-5">Created by <strong><%= @dilemma.user.username %></strong></p>
+          <p><%= @dilemma %></p>
+          <span class="pt-5">Active for 1 day</span>
+        </div>
+      </div>
     </div>
+
   </div>
 </div>
 

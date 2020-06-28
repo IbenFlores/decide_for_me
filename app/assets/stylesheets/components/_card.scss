@@ -38,7 +38,6 @@
   min-height: 15em;
   width: 15em;
   box-sizing: border-box;
-  text-align: justify;
   padding: 2em;
   position: relative;
   margin: 0;
@@ -71,7 +70,6 @@
   min-height: 15em;
   width: 15em;
   box-sizing: border-box;
-  text-align: justify;
   padding: 2em;
   position: relative;
   margin: 0;
@@ -162,6 +160,10 @@
 
 .background-color-input-form {
   background-color: #58e6fc;
+}
+
+.background-color-comment-form {
+  background-color: #d3f6ff;
 }
 
 .show-options {

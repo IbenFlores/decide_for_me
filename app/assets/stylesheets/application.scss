@@ -16,6 +16,11 @@
   font-size: 12px;
 }
 
+.little-text-border {
+  font-size: 10px;
+  border: 1px dotted $gray;
+}
+
 .word:first-letter {
   font-size: 20px;
   font-weight: bold;
