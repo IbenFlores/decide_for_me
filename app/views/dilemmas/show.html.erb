@@ -1,7 +1,9 @@
 <div class="container-show m-0">
   <div class="row">
     <div class="col-lg-8 <%= @dilemma.category %>">
+<!-- Dilemma card -->
       <%= render "display-show", dilemma: @dilemma %>
+<!-- Comments section -->
       <div class="mt-5">
         <% @dilemma.replies.each do |reply| %>
           <div class="d-flex justify-content-between align-items-center px-3 py-2 mx-4">
@@ -24,41 +26,43 @@
         <% end %>
       </div>
     </div>
-
+<!-- Form for comments -->
     <div class="col-lg-4 px-4">
       <div class="pb-5 pt-4 text-white">
+        <i class="fas fa-comments"></i>
         <p class="badge badge-secondary text-wrap p-1"><strong>ADD A COMMENT</strong></p>
         <div>
           <%= simple_form_for([@dilemma, @reply]) do |f| %>
             <%= f.input :answer, label: "Tell us what you really think:",
             error: 'A comment cannot be blank and must have 280 characters maximum.',
-            placeholder: "Type your comment 👀",
+            placeholder: "Type your comment",
             input_html: { class: "background-color-comment-form" } %>
             <%= f.button :submit, "Post", class: "btn-sober" %>
           <% end %>
         </div>
       </div>
-      <div class="d-flex justify-content-around">
-        <div class="btn btn-outline-primary pr-2" id="btn-thin">
+<!-- Link to all dilemmas -->
+      <div class="d-flex justify-content-around pt-5">
+        <div class="btn btn-outline-primary pr-2 mb-2" id="btn-thin">
           <i class="fas fa-circle-notch pr-1"></i>
           <%= link_to "All dilemmas", dilemmas_path %>
         </div>
-        <div class="pr-5">
+        <div class="px-2 mt-2 rounded-top bg-secondary text-center">
           <p class="badge badge-primary text-wrap p-1">Featured</p>
           <i class="fas fa-arrow-down pl-1 text-primary"></i>
         </div>
       </div>
-
-      <div class="pl-4 pt-5">
+<!-- Featured section -->
+      <div class="pl-4 pt-5 bg-secondary">
         <div class="easy card-category-easy card-note-text">
           <%= link_to "#{@dilemma.question}", dilemma_path(@dilemma) %>
           <p class="font-italic little-text pb-5">Created by <strong><%= @dilemma.user.username %></strong></p>
           <p><%= @dilemma %></p>
-          <span class="pt-5">Active for 1 day</span>
+          <span class="pt-5 text-monospace">Active for 1 day</span>
         </div>
       </div>
-    </div>
 
+    </div>
   </div>
 </div>
 

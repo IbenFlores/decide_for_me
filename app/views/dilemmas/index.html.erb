@@ -13,8 +13,8 @@
         <div class="p-2">
           <div class="easy card-category-easy card-note-text">
             <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
-            <p class="font-italic little-text pb-5">Created by <strong><%= dilemma.user.username %></strong></p>
-            <span class="pt-5">Active for 1 day</span>
+            <p class="font-italic little-text">Created by <strong><%= dilemma.user.username %></strong></p>
+            <p class="px-1 d-inline little-text-border">ACTIVE FOR 1 DAY</p>
           </div>
         </div>
       <% elsif dilemma.medium? %>
@@ -22,7 +22,7 @@
           <div class="medium card-category-medium card-note-text">
             <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
             <p class="font-italic little-text">Created by <strong><%= dilemma.user.username %></strong></p>
-            <p>Active for 3 days</p>
+            <p class="px-1 d-inline little-text-border">ACTIVE FOR 3 DAYS</p>
           </div>
         </div>
       <% elsif dilemma.hard? %>
@@ -30,6 +30,7 @@
           <div class="hard card-category-hard card-note-text">
             <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
             <p class="font-italic little-text">Created by <strong><%= dilemma.user.username %></strong></p>
+            <p class="px-1 d-inline little-text-border">ACTIVE FOR 7 DAYS</p>
             <% option_a = dilemma.options[0].users.count%>
             <% option_b = dilemma.options[1].users.count%>
             <%= javascript_include_tag '//www.google.com/jsapi', 'chartkick' %>
