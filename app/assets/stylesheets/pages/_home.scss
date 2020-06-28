@@ -1,53 +1,52 @@
-// Specific CSS for your home-page
-
 .background-pattern {
-  // background-color: #ff470f;
-  // background-image: linear-gradient(to bottom right, #ff470f, #8A27E4);
-  // font-family: "Playfair Display", serif;
   // height: 100vh;
   // width: 100vw;
   // display: flex;
   // justify-content: center;
   // align-items: center;
   // text-align: center;
+  h1 {
+    color: $blue;
+    font-family: $body-font;
+    font-size: 50px;
+  }
+  h5 {
+    letter-spacing: 2px;
+  }
 }
 
-.background-color h1 {
-  color: white;
-  font-size: 79px;
+.background-transparency {
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 50%;
+  box-sizing: content-box;
 }
 
-.background-color h1, h5 {
-  color: white;
+.background-dark {
+  background-color: $dark-gray;
+  width: 100%;
 }
 
-#button-home-page {
-  padding: 1em;
-  border: 1px solid;
-  border-color: white;
-  border-radius: 70px;
-  transition: all .4s ease-in-out;
-  text-align: center;
+.color-card {
+  height: 15em;
+  width: 100%;
+  img {
+    height: 15em;
+    object-fit: cover;
+    width: 100%;
+  }
 }
 
-#button-home-page:hover {
-  padding: 1em;
-  border: 3px solid;
-  border-color: white;
-  transform: scale(1.1);
+.color-card-half {
+  height: 15em;
+  width: 7em;
 }
 
-
-#button-home-page a {
-  color: white;
-  font-family: "Montserrat", serif;
-  font-size: 20px;
-}
-
-#button-home-page a:hover {
-  color: white;
-  font-family: "Montserrat", serif;
-  text-decoration: none;
+.card-note {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: black;
+  font-family: $headers-font;
 }
 
 #icons-page i {
@@ -55,7 +54,7 @@
   color:black;
 }
 
-.icon-container {
+.gradient-container {
   display: flex;
   height: 70vh;
   text-align: center;
@@ -97,21 +96,6 @@
   top: 10%;
 }
 
-#member-container {
-  height: 80vh;
-  width: 100vw;
-  background-image: linear-gradient(to bottom right, #ff470f, #8A27E4);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  display: inline-block;
-}
-
-#member-container i {
- font-size: 50px;
-}
-
 #container-card-action {
   display: flex;
   justify-content: space-around;
@@ -151,13 +135,6 @@
 }
 
 #card-individual2 a {
-  margin: 0 auto;
-  text-align: center;
-  font-size: 25px;
-  text-decoration: none;
-}
-
-#card-individual2 p {
   margin: 0 auto;
   text-align: center;
   font-size: 25px;

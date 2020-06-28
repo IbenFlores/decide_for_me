@@ -1,86 +1,89 @@
+<!-- First section -->
 <div class="background-pattern">
-  <div>
-    <h1>Decide for me</h1>
-    <h5>Collective Decision Making. No more drama. Let's vote. </h5>
-    <div id="button-home-page">
-     <%= link_to "See all dilemmas", dilemmas_path %>
+  <div class="background-transparency text-center p-4">
+    <h1 class="border-bottom">DECIDE FOR ME</h1>
+    <h5>collective decision-making</h5>
+    <div>
+     <%= link_to "What's in your mind?", dilemmas_path %>
     </div>
   </div>
 </div>
-<div class="icon-container">
-  <h1> Problem </h1>
+<!-- Second section -->
+<div class="background-dark">
+  <div class="d-flex">
+    <div class="color-card-half bg-primary mx-2 my-2 p-2">
+      <h2>Should I get a new job?</h2>
+      <div class="d-flex">
+        <i class="fas fa-comment pl-3 pr-2 text-dark"></i>
+        <p class="font-italic little-text">Created by <strong>Iben</strong></p>
+      </div>
+    </div>
+    <div class="color-card bg-light mx-1 my-2">
+      <%= image_tag "https://images.unsplash.com/photo-1548543604-a87c9909abec?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" %>
+    </div>
+    <div class="color-card bg-info mx-1 my-2 p-2">
+      <h2>Should I get married?</h2>
+      <i class="fas fa-comment pl-3 pr-2 text-dark"></i>
+      <p class="font-italic little-text">Created by <strong>Joselito</strong></p>
+    </div>
+    <div class="color-card bg-light mx-1 my-2">
+      <%= image_tag "https://images.unsplash.com/photo-1518800431428-69a992a6f54a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" %>
+    </div>
+    <div class="color-card bg-success mx-1 my-2 p-2">
+      <h2>Beach or pool this weekend?</h2>
+      <i class="fas fa-comment pl-3 pr-2 text-dark"></i>
+      <p class="font-italic little-text">Created by <strong>JolieFolie</strong></p>
+    </div>
+    <div class="color-card-half bg-danger mx-1 my-2 p-2">
+      <h2>Rent or buy my next place?</h2>
+      <i class="fas fa-comment pl-3 pr-2 text-dark"></i>
+      <p class="font-italic little-text">Created by <strong>JolieFolie</strong></p>
+    </div>
+  </div>
+  <div class="d-flex">
+    <div class="color-card bg-danger mx-1 mb-2 p-2">
+      <h2>Brunette or blond?</h2>
+      <i class="fas fa-comment pl-3 pr-2 text-dark"></i>
+      <p class="font-italic little-text">Created by <strong>Faith</strong></p>
+    </div>
+    <div class="color-card bg-light mx-1">
+      <%= image_tag "https://images.unsplash.com/photo-1522776507896-7174e7b0219d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80" %>
+    </div>
+    <div class="color-card bg-primary mx-1 p-2">
+      <h2>Should I forbid cellphones in my class?</h2>
+      <i class="fas fa-comment pl-3 pr-2 text-dark"></i>
+      <p class="font-italic little-text">Created by <strong>Raj</strong></p>
+    </div>
+    <div class="color-card bg-info mx-1 p-2">
+      <h2>Who would you rather meet?</h2>
+      <i class="fas fa-comment pl-3 pr-2 text-dark"></i>
+      <p class="font-italic little-text">Created by <strong>MarianaGT</strong></p>
+    </div>
+    <div class="color-card bg-success mx-1">
+      <%= image_tag "https://images.unsplash.com/photo-1505243542579-da5adfe8338f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" %>
+    </div>
+  </div>
+<!-- Third section -->
+<div class="background-pattern">
+  <p>Check this out</p>
+</div>
+
+<!-- <div class="gradient-container">
   <div id="icons-page" class="container-content-icons">
     <div class="contents-container">
       <i class="fas fa-dizzy"></i>
       <br>
-      <br>
-      <br>
       <p>Life or Death matter(maybe not)</p>
       <h1 class="number-card">1</h1>
     </div>
-  </div>
-  <div id="icons-page" class="container-content-icons">
-    <div class="contents-container">
-      <i class="fas fa-grimace"></i>
-      <br>
-      <br>
-      <br>
-      <p>Need some feedback</p>
-      <h1 class="number-card">2</h1>
-    </div>
-  </div>
-  <div id="icons-page" class="container-content-icons">
-    <div class="contents-container">
-      <i class="fas fa-hand-peace"></i>
-      <br>
-      <br>
-      <br>
-      <p>Post it!</p>
-      <h1 class="number-card">3</h1>
-    </div>
-  </div>
-  <div id="icons-page" class="container-content-icons">
-    <div class="contents-container">
-      <i class="fas fa-smile-wink"></i>
-      <br>
-      <br>
-      <br>
-      <p>Vote it!</p>
-      <h1 class="number-card">4</h1>
-    </div>
-  </div>
+  </div> -->
+
 </div>
 <div id="member-container">
   <div id="container-card-action">
-    <div id="card-individual">
-      <h3>Visitor</h3>
-      <i class="fas fa-user-secret"></i>
-      <p>Just looking</p>
-    </div>
-    <div id="card-individual2">
-      <p>Browse</p>
-    </div>
-    <div id="card-individual2">
-      <p>Dilemmas</p>
-    </div>
-    <div id="card-individual2">
-      <%= link_to "Sign Up", new_user_registration_path %>
-    </div>
+
   </div>
   <div id="container-card-action2">
-    <div id="card-individual">
-      <h3>User</h3>
-      <i class="fas fa-grin-stars"></i>
-      <p>Interact with users</p>
-    </div>
-    <div id="card-individual3">
-      <p>Browse dilemmas</p>
-    </div>
-    <div id="card-individual3">
-      <p>Select Category</p>
-    </div>
-    <div id="card-individual3">
-      <%= link_to "Create a dilemma", new_dilemma_path %>
-    </div>
+
   </div>
 </div>
