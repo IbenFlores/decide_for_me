@@ -8,29 +8,27 @@
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-  height: 40px;
-}
-
-.nav-item a {
+.navbar-lewagon .navbar-brand i {
+  width: 30px;
+  height: 30px;
   color: white;
 }
 
-#nav-bar-button a {
-  color: white;
+.nav-item {
 }
 
 .dropdown a {
   color: black;
 }
 
-#login-letters a {
-  color: white;
+#text-blue a {
+  color: $blue;
 }
 
-#icon-nav i {
-  color: white;
-  font-size: 38px;
-  margin-left: 10px;
+#text-blue:hover a {
+  color: #fee85f;
+  font-weight: bold;
+  text-decoration: none;
 }
+
+
