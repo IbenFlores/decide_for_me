@@ -1,0 +1,11 @@
+
+     <% @dilemmas.each do |dilemma| %>
+          <% if dilemma.easy? %>
+            <div class="m-2">
+              <div class="easy card-category-easy card-note-text">
+                <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
+                <p class="font-italic">Created by <%= dilemma.user.username %></p>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
