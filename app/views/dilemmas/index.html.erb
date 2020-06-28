@@ -16,7 +16,7 @@
               <% option_a = dilemma.options[0].users.count%>
               <% option_b = dilemma.options[1].users.count%>
               <%= javascript_include_tag '//www.google.com/jsapi', 'chartkick' %>
-              <%= pie_chart(a: option_a, b:option_b) %>
+              <%= pie_chart({"#{dilemma.options[0].description}" => option_a, "#{dilemma.options[1].description}" => option_b}) %>
             </div>
           </div>
         <% elsif dilemma.medium? %>
@@ -27,7 +27,7 @@
               <% option_a = dilemma.options[0].users.count%>
               <% option_b = dilemma.options[1].users.count%>
               <%= javascript_include_tag '//www.google.com/jsapi', 'chartkick' %>
-              <%= pie_chart(a: option_a, b:option_b) %>
+              <%= pie_chart({"#{dilemma.options[0].description}" => option_a, "#{dilemma.options[1].description}" => option_b}) %>
             </div>
           </div>
         <% elsif dilemma.hard? %>
@@ -38,7 +38,7 @@
               <% option_a = dilemma.options[0].users.count%>
               <% option_b = dilemma.options[1].users.count%>
               <%= javascript_include_tag '//www.google.com/jsapi', 'chartkick' %>
-              <%= pie_chart(a: option_a, b:option_b) %>
+              <%= pie_chart({"#{dilemma.options[0].description}" => option_a, "#{dilemma.options[1].description}" => option_b}) %>
             </div>
           </div>
         <% end %>
