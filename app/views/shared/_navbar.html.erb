@@ -43,8 +43,11 @@
           </div>
         </li>
       <% else %>
-        <li class="nav-item" id="login-letters">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        <li class="nav-item active pr-2 pl-5 pt-1 little-text" id="text-blue">
+          <%= link_to "LOGIN", new_user_session_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item active pr-2 pl-5 pt-1 little-text" id="text-blue">
+          <%= link_to "SIGN UP", new_user_registration_path, class: "nav-link" %>
         </li>
       <% end %>
     </ul>
