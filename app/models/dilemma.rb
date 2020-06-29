@@ -28,6 +28,11 @@ class Dilemma < ApplicationRecord
     voted
   end
 
+  def self.top_10
+    @dilemmas = Dilemma.all.sort_by { |dilemma| dilemma.replies.count }
+    @dilemmas.first(10)
+  end
+
   private
 
   def assign_expiration

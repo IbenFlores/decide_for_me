@@ -8,8 +8,26 @@
   </div>
   <!-- Dilemmas -->
   <div class="row row-cols-4">
+
+  <div class="col-sm-6 col-lg-1">
+    <% @dilemmas.top_10.each do |dilemma|%>
+      <% if dilemma.easy? %>
+        <div class="m-1 easy card-category-easy card-note-text">
+          <%= dilemma[:question] %>
+        </div>
+      <% elsif dilemma.medium? %>
+        <div class="m-1 medium card-category-medium card-note-text">
+          <%= dilemma[:question] %>
+        </div>
+      <% elsif dilemma.hard? %>
+        <div class="m-1 hard card-category-hard card-note-text">
+          <%= dilemma[:question] %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
   <% @dilemmas.each do |dilemma| %>
-    <div class="col-sm-6 col-lg-3">
+    <div class="col-sm-6 col-lg-2">
       <% if dilemma.easy? %>
         <div class="p-2 m-1">
           <div class="easy card-category-easy card-note-text">
