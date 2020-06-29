@@ -13,6 +13,10 @@ class RepliesController < ApplicationController
     @reply.owner_id = current_user.id
     authorize @reply
     if @reply.save
+      DilemmaChannel.broadcast_to(
+      @dilemma,
+      render_to_string(partial: "display-replies", locals: { reply: @reply })
+      )
       redirect_to dilemma_path(@dilemma)
     else
       render "dilemmas/show"

@@ -28,10 +28,13 @@ require("chart.js")
 // External imports
 import "bootstrap";
 
+
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { initChatroomCable } from  '../channels/dilemma_channel';
 
 document.addEventListener('turbolinks:load', () => {
+  initChatroomCable();
   // Call your functions here, e.g:
   // initSelect2();
 });
