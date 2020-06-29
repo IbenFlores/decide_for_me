@@ -32,16 +32,11 @@
             <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
             <p class="font-italic little-text">Created by <strong><%= dilemma.user.username %></strong></p>
             <p class="px-1 d-inline little-text-border">ACTIVE FOR 7 DAYS</p>
-            <% option_a = dilemma.options[0].users.count%>
-            <% option_b = dilemma.options[1].users.count%>
-            <%= javascript_include_tag '//www.google.com/jsapi', 'chartkick' %>
-            <%= pie_chart(a: option_a, b:option_b) %>
           </div>
         </div>
       <% end %>
     </div>
   <% end %>
-
   </div>
 </div>
 
