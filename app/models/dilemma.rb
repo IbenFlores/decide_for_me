@@ -28,6 +28,13 @@ class Dilemma < ApplicationRecord
     voted
   end
 
+  def self.top_10
+    sql_query = "SELECT COUNT(*), upvotes
+    JOIN options ON options.id = dilemmas.options_id
+    FROM options GROUP BY upvotes = :query_upvotes"
+    @dilemmas = Dilemma.where(sql_query, query_upvotes: params[:query])
+  end
+
   private
 
   def assign_expiration
