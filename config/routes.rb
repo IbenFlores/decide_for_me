@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   resources :replies, only: :destroy
   get '/options/:id/upvotes', to: 'options#upvotes', as: :upvotes
   get '/replies/:id/mark', to: 'replies#mark', as: :mark
+  get '/users/profile', to: 'users#profile', as: :profile
 end
