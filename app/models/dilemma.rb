@@ -29,10 +29,8 @@ class Dilemma < ApplicationRecord
   end
 
   def self.top_10
-    sql_query = "SELECT COUNT(*), upvotes
-    JOIN options ON options.id = dilemmas.options_id
-    FROM options GROUP BY upvotes = :query_upvotes"
-    @dilemmas = Dilemma.where(sql_query, query_upvotes: params[:query])
+    @dilemmas = Dilemma.all.sort_by { |dilemma| dilemma.replies.count }
+    @dilemmas.first(10)
   end
 
   private
