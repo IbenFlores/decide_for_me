@@ -1,0 +1,50 @@
+<div class="bg-pattern">
+  <div class="container narrow-viewport">
+    <div class="pb-2 mb-4 border-bottom border-dark">
+      <h1><strong>Dilemma</strong></h1>
+    </div>
+    <div>
+      <%= simple_form_for @dilemma do |f| %>
+        <div class="container d-flex mb-4 border-bottom border-dark">
+          <div class="narrow-box mb-3">
+            <h5><strong>Your dilemma</strong></h5>
+            <p>This is your core question. Try to give others a brief context.</p>
+          </div>
+          <div class="flex-grow-1">
+            <%= f.input :question, label: false,
+            error: 'A question is mandatory, please specify one',
+            input_html: { class: "background-color-input-form" } %>
+          </div>
+        </div>
+        <div class="container d-flex mb-4 border-bottom border-dark">
+          <div class="narrow-box mb-3">
+            <h5><strong>Options</strong></h5>
+            <p>Tell users which options you can't choose between and let others help you decide which one is better.</p>
+          </div>
+          <div class="flex-grow-1">
+            <div class="mb-5">
+              <%= f.simple_fields_for :options do |o| %>
+                <h5 class="pb-1"><strong>Option A</strong></h5>
+                <%= o.input :description, label: false,
+                error: 'An option is limited to 140 characters.',
+                input_html: { class: "background-color-input-form" } %>
+              <% end %>
+            </div>
+            <div class="mb-5">
+              <%= f.simple_fields_for :options do |o| %>
+                <h5 class="pb-2"><strong>Option B</strong></h5>
+                <%= o.input :description, label: false,
+                error: 'An option is limited to 140 characters.',
+                input_html: { class: "background-color-input-form" } %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <%= f.button :submit, "READY", class: "btn-sober" %>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>
