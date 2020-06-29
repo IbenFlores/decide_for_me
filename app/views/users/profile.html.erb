@@ -1,4 +1,4 @@
-<div class="container-show">
+<!-- <div class="container-show">
   <div class="col-lg-8">
     <h1 style="color:white"> Hello <%= @user.username %></h1>
     <div class="color-card bg-info">
@@ -9,6 +9,21 @@
       </h4>
     </div>
   </div>
+</div> -->
+
+<div class="wrapper">
+
+  <div class="profile">
+    <%= cl_image_tag current_user.avatar.key, class: "thumbnail" %>
+    <h3 class="name"><%= @user.username %></h3>
+    <p class="description"><%= @user.bio %></p>
+  </div>
+
+    <div class="icon">
+      <h4>My dilemmas: <%= User.last.dilemmas.count %>
+        <i class="fas fa-vote-yea"></i>
+      </h4>
+    </div>
 </div>
 
 

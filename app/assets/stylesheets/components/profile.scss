@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  font-family: 'Open Sans', sans-serif;
+  font-size: 100%;
+}
+
+// ------------------------------------------------
+
+$purple-gradient: linear-gradient(45deg, rgba(87,29,146,1) 0%,rgba(172,25,102,1) 100%);
+$purple-gradient: linear-gradient(to bottom right, #C90A6D, #FF48A0);
+$blue1-gradient: linear-gradient(to bottom right, #5E5AEC, #3F9EFC);
+$blue2-gradient: linear-gradient(to bottom right, #6452E9, #639FF9);
+$shadow: 0 13px 26px rgba(#000, .2), 0 3px 6px rgba(#000, .2);
+
+
+    .profile {
+      // &:after {background: #ececece;}
+      .name {
+        color: $dark-gray;
+      }
+
+      .description {
+        color: $dark-gray;
+      }
+    }
+    .icon {
+      h4 {
+        color: #FFFFFF;
+      }
+
+      p {
+        color: $dark-gray;;
+      }
+}
+
+.wrapper {
+  width: 320px;
+  height: 540px;
+  background: #FDFEFF;
+  transition: background .6s ease;
+  border-radius: 10px;
+  padding: 20px 20px 20px 20px;
+  box-shadow: 0 8px 40px rgba(#000000, .2);
+
+  .profile {
+    margin-top: 2.2em;
+    position: relative;
+    color: $dark-gray;
+
+    &:after {
+      width: 100%;
+      height: 1px;
+      content: ' ';
+      display: block;
+      margin-top: 1.3em;
+      background: #E9EFF6;
+    }
+
+
+    .thumbnail {
+      width: 124px;
+      height: 124px;
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 1.5em;
+      border-radius: 100%;
+      box-shadow: $shadow;
+    }
+    .name {
+      color: $dark-gray;
+      font-size: 24px;
+      font-weight: 600;
+      text-align: center;
+    }
+  }
+}
+
+
+.icon {
+      display: flex;
+      align-items: left;
+      flex-direction: column;
+      a {
+        color: #fff;
+        width: 60px;
+        height: 60px;
+        font-size: 28px;
+        line-height: 60px;
+        text-align: center;
+        border-radius: 30px;
+        box-shadow: $shadow;
+      }
+      &:nth-of-type(1) {
+        a {
+          background: $purple-gradient;
+        }
+      }
+      &:nth-of-type(2) {
+        a {
+          background: $blue1-gradient;
+        }
+      }
+      &:nth-of-type(3) {
+        a {
+          background: $blue2-gradient;
+        }
+      }
+  h4 {
+    color: $dark-gray;
+  }
+}
