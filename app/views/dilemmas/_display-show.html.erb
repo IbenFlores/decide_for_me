@@ -1,26 +1,32 @@
-<div class="card-box-show container <%= dilemma.category %> mt-4">
+<div class="card-box-show container mt-4">
   <div class="p-5">
-    <h2><%= dilemma.question.capitalize %></h2>
-    <p><%= dilemma.user.username %>'s dilemma</p>
-    <p class="pl-4"><%= "#{dilemma.category.capitalize} dilemma" %></p>
+    <h2><%= dilemma.question %></h2>
+    <p class="pl-2"><strong><%= dilemma.user.username %>'s</strong> dilemma</p>
+    <p class="ml-4 px-1 d-inline little-text-border">ACTIVE FOR 3 DAYS</p>
   </div>
-  <div class="container d-flex justify-content-center">
-    <% dilemma.options.each do |option| %>
-      <div class="show-options mx-5 mb-5">
-        <% if dilemma.has_user_voted?(current_user) || dilemma.user == current_user %>
-          <%= option.description %>
-        <% else %>
-          <%= link_to option.description, upvotes_path(option.id) %>
-        <% end %>
-        <div class="circle-percentage mt-3">
-          <% percentage = dilemma.options.reduce(0) { |sum, option| sum + option.users.count } %>
-          <% if percentage > 0 %>
-            <%= (option.users.count * 100) / percentage  %> %
+  <div class="container d-flex flex-column justify-content-center">
+    <div class="px-5 d-flex justify-content-between py-3">
+      <div class="flex-grow-1 pl-3 little-text text-white"><i class="fas fa-long-arrow-alt-right pr-2"></i>Option A</div>
+      <div class="flex-grow-1 pl-3 little-text text-white"><i class="fas fa-long-arrow-alt-right pr-2"></i>Option B</div>
+    </div>
+    <div class="d-flex justify-content-around">
+      <% dilemma.options.each do |option| %>
+        <div class="show-options mx-5 mb-5">
+          <% if dilemma.has_user_voted?(current_user) || dilemma.user == current_user %>
+            <%= option.description %>
           <% else %>
-            0%
+            <%= link_to option.description, upvotes_path(option.id) %>
           <% end %>
+          <div class="circle-percentage mt-3">
+            <% percentage = dilemma.options.reduce(0) { |sum, option| sum + option.users.count } %>
+            <% if percentage > 0 %>
+              <%= (option.users.count * 100) / percentage  %> %
+            <% else %>
+              0%
+            <% end %>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

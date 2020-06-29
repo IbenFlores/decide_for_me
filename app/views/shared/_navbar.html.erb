@@ -1,6 +1,7 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon" id="icon-nav">
+
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon d-flex justify-space-between mx-5">
   <%= link_to root_path, class: "navbar-brand" do %>
-    <i class="fas fa-gavel"></i>
+    <i class="fas fa-comments"></i>
     <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,18 +12,23 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item active" id="nav-bar-button">
-          <%= link_to "Home", root_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item form-inline mr-4">
+        <li class="nav-item form-inline pr-5">
           <%= form_tag dilemmas_path, method: :get do %>
             <%= text_field_tag :query,
               params[:query],
-              class: "form-control",
-              placeholder: "Find dilemmas"
-            %>
-            <%= submit_tag "Search", class: "btn btn-primary" %>
+              class: "form-control little-text",
+              placeholder: "Find dilemmas"%>
+            <%= submit_tag "Search", class: "btn btn-primary little-text" %>
           <% end %>
+        </li>
+        <li class="nav-item active pr-2 pl-5 pt-1 little-text" id="text-blue">
+          <%= link_to "ABOUT", root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item active pr-2 pl-3 pt-1 little-text" id="text-blue">
+          <%= link_to "MY PROFILE", root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item active mr-2 ml-5 mt-2 mb-3">
+          <%= current_user.username %>
         </li>
         <li class="nav-item dropdown">
           <%  if current_user.avatar.attached? %>
@@ -37,8 +43,11 @@
           </div>
         </li>
       <% else %>
-        <li class="nav-item" id="login-letters">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        <li class="nav-item active pr-2 pl-5 pt-1 little-text" id="text-blue">
+          <%= link_to "LOGIN", new_user_session_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item active pr-2 pl-5 pt-1 little-text" id="text-blue">
+          <%= link_to "SIGN UP", new_user_registration_path, class: "nav-link" %>
         </li>
       <% end %>
     </ul>

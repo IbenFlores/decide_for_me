@@ -3,12 +3,12 @@
 }
 
 .card-category-easy {
-  min-height: 13em;
+  min-height: 15em;
   width: 15em;
   box-sizing: border-box;
-  text-align: justify;
   padding: 2em;
   position: relative;
+  margin: 0;
 }
 
 .card-category-easy:after {
@@ -20,6 +20,7 @@
   border-width: 1em;
   border-style: solid;
   border-color: $easy;
+  margin: 0;
 }
 
 .card-category-easy:before {
@@ -30,15 +31,16 @@
   border-width: 2em 2em 0 0;
   border-style: solid;
   border-color: darken($easy, 10%) transparent;
+  margin: 0;
 }
 
 .card-category-medium {
-  min-height: 13em;
+  min-height: 15em;
   width: 15em;
   box-sizing: border-box;
-  text-align: justify;
   padding: 2em;
   position: relative;
+  margin: 0;
 }
 
 .card-category-medium:after {
@@ -50,6 +52,7 @@
   border-width: 1em;
   border-style: solid;
   border-color: $medium;
+  margin: 0;
 }
 
 .card-category-medium:before {
@@ -60,15 +63,16 @@
   border-width: 2em 2em 0 0;
   border-style: solid;
   border-color: darken($medium, 10%) transparent;
+  margin: 0;
 }
 
 .card-category-hard {
-  min-height: 13em;
+  min-height: 15em;
   width: 15em;
   box-sizing: border-box;
-  text-align: justify;
   padding: 2em;
   position: relative;
+  margin: 0;
 }
 
 .card-category-hard:after {
@@ -80,6 +84,7 @@
   border-width: 1em;
   border-style: solid;
   border-color: $hard;
+  margin: 0;
 }
 
 .card-category-hard:before {
@@ -90,6 +95,7 @@
   border-width: 2em 2em 0 0;
   border-style: solid;
   border-color: darken($hard, 10%) transparent;
+  margin: 0;
 }
 
 .card-note-text {
@@ -97,6 +103,8 @@
     font-size: 1.5em;
     font-weight: bold;
     color: black;
+    font-family: $headers-font;
+    text-decoration: none;
   }
 }
 
@@ -141,15 +149,21 @@
 
 .narrow-viewport {
   width: 60%;
-  background-color: #f9f9f9;
+  background-color: $blue;
   padding: 80px;
   margin: 0 auto;
   box-sizing: content-box;
+  h5 {
+    color: black;
+  }
 }
 
 .background-color-input-form {
-  // background-color: #f4e6ba;
-  background-color: white;
+  background-color: #58e6fc;
+}
+
+.background-color-comment-form {
+  background-color: #d3f6ff;
 }
 
 .show-options {
@@ -171,7 +185,7 @@
   box-sizing: content-box;
 }
 
-.background-pattern {
+.bg-pattern {
   background-image: url("doodle.png");
   padding: 90px;
 }

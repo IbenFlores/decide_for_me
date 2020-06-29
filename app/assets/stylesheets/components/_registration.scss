@@ -1,32 +1,23 @@
 #form-new-user {
   color: white;
   text-align: left;
-  width: 40%;
+  width: 30%;
   margin: 0 auto;
   margin-top: 40px;
-  border: 4px solid;
   padding: 40px;
   border-radius: 10px;
-  border-color: #ff470f;
-  background-image: linear-gradient(to bottom right, #ff470f, #8A27E4);
+  background-image: linear-gradient(to bottom right, rgba(255, 71, 15, 0.7), rgba(138, 39, 228, 0.7));
   align-item: center;
-}
-
-#form-new-user a {
-  color: white;
-}
-
-.form-actions a {
-  color: white;
-  text-align: center;
-}
-
-#button-submit {
-  margin: 0 auto;
-  color: white;
-  border-radius: 200%;
-  height: 4em;
-  width: 4em;
-  display: flex;
-  align-items: center;
+  h2 {
+    font-family: $body-font;
+    color: black;
+  }
+  a {
+    color: $blue;
+  }
+  a:hover {
+    color: $yellow;
+    font-weight: bold;
+    text-decoration: none;
+  }
 }

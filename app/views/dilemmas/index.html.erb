@@ -1,49 +1,42 @@
-<div class="container">
-  <div>
-    <div class="container mt-5 mb-3">
-      <h1>Dilemmas</h1>
-      <button type="button" class="btn btn-outline-success btn-lg">
-        <%= link_to "Post a new dilemma", new_dilemma_path %>
-       </button>
+<div class="container m-0">
+  <div class="container d-flex justify-content-between">
+    <p class="badge badge-primary text-wrap ml-5 p-1">Active</p>
+    <div class="btn btn-outline-primary" id="btn-thin">
+      <i class="fas fa-circle-notch pr-1"></i>
+      <%= link_to "Post a dilemma", new_dilemma_path %>
     </div>
-    <div class="cards">
-      <% @dilemmas.each do |dilemma| %>
-        <% if dilemma.easy? %>
-          <div class="m-3">
-            <div class="easy card-category-easy card-note-text">
-              <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
-              <p>created by <%= dilemma.user.username %></p>
-              <% option_a = dilemma.options[0].users.count%>
-              <% option_b = dilemma.options[1].users.count%>
-              <%= javascript_include_tag '//www.google.com/jsapi', 'chartkick' %>
-              <%= pie_chart({"#{dilemma.options[0].description}" => option_a, "#{dilemma.options[1].description}" => option_b}) %>
-            </div>
+  </div>
+  <!-- Dilemmas -->
+  <div class="row row-cols-4">
+  <% @dilemmas.each do |dilemma| %>
+    <div class="col-sm-6 col-lg-3">
+      <% if dilemma.easy? %>
+        <div class="p-2 m-1">
+          <div class="easy card-category-easy card-note-text">
+            <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
+            <p class="font-italic little-text">Created by <strong><%= dilemma.user.username %></strong></p>
+            <p class="px-1 d-inline little-text-border">ACTIVE FOR 1 DAY</p>
           </div>
-        <% elsif dilemma.medium? %>
-          <div class="m-3">
-            <div class="medium card-category-medium card-note-text">
-              <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
-              <p>created by <%= dilemma.user.username %></p>
-              <% option_a = dilemma.options[0].users.count%>
-              <% option_b = dilemma.options[1].users.count%>
-              <%= javascript_include_tag '//www.google.com/jsapi', 'chartkick' %>
-              <%= pie_chart({"#{dilemma.options[0].description}" => option_a, "#{dilemma.options[1].description}" => option_b}) %>
-            </div>
+        </div>
+      <% elsif dilemma.medium? %>
+        <div class="p-2">
+          <div class="medium card-category-medium card-note-text">
+            <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
+            <p class="font-italic little-text">Created by <strong><%= dilemma.user.username %></strong></p>
+            <p class="px-1 d-inline little-text-border">ACTIVE FOR 3 DAYS</p>
           </div>
-        <% elsif dilemma.hard? %>
-          <div class="m-3">
-            <div class="hard card-category-hard card-note-text">
-              <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
-              <p>created by <%= dilemma.user.username %></p>
-              <% option_a = dilemma.options[0].users.count%>
-              <% option_b = dilemma.options[1].users.count%>
-              <%= javascript_include_tag '//www.google.com/jsapi', 'chartkick' %>
-              <%= pie_chart({"#{dilemma.options[0].description}" => option_a, "#{dilemma.options[1].description}" => option_b}) %>
-            </div>
+        </div>
+      <% elsif dilemma.hard? %>
+        <div class="p-2 m-2">
+          <div class="hard card-category-hard card-note-text">
+            <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
+            <p class="font-italic little-text">Created by <strong><%= dilemma.user.username %></strong></p>
+            <p class="px-1 d-inline little-text-border">ACTIVE FOR 7 DAYS</p>
           </div>
-        <% end %>
+        </div>
       <% end %>
     </div>
+  <% end %>
   </div>
 </div>
 

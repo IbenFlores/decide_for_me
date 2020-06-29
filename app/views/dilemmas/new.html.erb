@@ -1,4 +1,4 @@
-<div class="background-pattern">
+<div class="bg-pattern">
   <div class="container narrow-viewport">
     <div class="pb-2 mb-4 border-bottom border-dark">
       <h1><strong>Dilemma</strong></h1>
@@ -25,7 +25,7 @@
           <div class="flex-grow-1">
             <div class="mb-5">
               <%= f.simple_fields_for :options do |o| %>
-                <h4 class="pb-1"><strong>Option A</strong></h4>
+                <h5 class="pb-1"><strong>Option A</strong></h5>
                 <%= o.input :description, label: false,
                 error: 'An option is limited to 140 characters.',
                 placeholder: "Type a clear and brief choice..",
@@ -34,7 +34,7 @@
             </div>
             <div class="mb-5">
               <%= f.simple_fields_for :options do |o| %>
-                <h4 class="pb-2"><strong>Option B</strong></h4>
+                <h5 class="pb-2"><strong>Option B</strong></h5>
                 <%= o.input :description, label: false,
                 error: 'An option is limited to 140 characters.',
                 placeholder: "Type a clear and brief choice..",
@@ -67,7 +67,7 @@
           input_html: { class: "background-color-input-form" } %>
         </div>
         <div class="text-center mt-4">
-          <%= f.submit "READY", class: "btn-sober" %>
+          <%= f.button :submit, "READY", class: "btn-sober" %>
         </div>
       <% end %>
 
