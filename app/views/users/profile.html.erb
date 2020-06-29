@@ -1,3 +1,16 @@
-<h1>Hello</h1>
+<div class="container-show">
+  <div class="col-lg-8">
+    <h1 style="color:white"> Hello <%= @user.username %></h1>
+    <div class="color-card bg-info">
+      <h4>
+        <i class="fas fa-vote-yea">
+        My dilemmas: <%= User.last.dilemmas.count %>
+        </i>
+      </h4>
+    </div>
+  </div>
+</div>
 
-<%= @user.username %>
+
+
+
