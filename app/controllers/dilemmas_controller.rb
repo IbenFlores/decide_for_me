@@ -1,5 +1,5 @@
 class DilemmasController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index]
   before_action :find_dilemma, only: [:show, :edit, :update, :destroy]
 
   def index
