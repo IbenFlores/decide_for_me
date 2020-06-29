@@ -16,4 +16,8 @@ class ReplyPolicy < ApplicationPolicy
   def create?
     true
   end
+
+  def mark?
+    true
+  end
 end
