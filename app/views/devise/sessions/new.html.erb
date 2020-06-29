@@ -1,20 +1,20 @@
-<div class="text-white" id="form-new-user">
-  <h2>Log in</h2>
+<div class="text-white mb-5" id="form-new-user">
+  <h2 class="pb-2 text-black text-center">Login</h2>
 
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-inputs">
       <%= f.input :email,
                   required: false,
                   autofocus: true,
-                  input_html: { autocomplete: "email" } %>
-      <%= f.input :password, label: "Secret word",
+                  input_html: { autocomplete: "email", class: "little-text" } %>
+      <%= f.input :password, label: "Password",
                   required: false,
                   input_html: { autocomplete: "current-password" } %>
       <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
     </div>
 
-    <div class="form-actions bg-light text-dark jus" style="width: 70px" id="button-submit">
-      <%= f.button :submit, "Log in" %>
+    <div class="py-2 text-center">
+      <%= f.button :submit, "LOGIN", class: "btn-sober" %>
     </div>
   <% end %>
 

@@ -60,11 +60,6 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-#icons-page i {
-  font-size: 70px;
-  color:black;
-}
-
 .gradient-container {
   display: flex;
   height: 10vh;
@@ -132,49 +127,4 @@
   width: 120px;
 }
 
-#card-individual2 {
-  box-shadow: 2px 2px 2px black;
-  background-color: white;
-  border-radius: 200%;
-  width: 9em;
-  height: 9em;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
 
-#card-individual2 a {
-  margin: 0 auto;
-  text-align: center;
-  font-size: 25px;
-  text-decoration: none;
-}
-
-#card-individual3 {
-   box-shadow: 2px 2px 2px black;
-  background-color: white;
-  border-radius: 200%;
-  width: 9em;
-  height: 9em;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-#card-individual3 a {
-  margin: 0 auto;
-  text-align: center;
-  font-size: 25px;
-  text-decoration: none;
-}
-
-#card-individual3 p {
-  margin: 0 auto;
-  text-align: center;
-  font-size: 25px;
-  text-decoration: none;
-}
