@@ -12,6 +12,12 @@ class Dilemma < ApplicationRecord
 
   accepts_nested_attributes_for :options, allow_destroy: true
 
+  after_create :assign_expiration
+
+  def can_users_vote?
+    self.expired_at > Time.zone.now
+  end
+
   def has_user_voted?(user)
     voted = false
     self.options.each do |option|
@@ -20,5 +26,18 @@ class Dilemma < ApplicationRecord
       end
     end
     voted
+  end
+
+  private
+
+  def assign_expiration
+    if self.category == "easy"
+      self.expired_at = self.created_at + 1.day
+    elsif self.category == "medium"
+      self.expired_at = self.created_at + 3.day
+    elsif self.category == "hard"
+      self.expired_at = self.created_at + 1.week
+    end
+    self.save
   end
 end
