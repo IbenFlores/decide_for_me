@@ -25,6 +25,15 @@ class RepliesController < ApplicationController
     redirect_to dilemma_path(@dilemma)
   end
 
+  def mark
+    @reply = Reply.find(params[:id])
+    @reply.users.push(current_user)
+    authorize @reply
+
+    @reply.save!
+    redirect_to dilemma_path(@reply.dilemma)
+  end
+
   private
 
   def reply_params
