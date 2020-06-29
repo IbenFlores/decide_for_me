@@ -1,5 +1,5 @@
 class DilemmasController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index]
   before_action :find_dilemma, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -36,17 +36,17 @@ class DilemmasController < ApplicationController
     end
   end
 
-  # def edit
-  # end
+  def edit
+  end
 
-  # def update
-  #   @dilemma.update(dilemma_params)
-  #   if @dilemma.save
-  #     redirect_to dilemma_path(dilemma)
-  #   else
-  #     render :edit_dilemma
-  #   end
-  # end
+  def update
+    @dilemma.update(dilemma_params)
+    if @dilemma.save
+      redirect_to dilemma_path(dilemma)
+    else
+      render :edit_dilemma
+    end
+  end
 
   # def destroy
   #   @dilemma.destroy
