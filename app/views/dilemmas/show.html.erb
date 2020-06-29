@@ -16,25 +16,25 @@
             <div class="flex-grow-1 px-3 text-dark">
               <i class="fas fa-comment pl-3 pr-2 text-dark"></i>
               <%= reply.answer %>
-
-              <!-- click on an icon -->
+              <!-- click on the icon, sum +1 to reply_votes -->
               <% if reply.has_user_marked_reply?(current_user) %>
-                <%= reply.users.count %>
+                <span class="px-3">
+                  <i class="fas fa-star text-primary"></i>
+                  <span class="little-text text-primary"><%= reply.users.count %></span>
+                </span>
               <% else %>
-                <i class="fas fa-star px-2 text-primary" style="font-size: 20px;"></i>
-                <%= link_to reply.users.count, mark_path(reply.id) %>
+                <%= link_to mark_path(reply.id) do %>
+                  <span class="px-3">
+                    <i class="fas fa-star icon-reply"></i>
+                    <span class="little-text text-primary"><%= reply.users.count %></span>
+                  </span>
+<!--                   <span>
+                    <i class="fas fa-times icon-reply icon-reply-negative"></i>
+                    <span class="little-text text-primary"><%= reply.users.count %></span>
+                  </span> -->
+                <% end %>
               <% end %>
-              <!-- sum +1 to reply_votes -->
-
-
               <!-- reflect the count of reply_votes on a user's points -->
-
-
-
-
-
-
-              <i class="fas fa-times text-primary" style="font-size: 20px;"></i>
             </div>
           </div>
           <div class="rounded px-3 mx-4 mb-4 mt-0">
