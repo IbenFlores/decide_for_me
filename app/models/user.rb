@@ -16,4 +16,9 @@ class User < ApplicationRecord
   def send_welcome_email
     UserMailer.send("welcome_email", self).deliver_now
   end
+
+  def self.show_dilemma
+    @users = User.all
+    @user = user.dilemma.last
+  end
 end
