@@ -37,7 +37,23 @@
     </div>
     <!-- Mariana  -->
     <!-- Display users dilemmas -->
-    <div class="col-sm-12 col-lg-4"></div>
+    <div class="col-sm-12 col-lg-4 charts text-center">
+      <h1 class="m-2 mt-3">My dilemmas</h1>
+      <% current_user.dilemmas.each do |dilemma| %>
+        <div class="mt-5">
+          <div>
+            <p class="text-white font-italic text-left"><%= dilemma.question %></p>
+          </div>
+          <div class="chart">
+            <% option_a = dilemma.options[0].users.count%>
+            <% option_b = dilemma.options[1].users.count%>
+            <%= javascript_include_tag '//www.google.com/jsapi', 'chartkick' %>
+            <%= pie_chart({"#{dilemma.options[0].description}" => option_a,
+            "#{dilemma.options[1].description}" => option_b}) %>
+          </div>
+        </div>
+      <% end %>
+    </div>
     <!-- Top 10 dilemmas -->
     <div class="col-sm-12 col-lg-4"></div>
   </div>
