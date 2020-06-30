@@ -1,7 +1,7 @@
 require 'open-uri'
 
 puts "Destroying all users and their dilemmas"
-User.destroy_all
+User.destroy_all if Rails.env.development?
 
 puts "DB restored"
 
