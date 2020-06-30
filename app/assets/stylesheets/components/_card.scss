@@ -136,9 +136,9 @@
 
 .narrow-viewport {
   width: 60%;
-  background-color: $blue;
-  padding: 80px;
+  padding: 90px;
   margin: 0 auto;
+  background-color: $blue;
   box-sizing: content-box;
   h5 {
     color: black;
@@ -170,11 +170,6 @@
 .card-box-show {
   width: 70%;
   box-sizing: content-box;
-}
-
-.bg-pattern {
-  background-image: url("doodle.png");
-  padding: 90px;
 }
 
 .circle-percentage {
@@ -210,3 +205,14 @@
   min-height: 15em;
   width:  15em;
 }
+
+.context-box {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.dilemma-form-background {
+  background-image: url("doodle.png");
+  padding: 90px;
+}
+

@@ -3,12 +3,15 @@
     <h2><%= dilemma.question %></h2>
     <p class="pl-2"><strong><%= dilemma.user.username %>'s</strong> dilemma</p>
     <% if dilemma.easy? %>
-      <p class="ml-4 px-1 d-inline little-text-border">ACTIVE FOR 1 DAY</p>
+      <p class="ml-4 px-2 py-1 d-inline little-text-border">ACTIVE FOR 1 DAY</p>
     <% elsif dilemma.medium? %>
-      <p class="ml-4 px-1 d-inline little-text-border">ACTIVE FOR 3 DAYS</p>
+      <p class="ml-4 px-2 py-1 d-inline little-text-border">ACTIVE FOR 3 DAYS</p>
     <% elsif dilemma.hard? %>
-      <p class="ml-4 px-1 d-inline little-text-border">ACTIVE FOR 7 DAYS</p>
+      <p class="ml-4 px-2 py-1 d-inline little-text-border">ACTIVE FOR 7 DAYS</p>
     <% end %>
+  </div>
+  <div class="context-box">
+    <p class="font-weight-lighter">Context context context</p>
   </div>
   <div class="container d-flex flex-column justify-content-center">
     <div class="px-5 d-flex justify-content-between py-3">

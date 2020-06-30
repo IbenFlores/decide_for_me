@@ -15,11 +15,11 @@
               <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
               <p class="font-italic little-text">Created by <strong><%= dilemma.user.username %></strong></p>
                <% if dilemma.easy? %>
-                <p class="px-1 d-inline little-text-border">ACTIVE FOR 1 DAY</p>
+                <p class="px-2 py-1 d-inline little-text-border">ACTIVE FOR 1 DAY</p>
               <% elsif dilemma.medium? %>
-                <p class="px-1 d-inline little-text-border">ACTIVE FOR 3 DAYS</p>
+                <p class="px-2 py-1 d-inline little-text-border">ACTIVE FOR 3 DAYS</p>
               <% elsif dilemma.hard? %>
-                <p class="px-1 d-inline little-text-border">ACTIVE FOR 7 DAYS</p>
+                <p class="px-2 py-1 d-inline little-text-border">ACTIVE FOR 7 DAYS</p>
               <% end %>
             </div>
           </div>
@@ -40,11 +40,11 @@
                   <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
                   <p class="font-italic little-text">Created by <strong><%= dilemma.user.username %></strong></p>
                    <% if dilemma.easy? %>
-                    <p class="px-1 d-inline little-text-border">ACTIVE FOR 1 DAY</p>
+                    <p class="px-2 py-1 d-inline little-text-border">ACTIVE FOR 1 DAY</p>
                   <% elsif dilemma.medium? %>
-                    <p class="px-1 d-inline little-text-border">ACTIVE FOR 3 DAYS</p>
+                    <p class="px-2 py-1 d-inline little-text-border">ACTIVE FOR 3 DAYS</p>
                   <% elsif dilemma.hard? %>
-                    <p class="px-1 d-inline little-text-border">ACTIVE FOR 7 DAYS</p>
+                    <p class="px-2 py-1 d-inline little-text-border">ACTIVE FOR 7 DAYS</p>
                   <% end %>
                 </div>
               </div>
