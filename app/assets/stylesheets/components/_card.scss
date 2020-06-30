@@ -10,6 +10,15 @@
   position: relative;
 }
 
+.card-tape-featured {
+  height: 20px;
+  width: 60px;
+  background-color: rgba(214,165,19,0.8);
+  position: absolute;
+  top: -12px;
+  right: 87px;
+}
+
 .card-category-easy:after {
   content: "";
   position: absolute;
