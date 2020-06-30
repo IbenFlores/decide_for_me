@@ -129,6 +129,9 @@ $brown: #786450;
 }
 
 .charts {
+  width: 200px;
+  margin: 0 auto;
+  box-sizing: border-box;
   h1 {
     color: $blue;
     font-family: $body-font;
@@ -137,6 +140,7 @@ $brown: #786450;
 }
 
 .chart {
+  box-sizing: border-box;
   width: 80%;
   margin: 0 auto;
 }
