@@ -35,7 +35,7 @@
         </div>
       </div>
     </div>
-    <!-- Mariana  -->
+
     <!-- Display users dilemmas -->
     <div class="col-sm-12 col-lg-4 charts text-center">
       <h1 class="m-2 mt-3">My dilemmas</h1>
@@ -54,8 +54,19 @@
         </div>
       <% end %>
     </div>
-    <!-- Top 10 dilemmas -->
-    <div class="col-sm-12 col-lg-4"></div>
+    <!-- All users' first dilemma -->
+    <div class="col-sm-12 col-lg-4">
+      <div class="charts">
+        <h1 class="m-2 mt-3">Feed</h1>
+        <% @users.each do |user|%>
+          <% if user.dilemmas.any? %>
+            <div class="badge-danger">
+              <%= user.dilemmas.first[:question] %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
 <div class="container">
