@@ -11,17 +11,17 @@
 
           <div class="name"><%= @user.username %></div>
           <div class="description">
-              <p> <%= @user.bio %> </p>
-            </div>
-
-          <div class="actions">
-            <button class="btn">Message</button>
+              <p> <%= current_user.bio %> </p>
           </div>
+
+          <!-- <div class="actions">
+            <button class="btn">Message</button>
+          </div> -->
         </div>
 
         <div class="stats">
           <div class="box">
-            <span class="value"><%= User.last.dilemmas.count %></span>
+            <span class="value"><%= current_user.dilemmas.count %></span>
             <span class="parameter">Dilemmas</span>
           </div>
           <div class="box">
@@ -29,7 +29,7 @@
             <span class="parameter">Badges</span>
           </div>
           <div class="box">
-            <span class="value"><%= User.last.userpoints %></span>
+            <span class="value"><%= current_user.userpoints %></span>
             <span class="parameter">User Points</span>
           </div>
         </div>

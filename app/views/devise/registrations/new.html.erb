@@ -20,6 +20,10 @@
                   required: false,
                   placeholder: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                   input_html: { autocomplete: "new-password", class: "little-text" } %>
+      <%= f.input :bio,
+                  required: false,
+                  placeholder: "Tell us something about yourself",
+                  input_html: { autocomplete: "bio", class: "description" } %>
       <%= f.input :avatar, label: "Choose a profile picture", as: :file,
                   input_html: { autocomplete: "new-password", class: "little-text" } %>
     </div>
