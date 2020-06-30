@@ -45,6 +45,6 @@ class DilemmasController < ApplicationController
   end
 
   def dilemma_params
-    params.require(:dilemma).permit(:question, :expired_at, :photo, {options_attributes: [:description]})
+    params.require(:dilemma).permit(:question, :context, :expired_at, :photo, {options_attributes: [:description]})
   end
 end
