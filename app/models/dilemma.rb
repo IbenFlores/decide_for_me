@@ -33,6 +33,10 @@ class Dilemma < ApplicationRecord
     @dilemmas.first(10)
   end
 
+  def self.sample
+    @dilemma = Dilemma.all.sample
+  end
+
   private
 
   def assign_expiration
