@@ -60,7 +60,7 @@
         <h1 class="m-2 mt-3">Feed</h1>
         <% @users.each do |user|%>
           <% if user.dilemmas.any? %>
-            <div class="badge-danger">
+            <div class="badge-danger m-2">
               <%= user.dilemmas.first[:question] %>
             </div>
           <% end %>
@@ -69,13 +69,3 @@
     </div>
   </div>
 </div>
-<div class="container">
-  <% current_user.replies.each do |reply| %>
-    <p>hola</p>
-  <% end %>
-</div>
-
-
-
-
-
