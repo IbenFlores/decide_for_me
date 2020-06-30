@@ -1,79 +1,72 @@
-<div class="container m-0">
-
+<div class="container-fluid">
   <!-- Dilemmas -->
   <div class="row row-cols-4">
     <!-- Dilemmas featured-->
     <div class="col-sm-6 col-lg-3">
       <div class="container d-flex mt-4">
-        <p class="badge badge-primary text-wrap ml-5 p-1 mr-2">Featured</p>
-        <i class="fas fa-arrow-down pl-1 text-primary"></i>
+        <p class="badge badge-info text-wrap ml-5 p-1 mr-2">Featured</p>
+        <i class="fas fa-star pl-1 text-info"></i>
       </div>
       <% @dilemmas.top_10.each do |dilemma|%>
-        <% if dilemma.easy? %>
-          <div class="p-2 m-1">
-            <div class="m-2 easy card-category-easy card-note-text">
-              <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
-              <p class="font-italic little-text">Created by <strong><%= dilemma.user.username %></strong></p>
+        <div class="p-2 m-1 mb-4">
+          <div class="m-2 card-ghost <%= dilemma.category %> card-category-<%= dilemma.category %> card-note-text">
+            <div class="card-tape-featured"></div>
+            <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
+            <p class="font-italic little-text">Created by <strong><%= dilemma.user.username %></strong></p>
+             <% if dilemma.easy? %>
               <p class="px-1 d-inline little-text-border">ACTIVE FOR 1 DAY</p>
-            </div>
-          </div>
-        <% elsif dilemma.medium? %>
-          <div class="p-2 m-1">
-            <div class="m-2 medium card-category-medium card-note-text">
-              <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
-              <p class="font-italic little-text">Created by <strong><%= dilemma.user.username %></strong></p>
+            <% elsif dilemma.medium? %>
               <p class="px-1 d-inline little-text-border">ACTIVE FOR 3 DAYS</p>
-            </div>
-          </div>
-        <% elsif dilemma.hard? %>
-          <div class="p-2 m-1">
-            <div class="m-2 hard card-category-hard card-note-text">
-              <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
-              <p class="font-italic little-text">Created by <strong><%= dilemma.user.username %></strong></p>
+            <% elsif dilemma.hard? %>
               <p class="px-1 d-inline little-text-border">ACTIVE FOR 7 DAYS</p>
-            </div>
+            <% end %>
           </div>
-        <% end %>
+        </div>
       <% end %>
     </div>
     <!-- Dilemmas active-->
-    <div class="col-sm-6 col-lg-9">
-      <div class="container d-flex justify-content-between mt-4 ml-4">
-        <p class="badge badge-primary text-wrap ml-5 p-1">Active</p>
-        <div class="btn btn-outline-primary" id="btn-thin">
+    <div class="col-sm-6 col-lg-6">
+      <div class="container d-flex justify-content-center align-items-center mt-4 mb-1 ml-4">
+        <p class="badge badge-primary text-wrap ml-2 p-1 mr-5">Active</p>
+        <div class="btn btn-outline-primary ml-5" id="btn-thin">
           <i class="fas fa-circle-notch pr-1"></i>
           <%= link_to "Post a dilemma", new_dilemma_path %>
         </div>
       </div>
-      <div class="container">
-        <% @dilemmas.each do |dilemma| %>
-          <% if dilemma.easy? %>
-            <div class="p-2 m-1">
-              <div class="m-2 easy card-category-easy card-note-text">
-                <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
-                <p class="font-italic little-text">Created by <strong><%= dilemma.user.username %></strong></p>
-                <p class="px-1 d-inline little-text-border">ACTIVE FOR 1 DAY</p>
+      <div class="dilemmas-container d-flex">
+        <div class="row">
+          <% @dilemmas.each do |dilemma| %>
+              <div class="col-6">
+                <div class="mt-3 mb-4 card-ghost <%= dilemma.category %> card-category-<%= dilemma.category %> card-note-text">
+                  <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
+                  <p class="font-italic little-text">Created by <strong><%= dilemma.user.username %></strong></p>
+                   <% if dilemma.easy? %>
+                    <p class="px-1 d-inline little-text-border">ACTIVE FOR 1 DAY</p>
+                  <% elsif dilemma.medium? %>
+                    <p class="px-1 d-inline little-text-border">ACTIVE FOR 3 DAYS</p>
+                  <% elsif dilemma.hard? %>
+                    <p class="px-1 d-inline little-text-border">ACTIVE FOR 7 DAYS</p>
+                  <% end %>
+                </div>
               </div>
-            </div>
-          <% elsif dilemma.medium? %>
-            <div class="p-2 m-1">
-              <div class="m-2 medium card-category-medium card-note-text">
-                <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
-                <p class="font-italic little-text">Created by <strong><%= dilemma.user.username %></strong></p>
-                <p class="px-1 d-inline little-text-border">ACTIVE FOR 3 DAYS</p>
-              </div>
-            </div>
-          <% elsif dilemma.hard? %>
-            <div class="p-2 m-1">
-              <div class="m-2 hard card-category-hard card-note-text">
-                <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
-                <p class="font-italic little-text">Created by <strong><%= dilemma.user.username %></strong></p>
-                <p class="px-1 d-inline little-text-border">ACTIVE FOR 7 DAYS</p>
-              </div>
-            </div>
           <% end %>
-        <% end %>
+        </div>
       </div>
+    </div>
+    <!-- Dilemmas archive >>>>> CHANGE CODE TO EXPIRED <<<<<-->
+    <div class="col-sm-6 col-lg-3">
+      <div class="container d-flex mt-4">
+        <p class="badge badge-danger text-wrap ml-5 p-1 mr-2">Archive</p>
+        <i class="fas fa-arrow-down pl-1 text-danger"></i>
+      </div>
+      <% @dilemmas.top_10.each do |dilemma|%>
+        <div class="p-2 m-1 mb-2">
+          <div class="m-2 card-ghost <%= dilemma.category %> card-category-<%= dilemma.category %> card-note-text">
+            <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
+            <p class="font-italic little-text">Created by <strong><%= dilemma.user.username %></strong></p>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
