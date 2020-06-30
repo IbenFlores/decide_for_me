@@ -1,12 +1,11 @@
-<div class="container m-0">
-
+<div class="container m-1">
   <!-- Dilemmas -->
   <div class="row row-cols-4">
     <!-- Dilemmas featured-->
     <div class="col-sm-6 col-lg-3">
       <div class="container d-flex mt-4">
-        <p class="badge badge-primary text-wrap ml-5 p-1 mr-2">Featured</p>
-        <i class="fas fa-arrow-down pl-1 text-primary"></i>
+        <p class="badge badge-info text-wrap ml-5 p-1 mr-2">Featured</p>
+        <i class="fas fa-star pl-1 text-info"></i>
       </div>
       <% @dilemmas.top_10.each do |dilemma|%>
         <% if dilemma.easy? %>
@@ -37,9 +36,10 @@
       <% end %>
     </div>
     <!-- Dilemmas active-->
-    <div class="col-sm-6 col-lg-9">
-      <div class="container d-flex justify-content-between mt-4 ml-4">
-        <p class="badge badge-primary text-wrap ml-5 p-1">Active</p>
+    <div class="col-sm-6 col-lg-6">
+      <div class="container d-flex justify-content-center mt-4 ml-4">
+        <p class="badge badge-primary text-wrap ml-5 p-1 mr-2">Active</p>
+        <i class="fas fa-arrow-down pl-1 text-primary mr-5"></i>
         <div class="btn btn-outline-primary" id="btn-thin">
           <i class="fas fa-circle-notch pr-1"></i>
           <%= link_to "Post a dilemma", new_dilemma_path %>
@@ -74,6 +74,40 @@
           <% end %>
         <% end %>
       </div>
+    </div>
+    <!-- Dilemmas archive >>>>> CHANGE CODE TO EXPIRED <<<<<-->
+    <div class="col-sm-6 col-lg-3">
+      <div class="container d-flex mt-4">
+        <p class="badge badge-danger text-wrap ml-5 p-1 mr-2">Archive</p>
+        <i class="fas fa-arrow-down pl-1 text-danger"></i>
+      </div>
+      <% @dilemmas.top_10.each do |dilemma|%>
+        <% if dilemma.easy? %>
+          <div class="p-2 m-1">
+            <div class="m-2 easy card-category-easy card-note-text">
+              <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
+              <p class="font-italic little-text">Created by <strong><%= dilemma.user.username %></strong></p>
+              <p class="px-1 d-inline little-text-border">ACTIVE FOR 1 DAY</p>
+            </div>
+          </div>
+        <% elsif dilemma.medium? %>
+          <div class="p-2 m-1">
+            <div class="m-2 medium card-category-medium card-note-text">
+              <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
+              <p class="font-italic little-text">Created by <strong><%= dilemma.user.username %></strong></p>
+              <p class="px-1 d-inline little-text-border">ACTIVE FOR 3 DAYS</p>
+            </div>
+          </div>
+        <% elsif dilemma.hard? %>
+          <div class="p-2 m-1">
+            <div class="m-2 hard card-category-hard card-note-text">
+              <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
+              <p class="font-italic little-text">Created by <strong><%= dilemma.user.username %></strong></p>
+              <p class="px-1 d-inline little-text-border">ACTIVE FOR 7 DAYS</p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>
