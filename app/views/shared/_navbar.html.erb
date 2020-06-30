@@ -12,6 +12,12 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
+        <li class="nav-item">
+          <div class="btn btn-outline-primary mx-5 mt-2 little-text" id="btn-thin">
+            <i class="fas fa-circle-notch pr-1"></i>
+            <%= link_to "Post a dilemma", new_dilemma_path %>
+          </div>
+        </li>
         <li class="nav-item form-inline pr-5">
           <%= form_tag dilemmas_path, method: :get do %>
             <%= text_field_tag :query,
@@ -20,12 +26,6 @@
               placeholder: "Find dilemmas"%>
             <%= submit_tag "Search", class: "btn btn-primary little-text" %>
           <% end %>
-        </li>
-        <li class="nav-item">
-          <div class="btn btn-outline-primary ml-5" id="btn-thin">
-            <i class="fas fa-circle-notch pr-1"></i>
-            <%= link_to "Post a dilemma", new_dilemma_path %>
-          </div>
         </li>
         <li class="nav-item active pr-2 pl-5 pt-1 little-text" id="text-blue">
           <%= link_to "ABOUT", about_path, class: "nav-link" %>
