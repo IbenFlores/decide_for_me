@@ -37,8 +37,8 @@
             <%= image_tag "default_avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "My profile", "#", class: "dropdown-item" %>
-            <%= link_to "Browse dilemmas", "#", class: "dropdown-item" %>
+            <%= link_to "My profile", profile_path, class: "dropdown-item" %>
+            <%= link_to "Browse dilemmas", dilemmas_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
