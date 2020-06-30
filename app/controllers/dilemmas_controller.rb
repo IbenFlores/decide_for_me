@@ -13,6 +13,7 @@ class DilemmasController < ApplicationController
   end
 
   def show
+    @sample = Dilemma.all.sample
     @reply = Reply.new
   end
 
@@ -35,24 +36,6 @@ class DilemmasController < ApplicationController
       render :new
     end
   end
-
-  def edit
-  end
-
-  def update
-    @dilemma.update(dilemma_params)
-    if @dilemma.save
-      redirect_to dilemma_path(dilemma)
-    else
-      render :edit_dilemma
-    end
-  end
-
-  # def destroy
-  #   @dilemma.destroy
-
-  #   redirect_to dilemmas_path
-  # end
 
   private
 
