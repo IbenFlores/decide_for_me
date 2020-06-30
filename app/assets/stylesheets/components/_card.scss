@@ -209,6 +209,12 @@
 .context-box {
   width: 60%;
   margin: 0 auto;
+  font-size: 15px;
+}
+
+.context-box:first-letter {
+  padding-left: 5px;
+  font-size: 17px;
 }
 
 .dilemma-form-background {
