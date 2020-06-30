@@ -27,11 +27,11 @@
       </div>
     </div>
     <!-- Dilemmas active-->
-    <div class="col-sm-6 col-lg-6" id="main-block">
+    <div class="col-sm-6 col-lg-6">
       <div class="container d-flex justify-content-center align-items-center mt-4 mb-1 ml-4">
         <p class="badge badge-primary text-wrap ml-2 p-1 mr-5">Active</p>
       </div>
-      <div class="dilemmas-container d-flex">
+      <div class="dilemmas-container d-flex" id="main-block">
         <div class="row">
           <% @dilemmas.each do |dilemma| %>
             <% if dilemma.can_users_vote? %>
@@ -54,21 +54,23 @@
       </div>
     </div>
     <!-- Dilemmas archive >>>>> CHANGE CODE TO EXPIRED <<<<<-->
-    <div class="col-sm-6 col-lg-3" id="main-block">
+    <div class="col-sm-6 col-lg-3">
       <div class="container d-flex mt-4">
         <p class="badge badge-danger text-wrap ml-5 p-1 mr-2">Expired and archived</p>
         <i class="fas fa-arrow-down pl-1 text-danger"></i>
       </div>
-      <% @dilemmas.each do |dilemma|%>
-        <% unless dilemma.can_users_vote? %>
-          <div class="p-2 m-1 mb-2">
-            <div class="m-2 card-ghost <%= dilemma.category %> card-category-<%= dilemma.category %> card-note-text">
-              <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
-              <p class="font-italic little-text">Created by <strong><%= dilemma.user.username %></strong></p>
+      <div id="main-block">
+        <% @dilemmas.each do |dilemma|%>
+          <% unless dilemma.can_users_vote? %>
+            <div class="p-2 m-1 mb-2">
+              <div class="m-2 card-ghost <%= dilemma.category %> card-category-<%= dilemma.category %> card-note-text">
+                <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
+                <p class="font-italic little-text">Created by <strong><%= dilemma.user.username %></strong></p>
+              </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>
