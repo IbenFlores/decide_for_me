@@ -1,25 +1,47 @@
-<h1>HOLA!</h1>
-
 <% if dilemma.can_users_vote? %>
-      <div class="col-lg-4 px-4">
-        <div class="pb-5 pt-4 text-white">
-          <i class="fas fa-comments"></i>
-          <p class="badge badge-secondary text-wrap p-1"><strong>ADD A COMMENT</strong></p>
-          <div>
-            <%= simple_form_for [dilemma, @reply], remote: true do |f| %>
-              <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-              <%= f.input :answer, label: "Tell us what you really think:",
-              error: 'A comment cannot be blank and must have 280 characters maximum.',
-              placeholder: "Type your comment",
-              input_html: { class: "background-color-comment-form little-text" } %>                <%= f.button :submit, "Post", class: "btn-sober" %>
-              <% end %>
-          </div>
-        </div>
-      <% else %>
-        <div class="col-lg-4 px-4">
-          <div class="pb-5 pt-4 text-white">
-          <h3>Dilemma has expired</h3>
-          <p>Users cannot vote or reply anymore</p>
-          </div>
+  <div class="col-lg-4 px-4">
+    <div class="pb-5 pt-4 text-white">
+      <i class="fas fa-comments"></i>
+      <p class="badge badge-secondary text-wrap p-1"><strong>ADD A COMMENT</strong></p>
+      <div>
+        <%= simple_form_for [dilemma, @reply], remote: true do |f| %>
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+          <%= f.input :answer, label: "Tell us what you really think:",
+          error: 'A comment cannot be blank and must have 280 characters maximum.',
+          placeholder: "Type your comment",
+          input_html: { class: "background-color-comment-form little-text" } %>
+          <%= f.button :submit, "Post", class: "btn-sober" %>
+        <% end %>
+      </div>
+    </div>
+    <!-- Link to all dilemmas / Featured -->
+    <div class="d-flex justify-content-around pt-5">
+      <div class="btn btn-outline-primary pr-2 mb-2" id="btn-thin">
+        <i class="fas fa-circle-notch pr-1"></i>
+        <%= link_to "All dilemmas", dilemmas_path %>
+      </div>
+      <% if @dilemma.can_users_vote? %>
+        <div class="px-2 mt-2 rounded-top bg-secondary text-center">
+          <p class="badge badge-primary text-wrap p-1">Featured</p>
+          <i class="fas fa-arrow-down pl-1 text-primary"></i>
         </div>
       <% end %>
+    </div>
+    <!-- Featured section -->
+    <div class="pl-4 pt-5 bg-secondary">
+      <div class="easy card-category-easy card-note-text">
+         <%= link_to "#{@dilemma.question}", dilemma_path(@dilemma) %>
+         <p class="font-italic little-text pb-5">Created by <strong><%= @dilemma.user.username %></strong></p>
+         <p><%= @dilemma %></p>
+         <span class="pt-5 text-monospace">Active for 1 day</span>
+      </div>
+    </div>
+  </div>
+<% else %>
+  <div class="col-lg-4 px-4">
+    <div class="pb-5 pt-4 text-white">
+      <h3>Dilemma has expired</h3>
+      <p>Users cannot vote or reply anymore</p>
+    </div>
+  </div>
+<% end %>

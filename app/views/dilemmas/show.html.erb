@@ -1,49 +1,16 @@
-
 <div class="container-show m-0">
   <div class="row">
     <div class="col-lg-8 <%= @dilemma.category %>">
-  <!-- Dilemma card -->
+      <!-- Dilemma card -->
       <%= render "display-show", dilemma: @dilemma %>
-  <!-- Comments section -->
+      <!-- Comments section -->
       <div class="mt-5" id="replies" data-chatroom-id="<%= @dilemma.id%>">
         <% @dilemma.replies.each do |reply| %>
           <%= render "replies/display-replies", reply: reply %>
         <% end %>
       </div>
     </div>
-  <!-- Form for comments -->
+    <!-- Form for comments -->
     <%= render "display-reply", dilemma: @dilemma %>
-  <!-- Link to all dilemmas -->
-         <div class="d-flex justify-content-around pt-5">
-          <div class="btn btn-outline-primary pr-2 mb-2" id="btn-thin">
-            <i class="fas fa-circle-notch pr-1"></i>
-            <%= link_to "All dilemmas", dilemmas_path %>
-          </div>
-        <% if @dilemma.can_users_vote? %>
-          <div class="px-2 mt-2 rounded-top bg-secondary text-center">
-            <p class="badge badge-primary text-wrap p-1">Featured</p>
-            <i class="fas fa-arrow-down pl-1 text-primary"></i>
-          </div>
-        </div>
-      <% else %>
-      <% end %>
-  <!-- Featured section -->
-      <% if @dilemma.can_users_vote? %>
-        <div class="pl-4 pt-5 bg-secondary">
-          <div class="easy card-category-easy card-note-text">
-             <%= link_to "#{@dilemma.question}", dilemma_path(@dilemma) %>
-             <p class="font-italic little-text pb-5">Created by <strong><%= @dilemma.user.username %></strong></p>
-             <p><%= @dilemma %></p>
-             <span class="pt-5 text-monospace">Active for 1 day</span>
-          </div>
-        </div>
-      <% else %>
-      <% end %>
-    </div>
   </div>
 </div>
-
-
-
-
-
