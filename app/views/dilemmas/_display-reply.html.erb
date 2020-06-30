@@ -30,9 +30,9 @@
     <!-- Featured section -->
     <div class="pl-4 pt-5 bg-secondary">
       <div class="easy card-category-easy card-note-text">
-         <%= link_to "#{@dilemma.question}", dilemma_path(@dilemma) %>
+         <%= link_to "#{Dilemma.sample.question}", dilemma_path(@dilemma) %>
          <p class="font-italic little-text pb-5">Created by <strong><%= @dilemma.user.username %></strong></p>
-         <p><%= @dilemma %></p>
+         <!-- <p><%= Dilemma.sample %></p> -->
          <span class="pt-5 text-monospace">Active for 1 day</span>
       </div>
     </div>

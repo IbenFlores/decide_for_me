@@ -37,5 +37,5 @@
     </div>
   </div>
 <div class="rounded px-3 mx-4 mb-4 mt-0">
-  <p class="font-weight-lighter text-dark" style="font-size: 10px;"><%= "Posted at #{@dilemma.created_at}" %></p>
+  <p class="font-weight-lighter text-dark" style="font-size: 10px;"><%= "Posted #{time_ago_in_words(reply.created_at)} ago" %></p>
 </div>
