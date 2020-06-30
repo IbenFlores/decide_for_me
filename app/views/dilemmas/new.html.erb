@@ -1,16 +1,16 @@
-<div class="bg-pattern">
-  <div class="container narrow-viewport">
-    <div class="pb-2 mb-4 border-bottom border-dark">
-      <h1><strong>Dilemma</strong></h1>
+<div class="dilemma-form-background">
+  <div class="narrow-viewport rounded">
+    <div class="pb-2 mb-2 border-dark">
+      <h1 class="text-center"><strong>Dilemma</strong></h1>
     </div>
     <div>
       <%= simple_form_for @dilemma do |f| %>
-        <div class="container d-flex mb-4 border-bottom border-dark">
+        <div class="container d-flex my-4 pt-4 border-bottom border-top border-dark">
           <div class="narrow-box mb-3">
             <h5><strong>Your dilemma</strong></h5>
-            <p>This is your core question. Try to give others a brief context.</p>
+            <p>This is your core question.</p>
           </div>
-          <div class="flex-grow-1">
+          <div class="flex-grow-1 pr-5">
             <%= f.input :question, label: false,
             error: 'A question is mandatory, please specify one',
             placeholder: "My dilemma is...",
@@ -19,10 +19,22 @@
         </div>
         <div class="container d-flex mb-4 border-bottom border-dark">
           <div class="narrow-box mb-3">
+            <h5><strong>Context</strong></h5>
+            <p>Try to give others a brief context of your dilemma.</p>
+          </div>
+          <div class="flex-grow-1 pr-5">
+            <%= f.input :context, label: false,
+            error: 'Please give other users a context for your dilemma',
+            placeholder: "Brief context of your dilemma",
+            input_html: { class: "background-color-input-form" } %>
+          </div>
+        </div>
+        <div class="container d-flex mb-4 border-bottom border-dark">
+          <div class="narrow-box mb-3">
             <h5><strong>Options</strong></h5>
             <p>Tell users which options you can't choose between and let others help you decide which one is better.</p>
           </div>
-          <div class="flex-grow-1">
+          <div class="flex-grow-1 pr-5">
             <div class="mb-5">
               <%= f.simple_fields_for :options do |o| %>
                 <h5 class="pb-1"><strong>Option A</strong></h5>
@@ -47,13 +59,14 @@
           <div class="narrow-box mb-3">
             <h5><strong>Type</strong></h5>
             <p>
-              <em>How hard is your dilemma?</em> <br>
-              <strong>Easy</strong> will be archived after a day. <br>
-              <strong>Medium</strong> after 72 hours. <br>
-              <strong>Hard</strong> after a week.
+              <em>How complex is your dilemma?</em> <br>
+              Users will be able to interact: <br>
+              <strong>Easy</strong> for a day. <br>
+              <strong>Medium</strong> for 3 days. <br>
+              <strong>Hard</strong> for a week.
           </p>
           </div>
-          <div class="flex-grow-1">
+          <div class="flex-grow-1 pr-5">
             <%= f.input :category, collection: Dilemma.categories,
               as: :select, label: false,
               error: 'Choose the level of difficulty',
