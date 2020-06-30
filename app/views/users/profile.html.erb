@@ -1,69 +1,49 @@
-<!-- <div class="container-show">
-  <div class="col-lg-8">
-    <h1 style="color:white"> Hello <%= @user.username %></h1>
-    <div class="color-card bg-info">
-      <h4>
-        <i class="fas fa-vote-yea">
-        My dilemmas: <%= User.last.dilemmas.count %>
-        </i>
-      </h4>
-    </div>
-  </div>
-</div> -->
+<div class="container-fluid">
+  <div class="row">
+    <!-- User profile card -->
+    <div class="col-sm-12 col-lg-4">
+      <div class="center">
+        <div class="profile">
+          <div class="image">
+            <div class="circle-1"></div>
+            <%= cl_image_tag current_user.avatar.key, class: "circle-1" %>
+          </div>
 
-<!-- <div class="wrapper">
+          <div class="name"><%= @user.username %></div>
+          <div class="description">
+              <p> <%= @user.bio %> </p>
+            </div>
 
-  <div class="profile">
-    <%= cl_image_tag current_user.avatar.key, class: "thumbnail" %>
-    <h3 class="name"><%= @user.username %></h3>
-    <p class="description"><%= @user.bio %></p>
-  </div>
-
-    <div class="icon">
-      <h4>My dilemmas: <%= User.last.dilemmas.count %>
-        <i class="fas fa-vote-yea"></i>
-      </h4>
-    </div>
-</div> -->
-
-
-<div class="frame">
-  <div class="center">
-
-    <div class="profile">
-      <div class="image">
-        <div class="circle-1"></div>
-        <div class="circle-2"></div>
-        <%= cl_image_tag current_user.avatar.key, class: "circle-1 circle-2" %>
-      </div>
-
-      <div class="name"><%= @user.username %></div>
-      <div class="description">
-        <%= @user.bio %>
-          <p> Chocolate Lover </p>
+          <div class="actions">
+            <button class="btn">Message</button>
+          </div>
         </div>
 
-      <div class="actions">
-        <button class="btn">Message</button>
+        <div class="stats">
+          <div class="box">
+            <span class="value"><%= User.last.dilemmas.count %></span>
+            <span class="parameter">Dilemmas</span>
+          </div>
+          <div class="box">
+            <span class="value">2</span>
+            <span class="parameter">Badges</span>
+          </div>
+          <div class="box">
+            <span class="value"><%= User.last.userpoints %></span>
+            <span class="parameter">User Points</span>
+          </div>
+        </div>
       </div>
     </div>
-
-    <div class="stats">
-      <div class="box">
-        <span class="value"><%= User.last.dilemmas.count %></span>
-        <span class="parameter">Dilemmas</span>
-      </div>
-      <div class="box">
-        <span class="value">2</span>
-        <span class="parameter">Badges</span>
-      </div>
-      <div class="box">
-        <span class="value"><%= User.last.userpoints %></span>
-        <span class="parameter">User Points</span>
-      </div>
-    </div>
+    <!-- Mariana  -->
+    <!-- Display users dilemmas -->
+    <div class="col-sm-12 col-lg-4"></div>
+    <!-- Top 10 dilemmas -->
+    <div class="col-sm-12 col-lg-4"></div>
   </div>
 </div>
+
+
 
 
 
