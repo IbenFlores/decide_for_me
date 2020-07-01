@@ -1,5 +1,6 @@
-<div class="d-flex justify-content-between align-items-center px-3 py-2 mx-4">
-  <div class="badge badge-dark text-wrap"><strong><%= reply.owner.username %></strong></div>
+<div class="reply-container">
+  <div class="d-flex justify-content-between align-items-center pr-3 pt-2 pb-1 mx-4">
+    <div class="badge badge-dark text-wrap"><strong><%= reply.owner.username %></strong></div>
     <% if reply.owner.avatar.attached? %>
       <div class="pr-3 pl-2 border-right border-dark"><%= cl_image_tag reply.owner.avatar.key, class: "avatar-bordered" %></div>
     <% else %>
@@ -19,7 +20,7 @@
       <% elsif reply.reply_votes > 10 %>
         <%= image_tag "10_points.png", class:  "avatar-bordered" %>
       <% end %>
-        <!-- click on the icon, sum +1 to reply_votes -->
+      <!-- click on the icon, sum +1 to reply_votes -->
       <% if reply.has_user_marked_reply?(current_user) %>
         <span class="px-3">
           <i class="fas fa-star text-primary"></i>
@@ -33,9 +34,9 @@
           </span>
         <% end %>
       <% end %>
-        <!-- reflect the count of reply_votes on a user's points -->
     </div>
   </div>
-<div class="rounded px-3 mx-4 mb-4 mt-0">
-  <p class="font-weight-lighter text-dark" style="font-size: 10px;"><%= "Posted #{time_ago_in_words(reply.created_at)} ago" %></p>
+  <div class="rounded mx-4 mb-4 mt-0">
+    <p class="font-weight-lighter text-dark pb-1" style="font-size: 10px;"><%= "Posted #{time_ago_in_words(reply.created_at)} ago" %></p>
+  </div>
 </div>
