@@ -129,7 +129,7 @@ $brown: #786450;
 }
 
 .charts {
-  width: 200px;
+  width: 70%;
   margin: 0 auto;
   box-sizing: border-box;
   h1 {
@@ -140,7 +140,11 @@ $brown: #786450;
 }
 
 .chart {
-  box-sizing: border-box;
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
+}
+
+.profile-dilemma-box {
+  box-sizing: content-box;
+  height: 400px;
 }

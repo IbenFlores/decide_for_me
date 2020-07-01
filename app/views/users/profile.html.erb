@@ -34,11 +34,11 @@
 
     <!-- Display users dilemmas -->
     <div class="col-sm-12 col-lg-4 charts text-center">
-      <h1 class="m-2 mt-3">My dilemmas</h1>
+      <p class="badge badge-primary text-wrap my-4">My dilemmas</p>
       <% current_user.dilemmas.each do |dilemma| %>
-        <div class="mt-5">
-          <div>
-            <p class="text-white font-italic text-left"><%= dilemma.question %></p>
+        <div class="profile-dilemma-box m-3 rounded bg-light">
+          <div class="card-note-text pt-3">
+            <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
           </div>
           <div class="chart">
             <% option_a = dilemma.options[0].users.count%>
@@ -52,12 +52,12 @@
     </div>
     <!-- All users' first dilemma -->
     <div class="col-sm-12 col-lg-4">
-      <div class="charts">
-        <h1 class="m-2 mt-3">Feed</h1>
+      <div class="charts text-center">
+        <p class="badge badge-primary text-wrap my-4">Feed</p>
         <% @users.each do |user|%>
           <% if user.dilemmas.any? %>
             <div class="badge-danger m-2">
-              <%= user.dilemmas.first[:question] %>
+              <%= link_to user.dilemmas.first[:question] %>
             </div>
           <% end %>
         <% end %>
