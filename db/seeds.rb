@@ -1,20 +1,21 @@
 require 'open-uri'
 
 puts "Destroying all users and their dilemmas"
+Reply.destroy_all if Rails.env.development?
 User.destroy_all if Rails.env.development?
 
 puts "DB restored"
 
 puts "creating new users"
-avatar_user1 = URI.open("https://files.slack.com/files-pri/T02NE0241-F016D9JTWDR/image.png")
+avatar_user1 = URI.open("https://res.cloudinary.com/dusgqtd1w/image/upload/v1593619302/Jolie_vencbv.png")
 user1 = User.create!(username: "Jolie", email: "as.jolie3@gmail.com", password: "123456")
 user1.avatar.attach(io: avatar_user1, filename: 'jolie_avatar.jpg', content_type: 'image/png')
 
-avatar_user2 = URI.open("https://files.slack.com/files-pri/T02NE0241-F015YAWEWDV/picture.jpg")
+avatar_user2 = URI.open("https://res.cloudinary.com/dusgqtd1w/image/upload/v1593124267/qpid8g0gbstiukutvnmnad23j56w.jpg")
 user2 = User.create!(username: "Mariana", email: "gatm870125@gmail.com", password: "123456")
 user2.avatar.attach(io: avatar_user2, filename: 'mariana_avatar.jpg', content_type: 'image/jpg')
 
-avatar_user3 = URI.open("https://pbs.twimg.com/media/ES3LuV6UcAMPlHp.jpg")
+avatar_user3 = URI.open("https://res.cloudinary.com/dusgqtd1w/image/upload/v1593619330/Jose_p2ifzv.jpg")
 user3 = User.create!(username: "Jose", email: "josematias92@gmail.com", password: "123456")
 user3.avatar.attach(io: avatar_user3, filename: 'jose_avatar.jpg', content_type: 'image/jpg')
 
