@@ -9,12 +9,12 @@
       </div>
       <div id="main-block">
         <% @dilemmas.top_10.each do |dilemma|%>
-          <div class="p-2 m-1 mb-4">
+          <div class="p-2 m-1 mx-3 mb-4">
             <div class="m-2 card-ghost <%= dilemma.category %> card-category-<%= dilemma.category %> card-note-text">
               <div class="card-tape-featured"></div>
               <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
               <p class="font-italic little-text">Created by <strong><%= dilemma.user.username %></strong></p>
-               <% if dilemma.easy? %>
+              <% if dilemma.easy? %>
                 <p class="px-2 py-1 d-inline little-text-border">ACTIVE FOR 1 DAY</p>
               <% elsif dilemma.medium? %>
                 <p class="px-2 py-1 d-inline little-text-border">ACTIVE FOR 3 DAYS</p>
