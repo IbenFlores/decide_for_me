@@ -5,24 +5,22 @@
     <%= f.error_notification %>
 
     <div class="form-inputs">
-      <%= f.input :username, label:"Choose a username",
+      <%= f.input :username, label: false,
                   required: false,
                   autofocus: true,
-                  input_html: { class: "little-text" } %>
-      <%= f.input :email, label: "Enter your email",
+                  placeholder: "Username" %>
+      <%= f.input :email, label: false,
                   required: false,
-                  input_html: { autocomplete: "email", class: "little-text" }%>
-      <%= f.input :password,
+                  placeholder: "Email"%>
+      <%= f.input :password, label: false,
                   required: false,
-                  placeholder: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                  input_html: { autocomplete: "new-password", class: "little-text" } %>
-      <%= f.input :password_confirmation,
+                  placeholder: ("Password (#{@minimum_password_length} characters minimum)" if @minimum_password_length) %>
+      <%= f.input :password_confirmation, label: false,
                   required: false,
-                  placeholder: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                  input_html: { autocomplete: "new-password", class: "little-text" } %>
+                  placeholder: "Confirm password" %>
       <%= f.input :bio,
-                  required: false,
-                  placeholder: "Tell us something about yourself",
+                  required: false, label: false,
+                  placeholder: "Bio: Tell us something about yourself",
                   input_html: { autocomplete: "bio", class: "description" } %>
       <%= f.input :avatar, label: "Choose a profile picture", as: :file,
                   input_html: { autocomplete: "new-password", class: "little-text" } %>
