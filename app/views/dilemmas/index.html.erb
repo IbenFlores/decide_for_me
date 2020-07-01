@@ -1,16 +1,16 @@
 <div class="container-fluid">
-  <!-- Dilemmas -->
-  <div class="row row-cols-4">
-    <!-- Dilemmas featured-->
-    <div class="col-sm-6 col-lg-3">
-      <div class="container d-flex mt-4">
-        <p class="badge badge-info text-wrap ml-5 p-1 mr-2">Featured</p>
-        <i class="fas fa-star pl-1 text-info"></i>
-      </div>
-      <div id="main-block">
-        <% if @dilemmas.empty? %>
-          <h2> 🤖 No results found 🧐</h2>
-        <% else %>
+  <% if @dilemmas.empty? %>
+    <p>No results found 🙊</p>
+  <% else %>
+    <!-- Dilemmas -->
+    <div class="row row-cols-4">
+      <!-- Dilemmas featured-->
+      <div class="col-sm-6 col-lg-3">
+        <div class="container d-flex mt-4">
+          <p class="badge badge-info text-wrap ml-5 p-1 mr-2">Featured</p>
+          <i class="fas fa-star pl-1 text-info"></i>
+        </div>
+        <div id="main-block">
           <% @dilemmas.top_10.each do |dilemma|%>
             <div class="p-2 m-1 mb-4">
               <div class="m-2 card-ghost <%= dilemma.category %> card-category-<%= dilemma.category %> card-note-text">
@@ -27,19 +27,15 @@
               </div>
             </div>
           <% end %>
-        <% end %>
+        </div>
       </div>
-    </div>
-    <!-- Dilemmas active-->
-    <div class="col-sm-6 col-lg-6">
-      <div class="container d-flex justify-content-center align-items-center mt-4 mb-1 ml-4">
-        <p class="badge badge-primary text-wrap ml-2 p-1 mr-5">Active</p>
-      </div>
-      <div class="dilemmas-container d-flex" id="main-block">
-        <div class="row">
-          <% if @dilemmas.empty? %>
-            <h3>Maybe you should create one 🙊</h3>
-          <% else %>
+      <!-- Dilemmas active-->
+      <div class="col-sm-6 col-lg-6">
+        <div class="container d-flex justify-content-center align-items-center mt-4 mb-1 ml-4">
+          <p class="badge badge-primary text-wrap ml-2 p-1 mr-5">Active</p>
+        </div>
+        <div class="dilemmas-container d-flex" id="main-block">
+          <div class="row">
             <% @dilemmas.each do |dilemma| %>
               <% if dilemma.can_users_vote? %>
                 <div class="col-6">
@@ -57,20 +53,16 @@
                 </div>
               <% end %>
             <% end %>
-          <% end %>
+          </div>
         </div>
       </div>
-    </div>
-    <!-- Dilemmas archive -->
-    <div class="col-sm-6 col-lg-3">
-      <div class="container d-flex mt-4">
-        <p class="badge badge-danger text-wrap ml-5 p-1 mr-2">Expired and archived</p>
-        <i class="fas fa-arrow-down pl-1 text-danger"></i>
-      </div>
-      <div id="main-block">
-        <% if @dilemmas.empty? %>
-          <h2> 🤖 No dilemmas found 🧐</h2>
-        <% else %>
+      <!-- Dilemmas archive -->
+      <div class="col-sm-6 col-lg-3">
+        <div class="container d-flex mt-4">
+          <p class="badge badge-danger text-wrap ml-5 p-1 mr-2">Expired and archived</p>
+          <i class="fas fa-arrow-down pl-1 text-danger"></i>
+        </div>
+        <div id="main-block">
           <% @dilemmas.each do |dilemma|%>
             <% unless dilemma.can_users_vote? %>
               <div class="p-2 m-1 mb-2">
@@ -81,10 +73,10 @@
               </div>
             <% end %>
           <% end %>
-        <% end %>
+        </div>
       </div>
     </div>
-  </div>
+  <% end %>
 </div>
 
 
