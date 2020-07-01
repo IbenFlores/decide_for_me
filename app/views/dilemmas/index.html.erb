@@ -1,6 +1,8 @@
 <div class="container-fluid">
   <% if @dilemmas.empty? %>
-    <p>No results found 🙊</p>
+    <div id="no-results-container">
+      <p id="no-results">No results found 🙊</p>
+    </div>
   <% else %>
     <!-- Dilemmas -->
     <div class="row row-cols-4">

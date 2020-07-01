@@ -16,14 +16,30 @@
   overflow: scroll;
 }
 
+#no-results-container {
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#no-results {
+  color: white;
+  font-size: 30px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+}
+
+
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 0px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-
+  background: #363945;
 }
 
 /* Handle */
