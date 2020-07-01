@@ -10,11 +10,12 @@
 }
 
 .about-card {
-  border: 2px solid;
+  // border: 1px solid;
+  box-shadow: 10px 10px 8px;
   border-radius: 10px;
   width: 20%;
   height: 440px;
-  background-color: white;
+  background-color: #F6F6F4;
   margin: 0 auto;
 }
 
@@ -29,11 +30,10 @@
 }
 
 .about-card-contents img {
-  width: 100%;
+  width: 80%;
   height: auto;
   border-radius: 200%;
-  border: 5px solid;
-  border-color: $dark-gray;
+  // border: 3px solid;
 
 }
 
