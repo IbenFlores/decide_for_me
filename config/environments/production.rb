@@ -43,7 +43,19 @@ Rails.application.configure do
   # config.action_cable.mount_path = nil
   # config.action_cable.url = 'wss://example.com/cable'
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
-
+  config.action_mailer.default_url_options = { :host => 'www.decide-for.me' }
+  config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {:address => "localhost", :port => 1025}
+  config.action_mailer.smtp_settings = {
+     :tls => true,
+     :address => "smtp.gmail.com",
+     :port => 465,
+     :domain => "gmail.com",
+     :authentication => :plain,
+     :user_name => "decide.for.me.noreply@gmail.com",
+     :password => "marianita123",
+     :enable_starttls_auto => true
+   }
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
 
