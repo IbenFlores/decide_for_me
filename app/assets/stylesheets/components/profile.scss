@@ -87,7 +87,6 @@ $brown: #786450;
       }
     }
   }
-
 }
 
 .stats {
@@ -129,7 +128,7 @@ $brown: #786450;
 }
 
 .charts {
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
   box-sizing: border-box;
   h1 {
@@ -147,4 +146,16 @@ $brown: #786450;
 .profile-dilemma-box {
   box-sizing: content-box;
   height: 400px;
+}
+
+.feed-box {
+  background-image: url("doodle.png");
+}
+
+.feed-user-container {
+  background-color: rgba(0,0,0,0.8);
+  border-radius: 8px;
+  a {
+    color: black;
+  }
 }
