@@ -64,13 +64,13 @@
 .shadow {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
-// Container fourth section
-.gradient-container {
-  // display: flex;
-  text-align: center;
-  justify-content: space-around;
-  align-items: center;
-}
+// // Container fourth section
+// .gradient-container {
+//   // display: flex;
+//   text-align: center;
+//   justify-content: space-around;
+//   align-items: center;
+// }
 
 #categories-1 {
   position: absolute;
@@ -148,8 +148,11 @@
 }
 
 #fourth-section {
-padding: 50px;
-height: 530px;
+  text-align: center;
+  justify-content: space-around;
+  align-items: center;
+  padding: 50px;
+  height: 530px;
 }
 
 #quote {
