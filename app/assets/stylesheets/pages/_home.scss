@@ -5,6 +5,10 @@
     font-family: $body-font;
     font-size: 50px;
   }
+  a:hover {
+    color: black;
+    font-weight: bold;
+  }
   h5 {
     letter-spacing: 2px;
   }
@@ -126,6 +130,10 @@
   background-color: white;
   border-radius: 25px;
   width: 120px;
+}
+
+.margin-center {
+  margin: 0 auto;
 }
 
 

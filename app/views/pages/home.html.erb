@@ -1,10 +1,16 @@
 <!-- First section -->
 <div class="background-pattern" style="background-image: url('https://res.cloudinary.com/dusgqtd1w/image/upload/v1593623380/doodle.png');">
   <div class="background-transparency text-center p-4">
-    <h1 class="border-bottom">DECIDE FOR ME</h1>
+    <h1 class="border-bottom"><%= link_to "DECIDE FOR ME", dilemmas_path %></h1>
     <h5>collective decision-making</h5>
-    <div>
-     <%= link_to "What's on your mind?", dilemmas_path %>
+    <div class="d-flex form-inline justify-content-center">
+      <%= form_tag dilemmas_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "What's on your mind?"%>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
     </div>
   </div>
 </div>
