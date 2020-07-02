@@ -5,4 +5,8 @@ class Reply < ApplicationRecord
   validates :answer, length: {
     minimum: 1, maximum: 280
   }
+
+  def created_by?(user)
+    owner == user
+  end
 end
