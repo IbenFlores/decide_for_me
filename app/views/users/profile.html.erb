@@ -38,6 +38,8 @@
       <% current_user.dilemmas.each do |dilemma| %>
         <div class="profile-dilemma-box m-3 rounded bg-light">
           <div class="card-note-text pt-3">
+            <div class="active-parent">
+            <p class="active-child badge badge-primary">Active</p>
             <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
           </div>
           <div class="chart">
@@ -104,5 +106,4 @@
           <% end %>
         </div>
       </div>
-<div class="active-parent">
-<p class="active-child badge badge-primary">Active</p>
+

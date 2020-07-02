@@ -18,6 +18,10 @@ class Dilemma < ApplicationRecord
     self.expired_at > Time.zone.now
   end
 
+  def remaining_time
+    self.expired_at - created_at
+  end
+
   def has_user_voted?(user)
     voted = false
     self.options.each do |option|

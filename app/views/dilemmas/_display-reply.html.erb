@@ -1,5 +1,5 @@
 <% if dilemma.can_users_vote? %>
-  <div class="col-sm-12 col-lg-4 px-4 position-sticky">
+  <div class="col-sm-12 col-lg-4 px-4">
     <div class="pb-5 pt-4 text-white">
       <i class="fas fa-comments"></i>
       <p class="badge badge-secondary text-wrap p-1"><strong>ADD A COMMENT</strong></p>
@@ -36,9 +36,8 @@
     </div>
 <% else %>
   <div class="col-sm-12 col-lg-4 px-4">
-    <div class="mx-5 text-white">
-      <h3>Dilemma has expired</h3>
-      <p>Users cannot vote or reply anymore</p>
+    <div class="mx-5 text-center">
+      <p> Expired dilemma. Users cannot vote or reply anymore </p>
     </div>
   </div>
 <% end %>
