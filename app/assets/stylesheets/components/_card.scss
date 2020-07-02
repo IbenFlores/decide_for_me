@@ -104,7 +104,7 @@
     font-weight: bold;
   }
   a:hover {
-    color: white;
+    color: $blue;
     text-decoration: none;
     opacity: 0.8;
   }
@@ -115,6 +115,7 @@
   box-sizing: content-box;
   h2 {
     font-weight: bold;
+    font-size: 50px;
   }
 }
 
@@ -190,4 +191,9 @@
   height: 50px;
   width: 30%;
   background-color: rgba(255,255,255,0.7);
+}
+
+.card-grow:hover {
+  transform: scale(1.10);
+  transition: 500ms;
 }
