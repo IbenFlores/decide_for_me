@@ -14,33 +14,27 @@
       <% end %>
     </div>
     <!-- Dilemmas -->
-
-      <!-- Dilemmas active-->
-
-        <div class="dilemmas-container d-flex" id="main-block">
-
-            <% @dilemmas.each do |dilemma| %>
-              <% if dilemma.can_users_vote? %>
-                <div class="col-6">
-                  <div class="mt-3 mb-4 active-parent card-ghost <%= dilemma.category %> card-category-<%= dilemma.category %> card-note-text">
-                    <p class="active-child badge badge-primary">Active</p>
-                    <% if dilemma.easy? %>
-                      <p class="px-2 py-1 d-inline little-text-border">1 DAY</p>
-                    <% elsif dilemma.medium? %>
-                      <p class="px-2 py-1 d-inline little-text-border mt-0">3 DAYS</p>
-                    <% elsif dilemma.hard? %>
-                      <p class="px-2 py-1 d-inline little-text-border">7 DAYS</p>
-                    <% end %>
-                    <div class="mt-1" id="min-card-width"><%= link_to "#{dilemma.question}", dilemma_path(dilemma) %></div>
-                    <p class="font-italic little-text">Created by <strong><%= dilemma.user.username %></strong></p>
-                  </div>
+    <div class="container-fluid">
+      <div class="row" id="scroll-block">
+        <% @dilemmas.each do |dilemma| %>
+          <div class="col-3">
+            <% if dilemma.can_users_vote? %>
+                <div class="mt-3 mb-5 color-parent card-ghost card-category card-note-text">
+                  <div class="color-child rounded-circle <%= dilemma.category %>"></div>
+                  <% if dilemma.easy? %>
+                    <p class="px-2 py-1 d-inline little-text-border">ACTIVE FOR 1 DAY</p>
+                  <% elsif dilemma.medium? %>
+                    <p class="px-2 py-1 d-inline little-text-border mt-0">ACTIVE FOR 3 DAYS</p>
+                  <% elsif dilemma.hard? %>
+                    <p class="px-2 py-1 d-inline little-text-border">ACTIVE FOR 7 DAYS</p>
+                  <% end %>
+                  <div class="mt-1" id="min-card-width"><%= link_to "#{dilemma.question}", dilemma_path(dilemma) %></div>
+                  <p class="font-italic little-text">Created by <strong><%= dilemma.user.username %></strong></p>
                 </div>
-              <% end %>
             <% end %>
-
-        </div>
-
-
+          </div>
+        <% end %>
+      </div>
     </div>
   <% end %>
 </div>

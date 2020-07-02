@@ -7,7 +7,8 @@
   box-shadow: 0 8px 40px rgba(0,0,0,.6);
 }
 
-.card-category-easy {
+.card-category {
+  background-color: $saffron;
   min-height: 15em;
   width: 15em;
   box-sizing: border-box;
@@ -24,7 +25,7 @@
   right: 87px;
 }
 
-.card-category-easy:after {
+.card-category:after {
   content: "";
   position: absolute;
   bottom: -2em;
@@ -32,17 +33,17 @@
   right: 2em;
   border-width: 1em;
   border-style: solid;
-  border-color: $easy;
+  border-color: $saffron;
 }
 
-.card-category-easy:before {
+.card-category:before {
   content: "";
   position: absolute;
   bottom: -2em;
   right: 0em;
   border-width: 2em 2em 0 0;
   border-style: solid;
-  border-color: darken($easy, 10%) transparent;
+  border-color: darken($saffron, 10%) transparent;
 }
 
 .card-category-medium {
