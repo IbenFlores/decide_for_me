@@ -164,3 +164,13 @@ $brown: #786450;
   font-size: 18px;
   margin-bottom: 0px;
 }
+
+.active-parent {
+  position: relative;
+}
+
+.active-child {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}

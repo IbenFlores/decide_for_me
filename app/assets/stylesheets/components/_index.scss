@@ -6,23 +6,19 @@
 @import "button";
 @import "registration";
 
-.dilemmas-container {
-  box-sizing: border-box;
-  width: 100%;
-}
-
-#main-block {
+#scroll-block {
   overflow: scroll;
   height: 100vh;
 }
 
-#main-block h2 {
-  text-align: right;
-  color: white;
+.color-parent {
+  position: relative;
 }
 
-#main-block h3 {
-  color: white;
-  text-align: center;
-  margin-left: 80px;
+.color-child {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  top: 1em;
+  right: 1em;
 }

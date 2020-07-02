@@ -85,3 +85,24 @@
     </div>
   </div>
 </div>
+
+     <div class="col-sm-6 col-lg-3">
+        <div id="main-block">
+          <% @dilemmas.each do |dilemma|%>
+            <% unless dilemma.can_users_vote? %>
+              <div class="p-2 m-1 mb-2">
+                <div class="m-2 featured-parent card-ghost <%= dilemma.category %> card-category-<%= dilemma.category %> card-note-text">
+                  <div class="container featured-child mt-4">
+                    <p class="badge badge-danger text-wrap">
+                    <i class="fas fa-arrow-down text-dark pr-1"></i>Expired and archived</p>
+                  </div>
+                  <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
+                  <p class="font-italic little-text">Created by <strong><%= dilemma.user.username %></strong></p>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+<div class="active-parent">
+<p class="active-child badge badge-primary">Active</p>
