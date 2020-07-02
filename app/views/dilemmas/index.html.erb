@@ -4,14 +4,16 @@
       <%= link_to ">> No results found 🤖. Try again <<", dilemmas_path %>
     </div>
   <% else %>
-    <div class="form-inline ml-3 mb-3">
-      <%= form_tag dilemmas_path, method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "What's on your mind?"%>
-        <%= submit_tag "Search", class: "btn btn-primary" %>
-      <% end %>
+    <div class="mb-2 ml-3">
+      <div class="form-inline">
+        <%= form_tag dilemmas_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "What's on your mind?"%>
+          <%= submit_tag "Search", class: "btn btn-primary" %>
+        <% end %>
+      </div>
     </div>
     <!-- Dilemmas -->
     <div class="container-fluid">
