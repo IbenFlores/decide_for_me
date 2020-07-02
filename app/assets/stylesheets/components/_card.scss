@@ -104,7 +104,7 @@
     font-weight: bold;
   }
   a:hover {
-    color: white;
+    color: $blue;
     text-decoration: none;
     opacity: 0.8;
   }
@@ -196,5 +196,4 @@
 .card-grow:hover {
   transform: scale(1.10);
   transition: 500ms;
-  border-radius: 30px;
 }
