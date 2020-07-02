@@ -14,15 +14,15 @@
         <% end %>
       </div>
     </div>
-    <!-- You might be interested section -->
+    <!-- Featured section -->
     <div class="mx-5 my-4">
-      <div class="px-2 mt-2 text-center">
-        <p class="badge badge-info text-wrap p-1">You might be interested</p>
-      </div>
-      <div class="<%= dilemma.category %> card-category-<%= dilemma.category %> card-note-text card-ghost mt-3">
+      <div class="featured-parent card-category card-note-text card-ghost mt-3">
         <div class="card-tape-featured"></div>
-        <%= link_to "#{@sample.question}", dilemma_path(@sample[:id]) %>
-        <p class="font-italic little-text">Created by <strong><%= @dilemma.user.username %></strong></p>
+        <div class="color-child rounded-circle <%= dilemma.category %>"></div>
+        <div class="featured-child">
+          <p class="badge badge-primary text-wrap">
+          <i class="fas fa-star text-dark pr-1"></i>Featured</p>
+        </div>
         <% if dilemma.easy? %>
           <p class="px-2 py-1 d-inline little-text-border">ACTIVE FOR 1 DAY</p>
         <% elsif dilemma.medium? %>
@@ -30,16 +30,10 @@
         <% elsif dilemma.hard? %>
           <p class="px-2 py-1 d-inline little-text-border">ACTIVE FOR 7 DAYS</p>
         <% end %>
+        <%= link_to "#{@sample.question}", dilemma_path(@sample[:id]) %>
+        <p class="font-italic little-text">Created by <strong><%= @dilemma.user.username %></strong></p>
       </div>
     </div>
-    <!-- Link to all dilemmas-->
-    <div class="py-3 mt-5 ml-5">
-      <div class="btn btn-outline-primary pr-2 mb-2" id="btn-thin">
-        <i class="fas fa-circle-notch pr-1"></i>
-        <%= link_to "Back to all dilemmas", dilemmas_path %>
-      </div>
-    </div>
-  </div>
 <% else %>
   <div class="col-sm-12 col-lg-4 px-4">
     <div class="mx-5 text-white">

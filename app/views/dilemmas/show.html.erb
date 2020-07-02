@@ -14,20 +14,3 @@
     <%= render "display-reply", dilemma: @dilemma %>
   </div>
 </div>
-
-<div class="m-2 featured-parent card-ghost <%= dilemma.category %> card-category-<%= dilemma.category %> card-note-text">
-                <div class="card-tape-featured"></div>
-                <div class="container featured-child mt-4">
-                  <p class="badge badge-info text-wrap">
-                  <i class="fas fa-star text-dark pr-1"></i>Featured</p>
-                </div>
-                <% if dilemma.easy? %>
-                  <p class="px-2 py-1 d-inline little-text-border">ACTIVE FOR 1 DAY</p>
-                <% elsif dilemma.medium? %>
-                  <p class="px-2 py-1 d-inline little-text-border">ACTIVE FOR 3 DAYS</p>
-                <% elsif dilemma.hard? %>
-                  <p class="px-2 py-1 d-inline little-text-border">ACTIVE FOR 7 DAYS</p>
-                <% end %>
-                <div class="mt-1"><%= link_to "#{dilemma.question}", dilemma_path(dilemma) %></div>
-                <p class="font-italic little-text">Created by <strong><%= dilemma.user.username %></strong></p>
-              </div>
