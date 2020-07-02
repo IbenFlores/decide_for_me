@@ -14,6 +14,13 @@
       <div class="d-flex justify-content-around">
         <% dilemma.options.each do |option| %>
           <div class="show-options d-flex flex-column align-items-center mx-5 mb-5 p-3 card-ghost card-grow rounded-pill">
+            <% if dilemma.has_user_voted?(current_user) || dilemma.user == current_user %>
+              <p class="text-dark"><%= option.description %></p>
+            <% else %>
+              <div class="bg-primary">
+                <p><%= link_to option.description, upvotes_path(option.id) %>Vote A</p>
+              </div>
+            <% end %>
             <div class="circle-percentage mb-1">
               <% percentage = dilemma.options.reduce(0) { |sum, option| sum + option.users.count } %>
               <% if percentage > 0 %>
