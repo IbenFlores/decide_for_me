@@ -6,7 +6,7 @@
     <% else %>
       <div class="pr-3 pl-2 border-right border-dark"><%= image_tag "default_avatar.png", class: "avatar-bordered" %></div>
     <% end %>
-    <div class="flex-grow-1 px-3 text-dark">
+    <div class="flex-grow-1 px-3 text-black">
       <i class="fas fa-comment pl-3 pr-2 text-dark"></i>
       <%= reply.answer %>
       <% if  reply.users.count > 50 %>
@@ -37,6 +37,6 @@
     </div>
   </div>
   <div class="rounded mx-4 mb-4 mt-0">
-    <p class="font-weight-lighter text-dark pb-1" style="font-size: 10px;"><%= "Posted #{time_ago_in_words(reply.created_at)} ago" %></p>
+    <p class="font-weight-lighter text-black pb-1" style="font-size: 10px;"><%= "Posted #{time_ago_in_words(reply.created_at)} ago" %></p>
   </div>
 </div>
