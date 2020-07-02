@@ -6,7 +6,7 @@
       <!-- Comments section -->
       <div class="mt-5" id="replies" data-chatroom-id="<%= @dilemma.id%>">
         <% @dilemma.replies.each do |reply| %>
-          <%= render "replies/display-replies", reply: reply %>
+          <%= render "replies/display-replies", reply: reply, dilemma: @dilemma %>
         <% end %>
       </div>
     </div>

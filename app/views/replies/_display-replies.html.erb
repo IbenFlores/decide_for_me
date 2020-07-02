@@ -9,19 +9,19 @@
     <div class="flex-grow-1 px-3 text-dark">
       <i class="fas fa-comment pl-3 pr-2 text-dark"></i>
       <%= reply.answer %>
-      <% if  reply.reply_votes > 50 %>
-        <%= image_tag "50_points.png", class:  "avatar-bordered" %>
-      <% elsif reply.reply_votes > 40 %>
-        <%= image_tag "40_points.png", class:  "avatar-bordered" %>
-      <% elsif reply.reply_votes > 30 %>
-        <%= image_tag "30_points.png", class:  "avatar-bordered" %>
-      <% elsif reply.reply_votes > 20 %>
-        <%= image_tag "20_points.png", class:  "avatar-bordered" %>
-      <% elsif reply.reply_votes > 10 %>
-        <%= image_tag "10_points.png", class:  "avatar-bordered" %>
+      <% if  reply.users.count > 50 %>
+        <%= cl_image_tag('50_points.png', :class => "avatar-bordered") %>
+      <% elsif reply.users.count > 40 %>
+        <%= cl_image_tag('40_points.png', :class => "avatar-bordered") %>
+      <% elsif reply.users.count > 30 %>
+        <%= cl_image_tag('30_points.png', :class => "avatar-bordered") %>
+      <% elsif reply.users.count > 20 %>
+        <%= cl_image_tag('20_points.png', :class => "avatar-bordered") %>
+      <% elsif reply.users.count > 10 %>
+        <%= cl_image_tag('10_points.png', :class => "avatar-bordered") %>
       <% end %>
       <!-- click on the icon, sum +1 to reply_votes -->
-      <% if reply.has_user_marked_reply?(current_user) %>
+      <% if dilemma.user_voted_reply?(current_user) || reply.owner == current_user %>
         <span class="px-3">
           <i class="fas fa-star text-primary"></i>
           <span class="little-text text-primary"><%= reply.users.count %></span>

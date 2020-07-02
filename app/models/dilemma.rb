@@ -28,6 +28,16 @@ class Dilemma < ApplicationRecord
     voted
   end
 
+  def user_voted_reply?(user)
+    voted = false
+    self.replies.each do |reply|
+      if user.replies.where("replies_users.reply_id = ?", reply.id).any?
+        voted = true
+      end
+    end
+    voted
+  end
+
   def self.top_10
     @dilemmas = Dilemma.all.sort_by { |dilemma| dilemma.replies.count }
     @dilemmas.first(10)
