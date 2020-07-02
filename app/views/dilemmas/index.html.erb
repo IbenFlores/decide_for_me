@@ -14,7 +14,7 @@
       <% end %>
     </div>
     <!-- Dilemmas -->
-    <div class="row row-cols-4">
+    <div class="row">
       <!-- Dilemmas featured-->
       <div class="col-sm-6 col-lg-3">
         <div id="main-block">
@@ -56,7 +56,7 @@
                     <% elsif dilemma.hard? %>
                       <p class="px-2 py-1 d-inline little-text-border">7 DAYS</p>
                     <% end %>
-                    <div class="mt-1"><%= link_to "#{dilemma.question}", dilemma_path(dilemma) %></div>
+                    <div class="mt-1" id="min-card-width"><%= link_to "#{dilemma.question}", dilemma_path(dilemma) %></div>
                     <p class="font-italic little-text">Created by <strong><%= dilemma.user.username %></strong></p>
                   </div>
                 </div>
@@ -67,15 +67,15 @@
       </div>
       <!-- Dilemmas archive -->
       <div class="col-sm-6 col-lg-3">
-        <div class="container mt-4">
-          <p class="badge badge-danger text-wrap ml-5 p-1" id="text-grow">
-          <i class="fas fa-arrow-down text-dark pr-1"></i>Expired and archived</p>
-        </div>
         <div id="main-block">
           <% @dilemmas.each do |dilemma|%>
             <% unless dilemma.can_users_vote? %>
               <div class="p-2 m-1 mb-2">
-                <div class="m-2 card-ghost <%= dilemma.category %> card-category-<%= dilemma.category %> card-note-text">
+                <div class="m-2 featured-parent card-ghost <%= dilemma.category %> card-category-<%= dilemma.category %> card-note-text">
+                  <div class="container featured-child mt-4">
+                    <p class="badge badge-danger text-wrap">
+                    <i class="fas fa-arrow-down text-dark pr-1"></i>Expired and archived</p>
+                  </div>
                   <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
                   <p class="font-italic little-text">Created by <strong><%= dilemma.user.username %></strong></p>
                 </div>
