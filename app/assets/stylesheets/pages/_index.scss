@@ -16,18 +16,6 @@
   overflow: scroll;
 }
 
-#no-results-container {
-  display: flex;
-  text-align: center;
-  justify-content: space-around;
-  align-items: center;
-}
-
-#no-results {
-  font-size: 20px;
-}
-
-
 /* width */
 ::-webkit-scrollbar {
   width: 0px;

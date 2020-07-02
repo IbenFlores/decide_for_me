@@ -4,13 +4,22 @@
       <%= link_to ">> No results found 🤖. Try again <<", dilemmas_path %>
     </div>
   <% else %>
+    <div class="form-inline ml-3 mb-3">
+      <%= form_tag dilemmas_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "What's on your mind?"%>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+    </div>
     <!-- Dilemmas -->
     <div class="row row-cols-4">
       <!-- Dilemmas featured-->
       <div class="col-sm-6 col-lg-3">
-        <div class="container d-flex mt-4">
-          <p class="badge badge-info text-wrap ml-5 p-1 mr-2">Featured</p>
-          <i class="fas fa-star pl-1 text-info"></i>
+        <div class="container mt-4">
+          <p class="badge badge-info text-wrap ml-5 p-1" id="text-grow">
+          <i class="fas fa-star text-dark pr-1"></i>Featured</p>
         </div>
         <div id="main-block">
           <% @dilemmas.top_10.each do |dilemma|%>
@@ -34,7 +43,7 @@
       <!-- Dilemmas active-->
       <div class="col-sm-6 col-lg-6">
         <div class="container d-flex justify-content-center align-items-center mt-4 mb-1 ml-4">
-          <p class="badge badge-primary text-wrap ml-2 p-1 mr-5">Active</p>
+          <p class="badge badge-primary text-wrap ml-2 p-1 mr-5" id="text-grow">Active</p>
         </div>
         <div class="dilemmas-container d-flex" id="main-block">
           <div class="row">
@@ -60,9 +69,9 @@
       </div>
       <!-- Dilemmas archive -->
       <div class="col-sm-6 col-lg-3">
-        <div class="container d-flex mt-4">
-          <p class="badge badge-danger text-wrap ml-5 p-1 mr-2">Expired and archived</p>
-          <i class="fas fa-arrow-down pl-1 text-danger"></i>
+        <div class="container mt-4">
+          <p class="badge badge-danger text-wrap ml-5 p-1" id="text-grow">
+          <i class="fas fa-arrow-down text-dark pr-1"></i>Expired and archived</p>
         </div>
         <div id="main-block">
           <% @dilemmas.each do |dilemma|%>
