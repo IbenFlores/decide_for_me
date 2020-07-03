@@ -13,6 +13,26 @@
 @import "components/profile";
 @import "pages/index";
 
+// Social Media
+
+
+//Social Media Design
+$size: 27px;
+
+.social-share-button {
+  .ssb-icon {
+    background-size: $size $size;
+    height: $size;
+    width: $size;
+  }
+}
+
+#social-media {
+  position: absolute;
+  top: 588px;
+  right: 110px;
+}
+
 .little-text {
   font-size: 12px;
 }

@@ -14,8 +14,16 @@ class Dilemma < ApplicationRecord
 
   after_create :assign_expiration
 
+  scope :expired, -> { where("expired_at < ?", Time.zone.now) }
+
+  scope :active, ->  { where("expired_at > ?", Time.zone.now) }
+
   def can_users_vote?
     self.expired_at > Time.zone.now
+  end
+
+  def remaining_time
+    self.expired_at - created_at
   end
 
   def has_user_voted?(user)
@@ -28,9 +36,19 @@ class Dilemma < ApplicationRecord
     voted
   end
 
-  def self.top_10
-    @dilemmas = Dilemma.all.sort_by { |dilemma| dilemma.replies.count }
-    @dilemmas.first(10)
+  def user_voted_reply?(user)
+    voted = false
+    self.replies.each do |reply|
+      if user.replies.where("replies_users.reply_id = ?", reply.id).any?
+        voted = true
+      end
+    end
+    voted
+  end
+
+  def self.top_3
+    @dilemmas = Dilemma.all.active.sort_by { |dilemma| dilemma.replies.count }
+    @dilemmas.first(3)
   end
 
   def self.sample

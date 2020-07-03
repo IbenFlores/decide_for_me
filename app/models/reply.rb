@@ -6,13 +6,7 @@ class Reply < ApplicationRecord
     minimum: 1, maximum: 280
   }
 
-  def has_user_marked_reply?(user)
-    marked = false
-    self.users.each do |user|
-      if user.replies.where("replies_users.reply_id = ?", self.id).any?
-        marked = true
-      end
-    end
-    marked
+  def created_by?(user)
+    owner == user
   end
 end

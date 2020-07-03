@@ -17,7 +17,11 @@ class RepliesController < ApplicationController
       @dilemma,
       render_to_string(partial: "display-replies", locals: { reply: @reply })
       )
-      redirect_to dilemma_path(@dilemma)
+      respond_to do |format|
+        format.html {redirect_to dilemma_path(@dilemma)}
+        format.js {}
+      end
+
     else
       render "dilemmas/show"
     end
