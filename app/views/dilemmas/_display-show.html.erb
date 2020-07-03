@@ -2,7 +2,9 @@
   <div class="border border-dark">
     <div class="p-5">
       <% if dilemma.category? %>
-        <p class="ml-5 px-2 py-1 d-inline little-text-border"><%= "#{distance_of_time_in_words(dilemma.remaining_time)} left" %> </p>
+        <p class="ml-5 px-2 py-1 d-inline little-text-border">
+          <%= render "distance_in_time", dilemma: dilemma %>
+        </p>
       <% end %>
       <h2 class="p-3 pb-3 border-bottom border-dark"><%= dilemma.question %></h2>
       <p class="pl-5"><strong><%= dilemma.user.username %>'s</strong> dilemma</p>

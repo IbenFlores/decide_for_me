@@ -1,0 +1,5 @@
+<% if dilemma.can_users_vote? %>
+  <%= "#{time_ago_in_words(dilemma.expired_at)} left" %>
+<% else %>
+  <%= "Expired #{time_ago_in_words(dilemma.expired_at)} ago" %>
+<% end %>
