@@ -33,7 +33,7 @@
     </div>
 
     <!-- My dilemmas -->
-    <div class="col-sm-12 col-lg-4 charts text-center">
+    <div class="col-sm-12 col-lg-8 charts text-center">
       <p class="badge badge-primary text-wrap mt-4 mb-2">My dilemmas</p>
       <% current_user.dilemmas.each do |dilemma| %>
         <div class="profile-dilemma-box m-3 rounded bg-light">
@@ -51,39 +51,6 @@
           </div>
         </div>
       <% end %>
-    </div>
-    <!-- All users' first dilemma -->
-    <div class="col-sm-12 col-lg-4">
-      <div class="charts text-center">
-        <p class="badge badge-primary text-wrap my-4">Feed</p>
-        <div class="feed-box rounded p-3" style="background-image: url('https://res.cloudinary.com/dusgqtd1w/image/upload/v1593623380/doodle.png');">
-          <% @users.each do |user|%>
-            <% if user.dilemmas.any? %>
-              <div class="feed-user-container">
-                <div class="mx-2 p-1">
-                  <div class="d-flex align-items-center mr-2">
-                    <div class="text-primary little-text pr-1"><%= user.username %></div>
-                    <% if user.avatar.attached? %>
-                      <div class="pr-2"><%= cl_image_tag user.avatar.key, class: "avatar" %></div>
-                    <% else %>
-                      <div class="pr-2"><%= image_tag "default_avatar.png", class: "avatar" %></div>
-                    <% end %>
-                    <i class="fas fa-comment text-primary"></i>
-                  </div>
-                  <% if user.dilemmas.first.easy? %>
-                    <p class="pl-1 pt-1 mt-1 badge badge-info text-wrap" id="text-grow"><%= link_to user.dilemmas.first[:question] %></p>
-                  <% elsif user.dilemmas.first.medium? %>
-                    <p class="pl-1 pt-1 badge badge-success text-wrap" id="text-grow"><%= link_to user.dilemmas.first[:question] %></p>
-                  <% elsif user.dilemmas.first.hard? %>
-                    <p class="pl-1 pt-1 badge badge-warning text-wrap" id="text-grow"><%= link_to user.dilemmas.first[:question] %></p>
-                  <% end %>
-                </div>
-                <p class="font-weight-lighter text-light pb-1 pt-0 text-right mr-2" style="font-size: 10px;"><%= "Posted #{time_ago_in_words(user.dilemmas.first.created_at)} ago" %></p>
-              </div>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
     </div>
   </div>
 </div>
