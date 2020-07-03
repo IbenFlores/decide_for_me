@@ -10,11 +10,11 @@
 
 // Your CSS partials
 @import "components/index";
-@import "components/profile";
+// @import "components/profile";
 @import "pages/index";
 
 // Social Media
-@import "social-share-button";
+
 
 //Social Media Design
 $size: 27px;
@@ -49,6 +49,7 @@ a:hover {
   font-size: 10px;
   letter-spacing: 1px;
   border: 1px dotted $gray;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .word:first-letter {
