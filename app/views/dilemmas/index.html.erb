@@ -17,12 +17,13 @@
     </div>
     <!-- Dilemmas -->
     <div class="container-fluid">
-      <div class="row" id="scroll-block">
-        <% @dilemmas.each do |dilemma| %>
+      <!-- active dilemmas -->
+      <div class="row">
+        <% @dilemmas.active.each do |dilemma| %>
           <div class="col-3">
-            <% if dilemma.can_users_vote? %>
-                <div class="mt-3 mb-5 color-parent card-ghost card-category card-note-text">
-                  <div class="color-child rounded-circle <%= dilemma.category %>"></div>
+            <div class="mt-3 mb-5 color-parent card-ghost card-category card-note-text">
+              <div class="color-child rounded-circle <%= dilemma.category %>"></div>
+                <% if dilemma.can_users_vote? %>
                   <% if dilemma.easy? %>
                     <p class="px-2 py-1 d-inline little-text-border">ACTIVE FOR 1 DAY</p><br>
                   <% elsif dilemma.medium? %>
@@ -30,10 +31,25 @@
                   <% elsif dilemma.hard? %>
                     <p class="px-2 py-1 d-inline little-text-border">ACTIVE FOR 7 DAYS</p><br>
                   <% end %>
-                  <div class="mt-1" id="min-card-width"><%= link_to "#{dilemma.question}", dilemma_path(dilemma) %></div>
-                  <p class="font-italic little-text">Created by <strong><%= dilemma.user.username %></strong></p>
-                </div>
-            <% end %>
+                <% end %>
+              <div class="mt-1" id="min-card-width"><%= link_to "#{dilemma.question}", dilemma_path(dilemma) %></div>
+              <p class="font-italic little-text">Created by <strong><%= dilemma.user.username %></strong></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <!-- expired dilemmas -->
+      <div class="row">
+        <% @dilemmas.expired.each do |dilemma| %>
+          <div class="col-3">
+            <div class="mt-3 mb-5 color-parent card-ghost card-category card-note-text">
+              <div class="color-child rounded-circle <%= dilemma.category %>"></div>
+              <p class="px-2 py-1 d-inline little-text-border">EXPIRED</p>
+              <div class="mt-1" id="min-card-width"><%= link_to "#{dilemma.question}", dilemma_path(dilemma) %></div>
+              <p class="font-italic little-text">Created by <strong><%= dilemma.user.username %></strong></p>
+            </div>
           </div>
         <% end %>
       </div>
