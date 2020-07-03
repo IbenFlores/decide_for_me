@@ -1,57 +1,62 @@
-<div class="container-fluid">
-  <div class="row">
-    <!-- User profile card -->
-    <div class="col-sm-12 col-lg-4">
-      <div class="center">
-        <div class="profile">
-          <div class="image">
-            <div class="circle-1"></div>
-            <%= cl_image_tag current_user.avatar.key, class: "circle-1" %>
+<div class="page-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- User profile card -->
+      <div class="col-sm-12 col-lg-4">
+        <div class="center mt-3 mb-2">
+          <div class="profile">
+            <div class="image">
+              <div class="circle-1"></div>
+              <%= cl_image_tag current_user.avatar.key, class: "circle-1" %>
+            </div>
+
+            <div class="name"><%= @user.username %></div>
+            <div class="description">
+                <p> <%= current_user.bio %> </p>
+            </div>
           </div>
 
-          <div class="name"><%= @user.username %></div>
-          <div class="description">
-              <p> <%= current_user.bio %> </p>
-          </div>
-        </div>
-
-        <div class="stats">
-          <div class="box">
-            <span class="value"><%= current_user.dilemmas.count %></span>
-            <span class="parameter">Dilemmas</span>
-          </div>
-          <div class="box">
-            <span class="value">2</span>
-            <span class="parameter">Badges</span>
-          </div>
-          <div class="box">
-            <span class="value"><%= current_user.userpoints %></span>
-            <span class="parameter">User Points</span>
+          <div class="stats">
+            <div class="box">
+              <span class="value"><%= current_user.dilemmas.count %></span>
+              <span class="parameter">Dilemmas</span>
+            </div>
+            <div class="box">
+              <span class="value">2</span>
+              <span class="parameter">Badges</span>
+            </div>
+            <div class="box">
+              <span class="value"><%= current_user.userpoints %></span>
+              <span class="parameter">User Points</span>
+            </div>
           </div>
         </div>
       </div>
+      <!-- My dilemmas -->
+      <div class="col-sm-12 col-lg-8 text-center">
+        <p class="badge badge-primary text-wrap mt-4 mb-2">My dilemmas</p>
+        <% current_user.dilemmas.each do |dilemma| %>
+          <div class="profile-dilemma-box m-3 rounded bg-light">
+            <div class="card-note-text pt-3">
+<!--               ACTIVE DILEMMMAS -->
+              <div class="active-parent">
+<!--               <p class="active-child badge badge-primary">Active</p> -->
+              <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
+            </div>
+<!--             ARCHIVED DILEMMAS -->
+            <div class="chart">
+              <% option_a = dilemma.options[0].users.count%>
+              <% option_b = dilemma.options[1].users.count%>
+              <%= javascript_include_tag '//www.google.com/jsapi', 'chartkick' %>
+              <%= pie_chart({"#{dilemma.options[0].description}" => option_a,
+              "#{dilemma.options[1].description}" => option_b}) %>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
-
-    <!-- My dilemmas -->
-    <div class="col-sm-12 col-lg-8 charts text-center">
-      <p class="badge badge-primary text-wrap mt-4 mb-2">My dilemmas</p>
-      <% current_user.dilemmas.each do |dilemma| %>
-        <div class="profile-dilemma-box m-3 rounded bg-light">
-          <div class="card-note-text pt-3">
-            <div class="active-parent">
-            <p class="active-child badge badge-primary">Active</p>
-            <%= link_to "#{dilemma.question}", dilemma_path(dilemma) %>
-          </div>
-          <div class="chart">
-            <% option_a = dilemma.options[0].users.count%>
-            <% option_b = dilemma.options[1].users.count%>
-            <%= javascript_include_tag '//www.google.com/jsapi', 'chartkick' %>
-            <%= pie_chart({"#{dilemma.options[0].description}" => option_a,
-            "#{dilemma.options[1].description}" => option_b}) %>
-          </div>
-        </div>
-      <% end %>
     </div>
   </div>
 </div>
+
 
