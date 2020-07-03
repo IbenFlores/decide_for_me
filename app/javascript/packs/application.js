@@ -27,6 +27,7 @@ require("chart.js")
 
 // External imports
 import "bootstrap";
+import "share-buttons";
 
 
 // Internal imports, e.g:

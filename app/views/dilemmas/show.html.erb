@@ -3,6 +3,14 @@
     <div class="col-lg-8">
       <!-- Dilemma card -->
       <%= render "display-show", dilemma: @dilemma %>
+      <!-- Social Media Buttons -->
+      <br>
+      <div class="share-btns" data-url="https://..." data-title="..." data-desc="...">
+        <a class="btn-facebook" data-id="fb"><i class="fab fa-facebook-square"></i> Facebook</a>
+        <a class="btn-twitter" data-id="tw"><i class="fab fa-twitter"></i> Twitter</a>
+        <a class="btn-telegram" data-id="tg"><i class="fab fa-telegram"></i> Telegram</a>
+        <a class="btn-mail" data-id="mail"><i class="fas fa-at"></i> EMail</a>
+      </div>
       <!-- Comments section -->
       <div class="mt-5" id="replies" data-chatroom-id="<%= @dilemma.id%>">
         <% @dilemma.replies.each do |reply| %>
