@@ -47,7 +47,7 @@ class Dilemma < ApplicationRecord
   end
 
   def self.top_3
-    @dilemmas = Dilemma.all.sort_by { |dilemma| dilemma.replies.count }
+    @dilemmas = Dilemma.all.active.sort_by { |dilemma| dilemma.replies.count }
     @dilemmas.first(3)
   end
 
