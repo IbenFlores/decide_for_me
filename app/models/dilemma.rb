@@ -14,6 +14,10 @@ class Dilemma < ApplicationRecord
 
   after_create :assign_expiration
 
+  scope :expired, -> { where("expired_at < ?", Time.zone.now) }
+
+  scope :active, ->  { where("expired_at > ?", Time.zone.now) }
+
   def can_users_vote?
     self.expired_at > Time.zone.now
   end

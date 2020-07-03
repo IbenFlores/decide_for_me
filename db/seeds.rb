@@ -40,6 +40,8 @@ dilemma_2_option_1 = Option.create!(description: "Corona",
                                     dilemma_id: dilemma_2.id)
 dilemma_2_option_2 = Option.create!(description: "Modelo",
                                     dilemma_id: dilemma_2.id)
+dilemma_2.expired_at = dilemma_2.expired_at - 1.week
+dilemma_2.save!
 puts "Dilemma created"
 
 dilemma_3 = Dilemma.create!(question: "Plans for the weekend",
