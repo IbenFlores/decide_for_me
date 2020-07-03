@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <% if @dilemmas.empty? %>
     <div class="text-center mt-5">
-      <%= link_to ">> No results found 🤖. Try again <<", dilemmas_path %>
+      <%= link_to ">> No dilemmas found 🤖. I think you should create one <<", new_dilemma_path %>
     </div>
   <% else %>
     <div class="mb-2 ml-3">
