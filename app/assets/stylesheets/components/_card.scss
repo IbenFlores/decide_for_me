@@ -172,7 +172,7 @@
 }
 
 .reply-container {
-  background-color: rgba(255,255,255,0.4);
+  background-color: rgba(255,255,255,0.1);
   border-radius: 10px;
   margin-left: 60px;
   margin-right: 60px;
@@ -188,4 +188,8 @@
 .card-grow:hover {
   transform: scale(1.10);
   transition: 500ms;
+}
+
+#bg-comment {
+  background-color: rgba(255,255,255,0.3);
 }

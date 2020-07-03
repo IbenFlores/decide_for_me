@@ -1,12 +1,12 @@
-<div class="reply-container">
-  <div class="d-flex justify-content-between align-items-center pr-3 pt-2 pb-1 mr-4 ml-3">
+<div class="reply-container mb-3">
+  <div class="d-flex justify-content-between align-items-center pr-3 pt-2 pb-1 mx-2">
     <div class="badge badge-dark text-wrap"><strong><%= reply.owner.username %></strong></div>
     <% if reply.owner.avatar.attached? %>
-      <div class="pr-3 pl-2 border-right border-dark"><%= cl_image_tag reply.owner.avatar.key, class: "avatar-bordered" %></div>
+      <div class="pr-3 pl-2"><%= cl_image_tag reply.owner.avatar.key, class: "avatar-bordered" %></div>
     <% else %>
-      <div class="pr-3 pl-2 border-right border-dark"><%= image_tag "default_avatar.png", class: "avatar-bordered" %></div>
+      <div class="pr-3 pl-2"><%= image_tag "default_avatar.png", class: "avatar-bordered" %></div>
     <% end %>
-    <div class="flex-grow-1 px-3 text-black">
+    <div class="flex-grow-1 pl-3 text-black border-left border-dark rounded mb-1" id="bg-comment">
       <i class="fas fa-comment pl-3 pr-2 text-dark"></i>
       <%= reply.answer %>
       <% if  reply.users.count > 50 %>
@@ -30,13 +30,11 @@
         <%= link_to mark_path(reply.id) do %>
           <span class="px-3">
             <i class="fas fa-star icon-reply"></i>
-            <span class="little-text text-primary"><%= reply.users.count %></span>
+            <span class="little-text text-primary text-right"><%= reply.users.count %></span>
           </span>
         <% end %>
       <% end %>
+      <br><p class="text-black border-top border-dark mt-1 mr-2" style="font-size: 10px;"><%= "Posted #{time_ago_in_words(reply.created_at)} ago" %></p>
     </div>
-  </div>
-  <div class="rounded mx-4 mb-4 mt-0">
-    <p class="font-weight-lighter text-black pb-1" style="font-size: 10px;"><%= "Posted #{time_ago_in_words(reply.created_at)} ago" %></p>
   </div>
 </div>
