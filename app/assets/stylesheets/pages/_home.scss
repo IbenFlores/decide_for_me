@@ -64,13 +64,7 @@
 .shadow {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
-// // Container fourth section
-// .gradient-container {
-//   // display: flex;
-//   text-align: center;
-//   justify-content: space-around;
-//   align-items: center;
-// }
+
 
 #card-fourth-section {
   width: 18em;
@@ -143,3 +137,79 @@
   bottom: 145px;
   font-size: 40px;
 }
+// Container fourth section
+.gradient-container {
+  // display: flex;
+  height: 450px;
+  text-align: center;
+  justify-content: space-around;
+  align-items: center;
+}
+#categories-1 {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: $easy;
+  right: -22px;
+  top: 20px;
+  border-radius: 200%;
+}
+#easy-circle {
+  color: white;
+  position: absolute;
+  right: -47px;
+}
+#active-time-1 {
+  position: absolute;
+  color: white;
+  width: 130px;
+  right: -215px;
+  top: 5px;
+}
+#categories-2 {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: $medium;
+  right: -22px;
+  top: 40px;
+  border-radius: 200%;
+}
+#medium-circle {
+  color: white;
+  position: absolute;
+  right: -70px;
+}
+#categories-3 {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: $hard;
+  right: -22px;
+  top: 60px;
+  border-radius: 200%;
+}
+#hard-circle {
+  color: white;
+  position: absolute;
+  right: -50px;
+}
+#post-it {
+  margin-top: 5%;
+  margin-left: 40px;
+}
+#post-it-title {
+  position: absolute;
+  top: -40px;
+  left: -20px;
+  color: white;
+  text-align: center;
+}
+#fourth-section {
+padding: 50px;
+}
+#quote {
+  color: white;
+  font-size: 38px;
+}
+
