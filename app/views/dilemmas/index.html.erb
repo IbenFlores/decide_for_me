@@ -1,7 +1,18 @@
 <div class="container-fluid">
   <% if @dilemmas.empty? %>
+    <div class="mb-2 ml-3">
+      <div class="form-inline">
+        <%= form_tag dilemmas_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Want to search again?"%>
+          <%= submit_tag "Search", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
     <div class="text-center mt-5">
-      <%= link_to ">> No results found 🤖. Try again <<", dilemmas_path %>
+      <%= link_to ">> No results found 🤖. Try creating one <<", new_dilemma_path %>
     </div>
   <% else %>
     <div class="mb-2 ml-3">
