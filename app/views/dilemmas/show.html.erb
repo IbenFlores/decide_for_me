@@ -3,6 +3,9 @@
     <div class="col-lg-8">
       <!-- Dilemma card -->
       <%= render "display-show", dilemma: @dilemma %>
+      <div id="social-media">
+        <%= social_share_button_tag(@dilemma.question) %>
+      </div>
       <!-- Comments section -->
       <div class="mt-5" id="replies" data-chatroom-id="<%= @dilemma.id%>">
         <% @dilemma.replies.each do |reply| %>
