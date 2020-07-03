@@ -72,175 +72,18 @@
 //   align-items: center;
 // }
 
-#categories-1 {
-  position: absolute;
+#card-fourth-section {
+  width: 18em;
+}
+
+.circle {
   width: 30px;
   height: 30px;
-  background-color: $easy;
-  right: -22px;
-  top: 20px;
-  border-radius: 200%;
-}
-
-#easy-circle {
-  color: white;
-  position: absolute;
-  right: -47px;
-}
-
-#active-time-1 {
-  position: absolute;
-  color: white;
-  width: 130px;
-  right: -215px;
-  top: 5px;
-}
-
-#categories-2 {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  background-color: $medium;
-  right: -22px;
-  top: 40px;
-  border-radius: 200%;
-}
-
-#medium-circle {
-  color: white;
-  position: absolute;
-  right: -70px;
-}
-
-#categories-3 {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  background-color: $hard;
-  right: -22px;
-  top: 60px;
-  border-radius: 200%;
-}
-
-#hard-circle {
-  color: white;
-  position: absolute;
-  right: -50px;
-}
-
-#post-it {
-  width: 400px;
-  text-align: justify;
-  justify-content: space-around;
-  align-items: center;
-  text-align: justify;
-  margin-left: 17%;
-  margin-top: 10%;
-
-}
-
-#fourth-section {
-  margin-top: 10%;
-  text-align: center;
-  justify-content: space-around;
-  align-items: center;
-  padding: 40px;
-  height: 60vh;
 }
 
 #quote {
   color: white;
   font-size: 38px;
-}
-
-// Ends Fourt Section
-.container-content-icons {
-  align-items: center;
-  width: 170px;
-  height: 70%;
-  border: 2px solid;
-  border-color: black;
-  border-radius: 15px;
-  padding: 15px;
-  transition: all .4s ease-in-out;
-}
-
-.container-content-icons:hover {
-  align-items: center;
-  width: 170px;
-  height: 80%;
-  border: 8px solid;
-  border-color: #8A27E4;
-  border-radius: 15px;
-  padding: 15px;
-  transform: scale(1.1);
-  color: #8A27E4;
-}
-
-.contents-container {
-  position: relative;
-  top: 10%;
-}
-
-.number-card {
-  position: relative;
-  top: 10%;
-}
-
-#container-card-action {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  text-align: center;
-  width: 100vw;
-  margin-top: 8%;
-}
-
-#container-card-action2 {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  text-align: center;
-  width: 100vw;
-  margin-top: 5%;
-}
-
-#card-individual {
-  padding: 25px;
-  background-color: white;
-  border-radius: 25px;
-  width: 120px;
-}
-
-.margin-center {
-  margin: 0 auto;
-}
-
-#main-paragraph {
-  text-align: justify;
-  position: absolute;
-  top: -80px;
-  right: -500px;
-  color: white;
-  width: 400px;
-}
-
-#second-paragraph {
-  text-align: justify;
-  position: absolute;
-  top: 120px;
-  right: -500px;
-  color: white;
-  width: 400px;
-}
-
-#third-paragraph {
-  text-align: justify;
-  position: absolute;
-  top: 210px;
-  right: -500px;
-  color: white;
-  width: 400px;
 }
 
 // fifth section
