@@ -13,7 +13,7 @@ class DilemmasController < ApplicationController
   end
 
   def show
-    @sample = Dilemma.all.sample
+    @dilemmas = Dilemma.all
     @reply = Reply.new
   end
 

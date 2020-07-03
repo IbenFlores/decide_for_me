@@ -42,9 +42,9 @@ class Dilemma < ApplicationRecord
     voted
   end
 
-  def self.top_10
+  def self.top_3
     @dilemmas = Dilemma.all.sort_by { |dilemma| dilemma.replies.count }
-    @dilemmas.first(10)
+    @dilemmas.first(3)
   end
 
   def self.sample
