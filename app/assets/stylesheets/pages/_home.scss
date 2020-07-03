@@ -134,23 +134,18 @@
   justify-content: space-around;
   align-items: center;
   text-align: justify;
+  margin-left: 17%;
+  margin-top: 10%;
 
-}
-
-#post-it-title {
-  position: absolute;
-  top: -80px;
-  left: -20px;
-  color: white;
-  text-align: center;
 }
 
 #fourth-section {
+  margin-top: 10%;
   text-align: center;
   justify-content: space-around;
   align-items: center;
-  padding: 120px;
-  height: 530px;
+  padding: 40px;
+  height: 60vh;
 }
 
 #quote {
@@ -292,7 +287,7 @@
   padding: 45px;
   box-sizing: content-box;
   position: absolute;
-  left: 70px;
+  left: 220px;
 }
 
 #peace-quote p {
