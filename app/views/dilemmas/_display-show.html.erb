@@ -29,7 +29,7 @@
               </div>
             <% else %>
               <%= link_to upvotes_path(option.id) do %>
-                <div class="show-options d-flex flex-column align-items-center mx-5 mb-5 p-4 card-ghost card-grow rounded-pill">
+                <div class="show-options d-flex flex-column align-items-center mx-5 mb-5 p-4 card-ghost card-grow">
                   <p class="badge badge-primary"><strong>Vote!</strong></p>
                   <div class="circle-percentage mb-1">
                     <% percentage = dilemma.options.reduce(0) { |sum, option| sum + option.users.count } %>
