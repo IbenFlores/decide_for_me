@@ -19,7 +19,7 @@ class RepliesController < ApplicationController
       )
       respond_to do |format|
         format.html {redirect_to dilemma_path(@dilemma)}
-        format.js {}
+        format.js {redirect_to dilemma_path(@dilemma)}
       end
 
     else
