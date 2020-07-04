@@ -45,41 +45,6 @@ user9.avatar.attach(io: avatar_user9, filename: "juliana.jpg", content_type: "im
 
 # => First user
 
-puts "creating dilemmas for Jolie"
-dilemma_1 = Dilemma.create!(question: "Prom dance outfit selection",
-                            category: 2,
-                            tag: "clothing",
-                            user_id: user1.id)
-dilemma_1_option_1 = Option.create!(description: "white smoking formal",
-                                    dilemma_id: dilemma_1.id)
-dilemma_1_option_2 = Option.create!(description: "t-shirt with jeans casual",
-                                    dilemma_id: dilemma_1.id)
-puts "Dilemma created"
-
-dilemma_2 = Dilemma.create!(question: "Which beer tastes better?",
-                            category: 0,
-                            tag: "social life",
-                            user_id: user1.id)
-dilemma_2_option_1 = Option.create!(description: "Corona",
-                                    dilemma_id: dilemma_2.id)
-dilemma_2_option_2 = Option.create!(description: "Modelo",
-                                    dilemma_id: dilemma_2.id)
-dilemma_2.expired_at = dilemma_2.expired_at - 1.week
-dilemma_2.save!
-puts "Dilemma created"
-
-dilemma_3 = Dilemma.create!(question: "Plans for the weekend",
-                              category: 1,
-                              tag: "vacation",
-                              user_id: user1.id)
-dilemma_3_option_1 = Option.create!(description: "Beach trip",
-                                    dilemma_id: dilemma_3.id)
-dilemma_3_option_2 = Option.create!(description: "Mountain hike",
-                                    dilemma_id: dilemma_3.id)
-puts "Dilemma created"
-
-puts "Jolie's dilemmas have been created"
-
 #  => Second user
 
 puts "creating dilemmas for Mariana"
