@@ -24,8 +24,6 @@
             <%= link_to "Post a dilemma", new_dilemma_path %>
           </div>
         </li>
-<!--         <li class="nav-item active mr-2 ml-3 mt-1 little-text" id="text-blue">
-          <%= link_to "MY PROFILE", profile_path, class: "nav-link" %>
         </li> -->
         <li class="nav-item active mr-2 ml-5 mt-2 mb-3">
           <%= current_user.username %>
@@ -37,7 +35,6 @@
             <%= image_tag "default_avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "My profile", profile_path, class: "dropdown-item" %>
             <%= link_to "Browse dilemmas", dilemmas_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
