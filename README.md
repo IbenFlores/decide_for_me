@@ -18,15 +18,16 @@ Our team:
 
 After-download command instructions
 -----------------------------------
-```bundle install
+```
+bundle install
 
- yarn install
+yarn install
  
- rails db:create
+rails db:create
  
- rails db:migrate
+rails db:migrate
  
- rails db:seed
+rails db:seed
  ```
 
 
