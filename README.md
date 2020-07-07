@@ -5,7 +5,7 @@ Main keywords:
 --------------
 * **Target:** Undecisive people with doubts that need solving.
 * **Pain:** People can't decide between options and need a second opinion in order to solve them
-* **solution:** App for posting dilemmas and allowing other users to help you with them
+* **solution:** App for posting dilemmas and allowing other users to help you with them by voting on the option they think is the best
 ----------------------------------------------------------------------------------------------------
 Our team:
 --------
@@ -19,15 +19,11 @@ Our team:
 After-download command instructions
 -----------------------------------
 ```
-bundle install
-
-yarn install
- 
-rails db:create
- 
-rails db:migrate
- 
-rails db:seed
+$ bundle install
+$ yarn install
+$ rails db:create
+$ rails db:migrate
+$ rails db:seed
  ```
 
 
