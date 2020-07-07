@@ -10,5 +10,10 @@ Main keywords:
 Our team
 --------
 **Lead Developer:** [IbenFP935](https://github.com/IbenFP935)
+**Project Manager:** [Jolumapi92](https://github.com/jolumapi92)
+**Lead Designer:** [MarianaGT](https://github.com/MarianaGT)
+**Product Owner:** [JolieWrites](https://github.com/joliewrites)
+-----------------------------------------------------------------
+
 
 Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
