@@ -18,7 +18,7 @@ Our team:
 
 After-download command instructions
 -----------------------------------
-```bundle install
+``bundle install
 
  yarn install
  
@@ -26,6 +26,7 @@ After-download command instructions
  
  rails db:migrate
  
- rails db:seed```
+ rails db:seed``
+
 
 Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
