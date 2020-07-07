@@ -2,7 +2,9 @@ Decide for me
 =============
 
 bullet list:
-* **Target**
+* **Target**: Undecisive people with doubts that need solving.
+* **Pain**: 
+
 
 
 Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
