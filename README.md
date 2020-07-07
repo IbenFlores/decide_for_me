@@ -13,6 +13,7 @@ Our team
 **Project Manager:** [Jolumapi92](https://github.com/jolumapi92)
 **Lead Designer:** [MarianaGT](https://github.com/MarianaGT)
 **Product Owner:** [JolieWrites](https://github.com/joliewrites)
+
 -----------------------------------------------------------------
 
 
