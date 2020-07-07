@@ -7,12 +7,12 @@ Main keywords:
 * **Pain:** People can't decide between options and need a second opinion in order to solve them
 * **solution:** App for posting dilemmas and allowing other users to help you with them
 ----------------------------------------------------------------------------------------------------
-Our team
+Our team:
 --------
-**Lead Developer:** [IbenFP935](https://github.com/IbenFP935)
-**Project Manager:** [Jolumapi92](https://github.com/jolumapi92)
-**Lead Designer:** [MarianaGT](https://github.com/MarianaGT)
-**Product Owner:** [JolieWrites](https://github.com/joliewrites)
+* **Lead Developer:** [IbenFP935](https://github.com/IbenFP935)
+* **Project Manager:** [Jolumapi92](https://github.com/jolumapi92)
+* **Lead Designer:** [MarianaGT](https://github.com/MarianaGT)
+* **Product Owner:** [JolieWrites](https://github.com/joliewrites)
 
 -----------------------------------------------------------------
 
