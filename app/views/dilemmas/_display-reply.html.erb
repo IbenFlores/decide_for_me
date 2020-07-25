@@ -15,29 +15,31 @@
       </div>
     </div>
     <!-- Featured section -->
-    <div class="ml-3 my-4 pt-2">
-      <div class="d-flex px-5">
-        <i class="fas fa-sort-down text-primary pr-1"></i>
-        <p class="text-primary text-center"><em>SUGGESTED</em></p>
-        <i class="fas fa-sort-down text-primary pl-1"></i>
-      </div>
-      <% @dilemmas.top_3.each do |dilemma| %>
-        <div class="card-category card-note-text card-ghost mt-2 mb-5">
-          <div class="card-tape-featured"></div>
-          <div class="color-child rounded-circle <%= dilemma.category %>"></div>
-          <% if dilemma.easy? %>
-            <p class="px-2 py-1 mr-1 d-inline little-text-border">ACTIVE FOR 1 DAY</p><br>
-          <% elsif dilemma.medium? %>
-            <p class="px-2 py-1 d-inline little-text-border">ACTIVE FOR 3 DAYS</p><br>
-          <% elsif dilemma.hard? %>
-            <p class="px-2 py-1 d-inline little-text-border">ACTIVE FOR 7 DAYS</p><br>
-          <% end %>
-          <%= link_to dilemma.question, dilemma_path(dilemma) %>
-          <p class="font-italic little-text">Created by <strong><%= @dilemma.user.username %></strong></p>
+    <% if dilemma.user != current_user %>
+      <div class="ml-3 my-4 pt-2">
+        <div class="d-flex px-5">
+          <i class="fas fa-sort-down text-primary pr-1"></i>
+          <p class="text-primary text-center"><em>SUGGESTED</em></p>
+          <i class="fas fa-sort-down text-primary pl-1"></i>
         </div>
-        <br>
-      <% end %>
-    </div>
+          <% @dilemmas.top_3.each do |dilemma| %>
+            <div class="card-category card-note-text card-ghost mt-2 mb-5">
+              <div class="card-tape-featured"></div>
+              <div class="color-child rounded-circle <%= dilemma.category %>"></div>
+              <% if dilemma.easy? %>
+                <p class="px-2 py-1 mr-1 d-inline little-text-border">ACTIVE FOR 1 DAY</p><br>
+              <% elsif dilemma.medium? %>
+                <p class="px-2 py-1 d-inline little-text-border">ACTIVE FOR 3 DAYS</p><br>
+              <% elsif dilemma.hard? %>
+                <p class="px-2 py-1 d-inline little-text-border">ACTIVE FOR 7 DAYS</p><br>
+              <% end %>
+              <%= link_to dilemma.question, dilemma_path(dilemma) %>
+              <p class="font-italic little-text">Created by <strong><%= @dilemma.user.username %></strong></p>
+            </div>
+            <br>
+          <% end %>
+      </div>
+    <% end %>
 <% else %>
   <div class="col-sm-12 col-lg-4 px-4">
     <div class="mt-5 pt-5 mr-5 text-left text-primary">
