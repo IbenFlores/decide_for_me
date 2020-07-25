@@ -34,7 +34,7 @@
                 <p class="px-2 py-1 d-inline little-text-border">ACTIVE FOR 7 DAYS</p><br>
               <% end %>
               <%= link_to dilemma.question, dilemma_path(dilemma) %>
-              <p class="font-italic little-text">Created by <strong><%= @dilemma.user.username %></strong></p>
+              <p class="font-italic little-text">Created by <strong><%= dilemma.user.username %></strong></p>
             </div>
             <br>
           <% end %>
