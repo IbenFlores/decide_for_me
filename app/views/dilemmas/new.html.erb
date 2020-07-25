@@ -14,7 +14,8 @@
             <%= f.input :question, label: false,
             error: 'A question is mandatory, please specify one',
             placeholder: "My dilemma is...",
-            input_html: { class: "background-color-input-form" } %>
+            input_html: { class: "background-color-input-form" },
+            hint: "*Required field" %>
           </div>
         </div>
         <div class="container d-flex mb-4 border-bottom border-dark">
@@ -41,7 +42,8 @@
                 <%= o.input :description, label: false,
                 error: 'An option is limited to 140 characters.',
                 placeholder: "Type a clear and brief choice..",
-                input_html: { class: "background-color-input-form" } %>
+                input_html: { class: "background-color-input-form" },
+                hint: "*Required field" %>
               <% end %>
             </div>
             <div class="mb-5">
@@ -50,7 +52,8 @@
                 <%= o.input :description, label: false,
                 error: 'An option is limited to 140 characters.',
                 placeholder: "Type a clear and brief choice..",
-                input_html: { class: "background-color-input-form" } %>
+                input_html: { class: "background-color-input-form" },
+                hint: "*Required field" %>
               <% end %>
             </div>
           </div>
