@@ -1,12 +1,12 @@
 <h1 align="center">Decide for me</h1>
-=============
+-----------------------------------------------------------------
 
 Summary
 --------------
 Feeling indecisive? This web application will allow you to share your dilemmas with other users to help you come up with a better decision. Either by posting, voting or commenting on dilemmas, get an unbiased and fun perspective on collective decision-making.
 
 ![image](https://user-images.githubusercontent.com/64441365/116282011-e881ae80-a74f-11eb-9c82-eb3341dd8190.png)
-----------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------
 Our team
 --------
 * **Lead Developer:** [IbenFP935](https://github.com/IbenFP935)
