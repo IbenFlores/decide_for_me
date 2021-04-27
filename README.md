@@ -2,13 +2,13 @@ Decide for me
 =============
 --------------
 
-Main keywords:
+Summary
 --------------
-* **Target:** Undecisive people with doubts that need solving.
-* **Pain:** People can't decide between options and need a second opinion in order to solve them
-* **solution:** App for posting dilemmas and allowing other users to help you with them by voting on the option they think is the best
+Feeling indecisive? This web application will allow you to share your dilemmas with other users to help you come up with a better decision. Either by posting, voting or commenting on dilemmas, get an unbiased and fun perspective on collective decision-making.
+
+![image](https://user-images.githubusercontent.com/64441365/116282011-e881ae80-a74f-11eb-9c82-eb3341dd8190.png)
 ----------------------------------------------------------------------------------------------------
-Our team:
+Our team
 --------
 * **Lead Developer:** [IbenFP935](https://github.com/IbenFP935)
 * **Project Manager:** [Jolumapi92](https://github.com/jolumapi92)
