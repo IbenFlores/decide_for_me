@@ -1,6 +1,5 @@
-Decide for me
+<h1 align="center">Decide for me</h1>
 =============
---------------
 
 Summary
 --------------
@@ -16,7 +15,30 @@ Our team
 * **Product Owner:** [JolieWrites](https://github.com/joliewrites)
 
 -----------------------------------------------------------------
+Tech stack
+--------
+* Ruby on Rails
 
+-----------------------------------------------------------------
+User stories
+--------
+![Decide Flow](https://user-images.githubusercontent.com/64441365/116283334-64302b00-a751-11eb-8c4d-c7ebdf0f2bc3.png)
+
+* As a visitor I can see the Home page
+* As a visitor I can Log in / Sign up
+* As a user I can see all the posted dilemmas
+* As a user I can browse for dilemmas
+* As a user I can see a single dilemma
+* As a user I can vote for one of two options in a dilemma
+* As a user I can comment on a dilemma
+* As a user I can create my own dilemma
+
+-----------------------------------------------------------------
+Resources
+--------
+* [High-Fidelity Interactive Prototype](https://www.figma.com/proto/AyvYN3oqCs9fT78vCKDnq6/Decide-for-me?node-id=168%3A2&scaling=min-zoom)
+
+-----------------------------------------------------------------
 After-download command instructions
 -----------------------------------
 ```
